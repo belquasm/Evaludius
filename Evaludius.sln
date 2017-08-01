@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B49E0BD5-A601-4950-B0A8-241FE41D311C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evaludius", "Evaludius\Evaludius\Evaludius.csproj", "{7BD339E2-40FC-4182-8EB7-74E0C33ABD6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "Evaludius\DAL\DAL.csproj", "{B17B0356-1E38-4662-81B9-6369D02EFDA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BD339E2-40FC-4182-8EB7-74E0C33ABD6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD339E2-40FC-4182-8EB7-74E0C33ABD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD339E2-40FC-4182-8EB7-74E0C33ABD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD339E2-40FC-4182-8EB7-74E0C33ABD6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17B0356-1E38-4662-81B9-6369D02EFDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17B0356-1E38-4662-81B9-6369D02EFDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17B0356-1E38-4662-81B9-6369D02EFDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17B0356-1E38-4662-81B9-6369D02EFDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7BD339E2-40FC-4182-8EB7-74E0C33ABD6D} = {B49E0BD5-A601-4950-B0A8-241FE41D311C}
+		{B17B0356-1E38-4662-81B9-6369D02EFDA3} = {B49E0BD5-A601-4950-B0A8-241FE41D311C}
+	EndGlobalSection
+EndGlobal
