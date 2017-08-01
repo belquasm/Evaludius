@@ -53,8 +53,8 @@ namespace DAL
                 await ensureRoleAsync(adminRoleName, "Default administrator", ApplicationPermissions.GetAllPermissionValues());
                 await ensureRoleAsync(userRoleName, "Default user", new string[] { });
 
-                await createUserAsync("admin", "tempP@ss123", "Inbuilt Administrator", "admin@ebenmonney.com", "+1 (123) 000-0000", new string[] { adminRoleName });
-                await createUserAsync("user", "tempP@ss123", "Inbuilt Standard User", "user@ebenmonney.com", "+1 (123) 000-0001", new string[] { userRoleName });
+                await createUserAsync("admin", "p@ssw0rd", "Inbuilt Administrator", "admin@evaludius.com", "+1 (123) 000-0000", new string[] { adminRoleName });
+                await createUserAsync("user", "p@ssw0rd3", "Inbuilt Standard User", "user@evaludius.com", "+1 (123) 000-0001", new string[] { userRoleName });
             }
 
 
@@ -69,6 +69,66 @@ namespace DAL
                 };
 
 				_context.Categories.Add(cat);
+				// Technical SkillSets
+				SkillSet skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Vision and Awareness",
+					Name = "Vision and Awareness",
+					Tag = "VA"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Receiving and Turning Efficiency",
+					Name = "Receiving and Turning Efficiency",
+					Tag = "RTE"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Proactive Passing",
+					Name = "Proactive Passing",
+					Tag = "PP"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Running & Dribbling",
+					Name = "Running & Dribbling",
+					Tag = "RD"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Finishing",
+					Name = "Finishing",
+					Tag = "FIN"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Proactive Defending",
+					Name = "Proactive Defending",
+					Tag = "PD"
+				};
+
+				_context.SkillSets.Add(skillSet);
 
 				cat = new Category
 				{
@@ -79,6 +139,39 @@ namespace DAL
 
 				_context.Categories.Add(cat);
 
+				// Tactical SkillSets
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Attacking",
+					Name = "Attacking",
+					Tag = "ATT"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Transition",
+					Name = "Transition",
+					Tag = "TRN"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Defending",
+					Name = "Defending",
+					Tag = "DEF"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+
 				cat = new Category
 				{
 					Name = "SE",
@@ -86,6 +179,37 @@ namespace DAL
 					Tag = "SE"
 				};
 				_context.Categories.Add(cat);
+
+				// Socio-Emotional SkillSets
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Cohesion",
+					Name = "Cohesion",
+					Tag = "COH"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Emotional Balance",
+					Name = "Emotional Balance",
+					Tag = "EB"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Communication",
+					Name = "Communication",
+					Tag = "COM"
+				};
+
+				_context.SkillSets.Add(skillSet);
 
 				cat = new Category
 				{
@@ -95,16 +219,74 @@ namespace DAL
 				};
 				_context.Categories.Add(cat);
 
+				// Psychological SkillSets
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Commitment",
+					Name = "Commitment",
+					Tag = "COMM"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Concentration",
+					Name = "Concentration",
+					Tag = "CONC"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Confidence",
+					Name = "Confidence",
+					Tag = "CONF"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+
+
 				cat = new Category
 				{
 					Name = "Physical",
 					Description = "Physical acpect",
 					Tag = "Phy"
 				};
-				_context.Categories.Add(cat);
 
+				_context.Categories.Add(cat);
+				// Psychological SkillSets
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Physical Literacy",
+					Name = "Physical Literacy",
+					Tag = "PHL"
+				};
+
+				_context.SkillSets.Add(skillSet);
+
+				skillSet = new SkillSet
+				{
+					Category = cat,
+					Description = "Match Fitness",
+					Name = "Match Fitness",
+					Tag = "MAFI"
+				};
+
+				_context.SkillSets.Add(skillSet);
+				
 				await _context.SaveChangesAsync();
             }
+			if (!await _context.SkillSets.AnyAsync() && !await _context.SkillSets.AnyAsync())
+			{
+
+			}
         }
 
 

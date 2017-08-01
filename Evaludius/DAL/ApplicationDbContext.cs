@@ -22,9 +22,11 @@ namespace DAL
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public DbSet<Category> Categories { get; set; }
-        public DbSet<SkillSet> ProductCategories { get; set; }
-       
-        public DbSet<Team> Orders { get; set; }
+        public DbSet<SkillSet> SkillSets { get; set; }
+
+		public DbSet<SkillSetItem> SkillSetItemss { get; set; }
+
+		public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
 
 
