@@ -159,7 +159,9 @@ namespace Evaludius
 
 				options.AddPolicy(AuthPolicies.ViewPlayersPolicy, policy => policy.RequireClaim(CustomClaimTypes.Permission, AppPermissions.ViewPlayers));
 
-				options.AddPolicy(AuthPolicies.ManageUserByUserIdPolicy, policy => policy.Requirements.Add(new ManageUserByIdRequirement()));
+                options.AddPolicy(AuthPolicies.ManagePlayersPolicy, policy => policy.RequireClaim(CustomClaimTypes.Permission, AppPermissions.ManagePlayers));
+
+                options.AddPolicy(AuthPolicies.ManageUserByUserIdPolicy, policy => policy.Requirements.Add(new ManageUserByIdRequirement()));
 
                 options.AddPolicy(AuthPolicies.ManageUsersPolicy, policy => policy.RequireClaim(CustomClaimTypes.Permission, AppPermissions.ManageUsers));
 

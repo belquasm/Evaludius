@@ -53,8 +53,8 @@ namespace DAL
                 await ensureRoleAsync(adminRoleName, "Default administrator", ApplicationPermissions.GetAllPermissionValues());
                 await ensureRoleAsync(userRoleName, "Default user", new string[] { });
 
-                await createUserAsync("admin", "p@ssw0rd", "Inbuilt Administrator", "admin@evaludius.com", "+1 (123) 000-0000", new string[] { adminRoleName });
-                await createUserAsync("user", "p@ssw0rd3", "Inbuilt Standard User", "user@evaludius.com", "+1 (123) 000-0001", new string[] { userRoleName });
+                await createUserAsync("admin", "tempP@ss123", "Inbuilt Administrator", "admin@evaludius.com", "+1 (123) 000-0000", new string[] { adminRoleName });
+                await createUserAsync("user",  "tempP@ss123", "Inbuilt Standard User", "user@evaludius.com", "+1 (123) 000-0001", new string[] { userRoleName });
             }
 
 
@@ -283,10 +283,34 @@ namespace DAL
 				
 				await _context.SaveChangesAsync();
             }
-			if (!await _context.SkillSets.AnyAsync() && !await _context.SkillSets.AnyAsync())
+			if (!await _context.Positions.AnyAsync() && !await _context.Positions.AnyAsync())
 			{
+                _context.Positions.Add(new Position
+                {
+                    IsFieldPosition = false,
+                    Name = "Goalie"
+                });
 
-			}
+                _context.Positions.Add(new Position
+                {
+                    Name = "Defender",
+                    IsFieldPosition = true
+                });
+
+                _context.Positions.Add(new Position
+                {
+                    Name = "Midfield",
+                    IsFieldPosition = true
+                });
+
+                _context.Positions.Add(new Position
+                {
+                    Name = "Forward",
+                    IsFieldPosition = true
+                });
+
+                await _context.SaveChangesAsync();
+            }
         }
 
 

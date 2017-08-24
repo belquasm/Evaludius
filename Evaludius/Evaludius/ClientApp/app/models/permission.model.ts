@@ -8,11 +8,11 @@
 
 export type PermissionNames =
     "View Players" | "Manage Users" |
-	"View Roles" | "Manage Roles" | "Assign Roles" | "View Users";
+	"View Roles" | "Manage Roles" | "Assign Roles" | "View Users" | "Manage Players";
 
 export type PermissionValues =
     "players.view" | "users.manage" |
-	"roles.view" | "roles.manage" | "roles.assign" | "users.view";
+	"roles.view" | "roles.manage" | "roles.assign" | "users.view" | "players.manage";
 
 export class Permission {
 	public static readonly viewPlayersPermission: PermissionValues = "players.view";
@@ -21,6 +21,8 @@ export class Permission {
 	
 	
     public static readonly manageUsersPermission: PermissionValues = "users.manage";
+
+    public static readonly managePlayersPermission: PermissionValues = "players.manage";
 
     public static readonly viewRolesPermission: PermissionValues = "roles.view";
     public static readonly manageRolesPermission: PermissionValues = "roles.manage";

@@ -42,5 +42,7 @@ namespace Evaludius.Policies
 
 		///<summary>Policy to allow viewing all player records.</summary>
 		public const string ViewPlayersPolicy = "View Players";
-	}
+
+        public const string ManagePlayersPolicy = "Manage Players";
+    }
 }

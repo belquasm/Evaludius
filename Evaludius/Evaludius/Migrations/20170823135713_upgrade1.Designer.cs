@@ -8,7 +8,7 @@ using DAL;
 namespace Evaludius.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170801131831_upgrade1")]
+    [Migration("20170823135713_upgrade1")]
     partial class upgrade1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,9 +121,15 @@ namespace Evaludius.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime?>("DateOfBirth");
+
                     b.Property<string>("FirstName");
 
+                    b.Property<bool>("IsActive");
+
                     b.Property<string>("LastName");
+
+                    b.Property<int?>("PositionId");
 
                     b.Property<int?>("TeamId");
 
@@ -131,9 +137,25 @@ namespace Evaludius.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("PositionId");
+
                     b.HasIndex("TeamId");
 
                     b.ToTable("Players");
+                });
+
+            modelBuilder.Entity("DAL.Models.Position", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<bool>("IsFieldPosition");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Positions");
                 });
 
             modelBuilder.Entity("DAL.Models.SkillSet", b =>
@@ -153,7 +175,7 @@ namespace Evaludius.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("SkillSets");
                 });
 
             modelBuilder.Entity("DAL.Models.SkillSetItem", b =>
@@ -173,7 +195,7 @@ namespace Evaludius.Migrations
 
                     b.HasIndex("SkillSetId");
 
-                    b.ToTable("SkillSetItem");
+                    b.ToTable("SkillSetItemss");
                 });
 
             modelBuilder.Entity("DAL.Models.Team", b =>
@@ -193,7 +215,7 @@ namespace Evaludius.Migrations
 
                     b.HasIndex("ApplicationUserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -359,6 +381,10 @@ namespace Evaludius.Migrations
 
             modelBuilder.Entity("DAL.Models.Player", b =>
                 {
+                    b.HasOne("DAL.Models.Position", "Position")
+                        .WithMany()
+                        .HasForeignKey("PositionId");
+
                     b.HasOne("DAL.Models.Team", "Team")
                         .WithMany("Players")
                         .HasForeignKey("TeamId");

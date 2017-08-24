@@ -36,6 +36,8 @@ import { NotificationService } from './services/notification.service';
 import { NotificationEndpoint } from './services/notification-endpoint.service';
 import { AccountService } from './services/account.service';
 import { AccountEndpoint } from './services/account-endpoint.service';
+import { PlayersService } from './services/players.service';
+import { PlayersEndpoint } from './services/players-endpoint.service';
 
 import { EqualValidator } from './directives/equal-validator.directive';
 import { LastElementDirective } from './directives/last-element.directive';
@@ -51,7 +53,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { HomeComponent } from "./components/home/home.component";
 import { CustomersComponent } from "./components/customers/customers.component";
 import { ProductsComponent } from "./components/products/products.component";
-import { PlayersComponent } from "./components/players/players.component";
+
 import { OrdersComponent } from "./components/orders/orders.component";
 import { SettingsComponent } from "./components/settings/settings.component";
 import { AboutComponent } from "./components/about/about.component";
@@ -63,6 +65,8 @@ import { StatisticsDemoComponent } from "./components/controls/statistics-demo.c
 import { NotificationsViewerComponent } from "./components/controls/notifications-viewer.component";
 import { SearchBoxComponent } from "./components/controls/search-box.component";
 import { UserInfoComponent } from "./components/controls/user-info.component";
+import { PlayerInfoComponent } from "./components/players/player-info.component";
+import { PlayersComponent } from "./components/players/players.component";
 import { UserPreferencesComponent } from "./components/controls/user-preferences.component";
 import { UsersManagementComponent } from "./components/controls/users-management.component";
 import { RolesManagementComponent } from "./components/controls/roles-management.component";
@@ -116,7 +120,7 @@ import { RoleEditorComponent } from "./components/controls/role-editor.component
         BootstrapToggleDirective,
         BootstrapSelectDirective,
         BootstrapDatepickerDirective,
-        GroupByPipe
+        GroupByPipe, PlayerInfoComponent
     ],
     providers: [
         { provide: ErrorHandler, useClass: AppErrorHandler },
@@ -129,7 +133,10 @@ import { RoleEditorComponent } from "./components/controls/role-editor.component
         AccountService,
         AccountEndpoint,
         LocalStoreManager,
+        PlayersService,
+        PlayersEndpoint,
         EndpointFactory
+        
     ],
     bootstrap: [AppComponent]
 })

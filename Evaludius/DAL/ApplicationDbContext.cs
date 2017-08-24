@@ -28,8 +28,7 @@ namespace DAL
 
 		public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
-
-
+        public DbSet<Position> Positions { get;  set; }
 
         public ApplicationDbContext(DbContextOptions options) : base(options)
         { }

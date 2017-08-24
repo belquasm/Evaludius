@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using DAL.Models;
 using DAL.Repositories.Interfaces;
-
+using AutoMapper;
 namespace DAL.Repositories
 {
     public class PlayerRepository : Repository<Player>, IPlayerRepository
@@ -25,18 +25,35 @@ namespace DAL.Repositories
 
         public IEnumerable<Player> GetTopActivePlayers(int count)
         {
-            throw new NotImplementedException();
+            return GetAllPlayersData().Where(x => x.IsActive).Take(count).ToList();
         }
 
 
         public IEnumerable<Player> GetAllPlayersData()
         {
-            return appContext.Players
+            return appContext.Players.Include(x=>x.Position).Include(y=>y.Team)
                 
                 .ToList();
         }
 
+        public Tuple<bool, string[]> UpdatePlayerAsync(Player player)
+        {
 
+           var playerEdit = appContext.Players.FirstOrDefault(x => x.Id == player.Id);
+
+            if (playerEdit == null)
+            {
+                string[] error = { $"{player.FullName} not found." };
+
+                return Tuple.Create<bool, string[]>(false, error );
+            }
+
+            Mapper.Map(player, playerEdit);
+
+            appContext.SaveChanges();
+
+            return Tuple.Create(true, new string[] { });
+        }
 
         private ApplicationDbContext appContext
         {

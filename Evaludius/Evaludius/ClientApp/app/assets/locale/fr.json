@@ -13,15 +13,16 @@
 		"Logout": "Se Déconnecter",
 		"Players": "Joueurs"
 	},
-	"pageHeader": {
-		"Dashboard": "Tableau de bord",
-		"Customers": "Les clients",
-		"Products": "Les produits",
-		"Orders": "Les ordres",
-		"NotFound": "Pas trouvé",
-		"About": "À Propos",
-		"Settings": "Paramètres"
-	},
+  "pageHeader": {
+    "Dashboard": "Tableau de bord",
+    "Customers": "Les clients",
+    "Products": "Les produits",
+    "Orders": "Les ordres",
+    "NotFound": "Pas trouvé",
+    "About": "À Propos",
+    "Settings": "Paramètres",
+    "Players": "Joueurs"
+  },
 	"home": {
 		"NoWidgets1": "Vous n'avez pas de widgets affichés. Aller à",
 		"NoWidgets2": "Configurer les widgets disponibles",

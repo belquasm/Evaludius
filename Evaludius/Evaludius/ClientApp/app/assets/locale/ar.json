@@ -1,9 +1,12 @@
 ﻿{
-	"app": {
-		"Welcome": "أهلا بك",
-		"Notifications": "إعلام",
-		"New": "جديد"
-	},
+  "app": {
+    "Welcome": "أهلا بك",
+    "Notifications": "إعلام",
+    "New": "جديد"
+  },
+  "common": {
+    "firstName": "الاسم الشخصي"
+  },
 	"mainMenu": {
 		"Appointments": "المواعيد",
 		"Customers": "الزبائن",
@@ -13,15 +16,16 @@
 		"Logout": "الخروج",
 		"Players": "اللاعبين"
 	},
-	"pageHeader": {
-		"Dashboard": "لوحة القيادة",
-		"Customers": "الزبائن",
-		"Products": "المنتجات",
-		"Orders": "الأوامر",
-		"NotFound": "لا يوجد",
-		"About": "حول منجز التطبيق",
-		"Settings": "إعدادات"
-	},
+  "pageHeader": {
+    "Dashboard": "لوحة القيادة",
+    "Customers": "الزبائن",
+    "Products": "المنتجات",
+    "Orders": "الأوامر",
+    "NotFound": "لا يوجد",
+    "About": "حول منجز التطبيق",
+    "Settings": "إعدادات",
+    "Players": "اللاعبين"
+  },
 	"home": {
 		"NoWidgets1": "لم يتم عرض أية أدوات. اذهب إلى",
 		"NoWidgets2": "لتكوين الأدوات المتاحة",

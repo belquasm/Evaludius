@@ -4,6 +4,9 @@
     "Notifications": "Notifications",
     "New": "New"
   },
+  "common": {
+    "firstName": "First Name"
+  },
   "mainMenu": {
     "Appointments": "Appointments",
     "Customers": "Customers",
@@ -20,7 +23,8 @@
     "Orders": "Orders",
     "NotFound": "Not-Found",
     "About": "About",
-    "Settings": "Settings"
+    "Settings": "Settings",
+    "Players": "Players"
   },
   "home": {
     "NoWidgets1": "You have no widgets displayed. Goto",
@@ -95,7 +99,13 @@
 			"FullName": "Full Name",
 			"Email": "Email",
 			"Roles": "Roles",
-			"PhoneNumber": "Phone Number"
+      "PhoneNumber": "Phone Number",
+      "FirstName": "First Name",
+      "LastName": "Last Name",
+      "Position": "Position",
+      "Team": "Team",
+      "YearOfBirth": "Year of Birth",
+      "NewPlayer": "New Player"
 		},
 		"editor": {
 			"JobTitle": "Job Title: ",

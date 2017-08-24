@@ -8,35 +8,28 @@
 
 export class Player {
     // Note: Using only optional constructor properties without backing store disables typescript's type checking for the type
-    constructor(id?: string, userName?: string, fullName?: string, email?: string, jobTitle?: string, phoneNumber?: string, roles?: string[]) {
+    constructor(id?: number, firstName?: string, lastName?: string, yearOfBirth?: number, position?: string, isActive?: boolean) {
 
         this.id = id;
-        this.userName = userName;
-        this.fullName = fullName;
-        this.email = email;
-        this.jobTitle = jobTitle;
-        this.phoneNumber = phoneNumber;
-        this.roles = roles;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+        this.position = position;
+        this.isActive = isActive;
+        
     }
 
 
-    get friendlyName(): string {
-        let name = this.fullName || this.userName;
-
-        if (this.jobTitle)
-            name = this.jobTitle + " " + name;
-
-        return name;
-    }
+    
 
 
-    public id: string;
-    public userName: string;
-    public fullName: string;
-    public email: string;
-    public jobTitle: string;
-    public phoneNumber: string;
-    public isEnabled: boolean;
-    public isLockedOut: boolean;
-    public roles: string[];
+    public id: number;
+    public firstName: string;
+    public lastName: string;
+    public yearOfBirth: number;
+    public position: string; 
+    public team: string;
+    public isActive: boolean;
+    public fullName = this.firstName + " " + this.lastName;
+   
 }

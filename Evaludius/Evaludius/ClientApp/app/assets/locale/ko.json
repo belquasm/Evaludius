@@ -13,15 +13,16 @@
 		"Logout": "로그 아웃",
 		"Players": "플레이어"
 	},
-	"pageHeader": {
-		"Dashboard": "계기반",
-		"Customers": "고객",
-		"Products": "제작품",
-		"Orders": "명령",
-		"NotFound": "발견되지 않음",
-		"About": "약",
-		"Settings": "설정"
-	},
+  "pageHeader": {
+    "Dashboard": "계기반",
+    "Customers": "고객",
+    "Products": "제작품",
+    "Orders": "명령",
+    "NotFound": "발견되지 않음",
+    "About": "약",
+    "Settings": "설정",
+    "Players": "플레이어"
+  },
 	"home": {
 		"NoWidgets1": "위젯이 표시되지 않았습니다. 고토",
 		"NoWidgets2": "사용 가능한 위젯을 구성하는 방법",

@@ -1,0 +1,77 @@
+﻿<div class="form-horizontal">
+    <div class="form-group">
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.firstName' | translate}}</label>
+        <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <p class="form-control-static">{{player.firstName}}</p>
+        </div>
+        <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <input autofocus type="text" attr.id="firstName-{{uniqueId}}" name="firstName" placeholder="Enter First Name" class="form-control" [(ngModel)]="playerEdit.firstName" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr class="separator-hr" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.lastName' | translate}}</label>
+        <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <p class="form-control-static">{{player.lastName}}</p>
+        </div>
+        <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <input autofocus type="text" attr.id="lastName-{{uniqueId}}" name="lastName" placeholder="Enter Last Name" class="form-control" [(ngModel)]="playerEdit.lastName" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr class="separator-hr" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'players.Editor.yearOfBirth' | translate}}</label>
+        <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <p class="form-control-static">{{player.yearOfBirth}}</p>
+        </div>
+        <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <input autofocus type="text" attr.id="yearOfBirth-{{uniqueId}}" name="jobTiyearOfBirthtle" placeholder="Enter Year Of Birth" class="form-control" [(ngModel)]="playerEdit.yearOfBirth" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr class="separator-hr" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.firstName' | translate}}</label>
+        <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <p class="form-control-static">{{player.firstName}}</p>
+        </div>
+        <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <input autofocus type="text" attr.id="jobTitle-{{uniqueId}}" name="jobTitle" placeholder="Enter First Name" class="form-control" [(ngModel)]="playerEdit.firstName" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr class="separator-hr" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.firstName' | translate}}</label>
+        <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <p class="form-control-static">{{player.firstName}}</p>
+        </div>
+        <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
+            <input autofocus type="text" attr.id="jobTitle-{{uniqueId}}" name="jobTitle" placeholder="Enter First Name" class="form-control" [(ngModel)]="playerEdit.firstName" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <hr class="separator-hr" />
+        </div>
+    </div>
+</div>

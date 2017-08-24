@@ -22,9 +22,9 @@ import { LocalStoreManager } from '../../services/local-store-manager.service';
     styleUrls: ['./todo-demo.component.css']
 })
 export class TodoDemoComponent implements OnInit, OnDestroy {
-    public static readonly DBKeyTodoDemo = "todo-demo.todo_list";
-
-    rows = [];
+	public static readonly DBKeyTodoDemo = "todo-demo.todo_list";
+	
+	   rows = [];
     rowsCache = [];
     columns = [];
     editing = {};
@@ -95,6 +95,7 @@ export class TodoDemoComponent implements OnInit, OnDestroy {
 
         this.fetch((data) => {
             this.rows = data;
+            
             this.rowsCache = [...data];
             this.isDataLoaded = true;
 
@@ -109,7 +110,12 @@ export class TodoDemoComponent implements OnInit, OnDestroy {
             { prop: 'name', name: gT('todoDemo.management.Task'), cellTemplate: this.nameTemplate, width: 200 },
             { prop: 'description', name: gT('todoDemo.management.Description'), cellTemplate: this.descriptionTemplate, width: 500 },
             { name: '', width: 80, cellTemplate: this.actionsTemplate, resizeable: false, canAutoResize: false, sortable: false, draggable: false }
-        ];
+		];
+
+		
+
+		
+
     }
 
     ngOnDestroy() {

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5c1ef2e3f5435fc9d8a3"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5610f2ea778ffd1e552b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -706,7 +706,7 @@
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire(242)(__webpack_require__.s = 242);
+/******/ 	return hotCreateRequire(249)(__webpack_require__.s = 249);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -830,7 +830,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(13);
+var http_1 = __webpack_require__(11);
 var Utilities = (function () {
     var Utilities = Utilities_1 = function Utilities() {
     };
@@ -1165,7 +1165,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(13);
+var http_1 = __webpack_require__(11);
 var Subject_1 = __webpack_require__(15);
 var utilities_1 = __webpack_require__(4);
 var AlertService = (function () {
@@ -1371,14 +1371,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(14);
-var http_1 = __webpack_require__(13);
+var http_1 = __webpack_require__(11);
 var Observable_1 = __webpack_require__(2);
 var Subject_1 = __webpack_require__(15);
-__webpack_require__(153);
-__webpack_require__(158);
-__webpack_require__(12);
-var account_endpoint_service_1 = __webpack_require__(50);
-var auth_service_1 = __webpack_require__(10);
+__webpack_require__(58);
+__webpack_require__(59);
+__webpack_require__(8);
+var account_endpoint_service_1 = __webpack_require__(52);
+var auth_service_1 = __webpack_require__(13);
 var AccountService = (function () {
     var AccountService = AccountService_1 = function AccountService(router, http, authService, accountEndpoint) {
         this.router = router;
@@ -1565,10 +1565,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var core_2 = __webpack_require__(34);
+var core_2 = __webpack_require__(35);
 var Observable_1 = __webpack_require__(2);
 var Subject_1 = __webpack_require__(15);
-__webpack_require__(31);
+__webpack_require__(32);
 var AppTranslationService = (function () {
     function AppTranslationService(translate) {
         this.translate = translate;
@@ -1636,13 +1636,13 @@ var TranslateLanguageLoader = (function () {
         //Note Dynamic require(variable) will not work. Require is always at compile time
         switch (lang) {
             case "en":
-                return Observable_1.Observable.of(__webpack_require__(69));
+                return Observable_1.Observable.of(__webpack_require__(74));
             case "fr":
-                return Observable_1.Observable.of(__webpack_require__(70));
+                return Observable_1.Observable.of(__webpack_require__(75));
             case "ar":
-                return Observable_1.Observable.of(__webpack_require__(68));
+                return Observable_1.Observable.of(__webpack_require__(73));
             case "ko":
-                return Observable_1.Observable.of(__webpack_require__(71));
+                return Observable_1.Observable.of(__webpack_require__(76));
             default:
         }
     };
@@ -1653,6 +1653,17 @@ exports.TranslateLanguageLoader = TranslateLanguageLoader;
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var map_1 = __webpack_require__(219);
+Observable_1.Observable.prototype.map = map_1.map;
+//# sourceMappingURL=map.js.map
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1675,42 +1686,13 @@ var Permission = (function () {
     Permission.viewPlayersPermission = "players.view";
     Permission.viewUsersPermission = "users.view";
     Permission.manageUsersPermission = "users.manage";
+    Permission.managePlayersPermission = "players.manage";
     Permission.viewRolesPermission = "roles.view";
     Permission.manageRolesPermission = "roles.manage";
     Permission.assignRolesPermission = "roles.assign";
     return Permission;
 }());
 exports.Permission = Permission;
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// ======================================
-// Author: Ebenezer Monney
-// Email:  info@ebenmonney.com
-// Copyright (c) 2017 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-Object.defineProperty(exports, "__esModule", { value: true });
-var animations_1 = __webpack_require__(32);
-exports.fadeInOut = animations_1.trigger('fadeInOut', [
-    animations_1.transition(':enter', [animations_1.style({ opacity: 0 }), animations_1.animate('0.4s ease-in', animations_1.style({ opacity: 1 }))]),
-    animations_1.transition(':leave', [animations_1.animate('0.4s 10ms ease-out', animations_1.style({ opacity: 0 }))])
-]);
-function flyInOut(duration) {
-    if (duration === void 0) { duration = 0.2; }
-    return animations_1.trigger('flyInOut', [
-        animations_1.state('in', animations_1.style({ opacity: 1, transform: 'translateX(0)' })),
-        animations_1.transition('void => *', [animations_1.style({ opacity: 0, transform: 'translateX(-100%)' }), animations_1.animate(duration + "s ease-in")]),
-        animations_1.transition('* => void', [animations_1.animate(duration + "s 10ms ease-out", animations_1.style({ opacity: 0, transform: 'translateX(100%)' }))])
-    ]);
-}
-exports.flyInOut = flyInOut;
 
 
 /***/ }),
@@ -1737,16 +1719,292 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
+var app_translation_service_1 = __webpack_require__(7);
+var local_store_manager_service_1 = __webpack_require__(17);
+var db_Keys_1 = __webpack_require__(54);
+var utilities_1 = __webpack_require__(4);
+var ConfigurationService = (function () {
+    var ConfigurationService = ConfigurationService_1 = function ConfigurationService(localStorage, translationService) {
+        this.localStorage = localStorage;
+        this.translationService = translationService;
+        this.baseUrl = utilities_1.Utilities.baseUrl().replace(/\/$/, '');
+        this.fallbackBaseUrl = "http://ebenmonney.com/demo/quickapp";
+        this.loginUrl = "/Login";
+        //***End of defaults***  
+        this._language = null;
+        this._homeUrl = null;
+        this._theme = null;
+        this._showDashboardStatistics = null;
+        this._showDashboardNotifications = null;
+        this._showDashboardTodo = null;
+        this._showDashboardBanner = null;
+        this.loadLocalChanges();
+    };
+    ConfigurationService.prototype.loadLocalChanges = function () {
+        if (this.localStorage.exists(db_Keys_1.DBkeys.LANGUAGE)) {
+            this._language = this.localStorage.getDataObject(db_Keys_1.DBkeys.LANGUAGE);
+            this.translationService.changeLanguage(this._language);
+        }
+        else {
+            this.resetLanguage();
+        }
+        if (this.localStorage.exists(db_Keys_1.DBkeys.HOME_URL))
+            this._homeUrl = this.localStorage.getDataObject(db_Keys_1.DBkeys.HOME_URL);
+        if (this.localStorage.exists(db_Keys_1.DBkeys.THEME))
+            this._theme = this.localStorage.getDataObject(db_Keys_1.DBkeys.THEME);
+        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS))
+            this._showDashboardStatistics = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS);
+        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS))
+            this._showDashboardNotifications = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS);
+        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO))
+            this._showDashboardTodo = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO);
+        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER))
+            this._showDashboardBanner = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER);
+    };
+    ConfigurationService.prototype.saveToLocalStore = function (data, key) {
+        var _this = this;
+        setTimeout(function () { return _this.localStorage.savePermanentData(data, key); });
+    };
+    ConfigurationService.prototype.import = function (jsonValue) {
+        this.clearLocalChanges();
+        if (!jsonValue)
+            return;
+        var importValue = utilities_1.Utilities.JSonTryParse(jsonValue);
+        if (importValue.language != null)
+            this.language = importValue.language;
+        if (importValue.homeUrl != null)
+            this.homeUrl = importValue.homeUrl;
+        if (importValue.theme != null)
+            this.theme = importValue.theme;
+        if (importValue.showDashboardStatistics != null)
+            this.showDashboardStatistics = importValue.showDashboardStatistics;
+        if (importValue.showDashboardNotifications != null)
+            this.showDashboardNotifications = importValue.showDashboardNotifications;
+        if (importValue.showDashboardTodo != null)
+            this.showDashboardTodo = importValue.showDashboardTodo;
+        if (importValue.showDashboardBanner != null)
+            this.showDashboardBanner = importValue.showDashboardBanner;
+    };
+    ConfigurationService.prototype.export = function (changesOnly) {
+        if (changesOnly === void 0) { changesOnly = true; }
+        var exportValue = {
+            language: changesOnly ? this._language : this.language,
+            homeUrl: changesOnly ? this._homeUrl : this.homeUrl,
+            theme: changesOnly ? this._theme : this.theme,
+            showDashboardStatistics: changesOnly ? this._showDashboardStatistics : this.showDashboardStatistics,
+            showDashboardNotifications: changesOnly ? this._showDashboardNotifications : this.showDashboardNotifications,
+            showDashboardTodo: changesOnly ? this._showDashboardTodo : this.showDashboardTodo,
+            showDashboardBanner: changesOnly ? this._showDashboardBanner : this.showDashboardBanner
+        };
+        return JSON.stringify(exportValue);
+    };
+    ConfigurationService.prototype.clearLocalChanges = function () {
+        this._language = null;
+        this._homeUrl = null;
+        this._theme = null;
+        this._showDashboardStatistics = null;
+        this._showDashboardNotifications = null;
+        this._showDashboardTodo = null;
+        this._showDashboardBanner = null;
+        this.localStorage.deleteData(db_Keys_1.DBkeys.LANGUAGE);
+        this.localStorage.deleteData(db_Keys_1.DBkeys.HOME_URL);
+        this.localStorage.deleteData(db_Keys_1.DBkeys.THEME);
+        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS);
+        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS);
+        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO);
+        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER);
+        this.resetLanguage();
+    };
+    ConfigurationService.prototype.resetLanguage = function () {
+        var language = this.translationService.useBrowserLanguage();
+        if (language) {
+            this._language = language;
+        }
+        else {
+            this._language = this.translationService.changeLanguage();
+        }
+    };
+    Object.defineProperty(ConfigurationService.prototype, "language", {
+        get: function () {
+            if (this._language != null)
+                return this._language;
+            return ConfigurationService_1.defaultLanguage;
+        },
+        set: function (value) {
+            this._language = value;
+            this.saveToLocalStore(value, db_Keys_1.DBkeys.LANGUAGE);
+            this.translationService.changeLanguage(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ConfigurationService.prototype, "homeUrl", {
+        get: function () {
+            if (this._homeUrl != null)
+                return this._homeUrl;
+            return ConfigurationService_1.defaultHomeUrl;
+        },
+        set: function (value) {
+            this._homeUrl = value;
+            this.saveToLocalStore(value, db_Keys_1.DBkeys.HOME_URL);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ConfigurationService.prototype, "theme", {
+        get: function () {
+            if (this._theme != null)
+                return this._theme;
+            return ConfigurationService_1.defaultTheme;
+        },
+        set: function (value) {
+            this._theme = value;
+            this.saveToLocalStore(value, db_Keys_1.DBkeys.THEME);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ConfigurationService.prototype, "showDashboardStatistics", {
+        get: function () {
+            if (this._showDashboardStatistics != null)
+                return this._showDashboardStatistics;
+            return ConfigurationService_1.defaultShowDashboardStatistics;
+        },
+        set: function (value) {
+            this._showDashboardStatistics = value;
+            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ConfigurationService.prototype, "showDashboardNotifications", {
+        get: function () {
+            if (this._showDashboardNotifications != null)
+                return this._showDashboardNotifications;
+            return ConfigurationService_1.defaultShowDashboardNotifications;
+        },
+        set: function (value) {
+            this._showDashboardNotifications = value;
+            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ConfigurationService.prototype, "showDashboardTodo", {
+        get: function () {
+            if (this._showDashboardTodo != null)
+                return this._showDashboardTodo;
+            return ConfigurationService_1.defaultShowDashboardTodo;
+        },
+        set: function (value) {
+            this._showDashboardTodo = value;
+            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ConfigurationService.prototype, "showDashboardBanner", {
+        get: function () {
+            if (this._showDashboardBanner != null)
+                return this._showDashboardBanner;
+            return ConfigurationService_1.defaultShowDashboardBanner;
+        },
+        set: function (value) {
+            this._showDashboardBanner = value;
+            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    ConfigurationService.appVersion = "1.0.0";
+    //***Specify default configurations here***
+    ConfigurationService.defaultLanguage = "en";
+    ConfigurationService.defaultHomeUrl = "/";
+    ConfigurationService.defaultTheme = "Default";
+    ConfigurationService.defaultShowDashboardStatistics = true;
+    ConfigurationService.defaultShowDashboardNotifications = true;
+    ConfigurationService.defaultShowDashboardTodo = false;
+    ConfigurationService.defaultShowDashboardBanner = true;
+    ConfigurationService = ConfigurationService_1 = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [local_store_manager_service_1.LocalStoreManager, app_translation_service_1.AppTranslationService])
+    ], ConfigurationService);
+    return ConfigurationService;
+    var ConfigurationService_1;
+}());
+exports.ConfigurationService = ConfigurationService;
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(190);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__(33);
+exports.fadeInOut = animations_1.trigger('fadeInOut', [
+    animations_1.transition(':enter', [animations_1.style({ opacity: 0 }), animations_1.animate('0.4s ease-in', animations_1.style({ opacity: 1 }))]),
+    animations_1.transition(':leave', [animations_1.animate('0.4s 10ms ease-out', animations_1.style({ opacity: 0 }))])
+]);
+function flyInOut(duration) {
+    if (duration === void 0) { duration = 0.2; }
+    return animations_1.trigger('flyInOut', [
+        animations_1.state('in', animations_1.style({ opacity: 1, transform: 'translateX(0)' })),
+        animations_1.transition('void => *', [animations_1.style({ opacity: 0, transform: 'translateX(-100%)' }), animations_1.animate(duration + "s ease-in")]),
+        animations_1.transition('* => void', [animations_1.animate(duration + "s 10ms ease-out", animations_1.style({ opacity: 0, transform: 'translateX(100%)' }))])
+    ]);
+}
+exports.flyInOut = flyInOut;
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(14);
 var Subject_1 = __webpack_require__(15);
-__webpack_require__(12);
+__webpack_require__(8);
 var local_store_manager_service_1 = __webpack_require__(17);
-var endpoint_factory_service_1 = __webpack_require__(28);
-var configuration_service_1 = __webpack_require__(11);
-var db_Keys_1 = __webpack_require__(52);
-var jwt_helper_1 = __webpack_require__(100);
+var endpoint_factory_service_1 = __webpack_require__(22);
+var configuration_service_1 = __webpack_require__(10);
+var db_Keys_1 = __webpack_require__(54);
+var jwt_helper_1 = __webpack_require__(106);
 var utilities_1 = __webpack_require__(4);
-var user_model_1 = __webpack_require__(20);
+var user_model_1 = __webpack_require__(21);
 var AuthService = (function () {
     function AuthService(router, configurations, endpointFactory, localStorage) {
         this.router = router;
@@ -1967,263 +2225,6 @@ exports.AuthService = AuthService;
 
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// ======================================
-// Author: Ebenezer Monney
-// Email:  info@ebenmonney.com
-// Copyright (c) 2017 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(0);
-var app_translation_service_1 = __webpack_require__(7);
-var local_store_manager_service_1 = __webpack_require__(17);
-var db_Keys_1 = __webpack_require__(52);
-var utilities_1 = __webpack_require__(4);
-var ConfigurationService = (function () {
-    var ConfigurationService = ConfigurationService_1 = function ConfigurationService(localStorage, translationService) {
-        this.localStorage = localStorage;
-        this.translationService = translationService;
-        this.baseUrl = utilities_1.Utilities.baseUrl().replace(/\/$/, '');
-        this.fallbackBaseUrl = "http://ebenmonney.com/demo/quickapp";
-        this.loginUrl = "/Login";
-        //***End of defaults***  
-        this._language = null;
-        this._homeUrl = null;
-        this._theme = null;
-        this._showDashboardStatistics = null;
-        this._showDashboardNotifications = null;
-        this._showDashboardTodo = null;
-        this._showDashboardBanner = null;
-        this.loadLocalChanges();
-    };
-    ConfigurationService.prototype.loadLocalChanges = function () {
-        if (this.localStorage.exists(db_Keys_1.DBkeys.LANGUAGE)) {
-            this._language = this.localStorage.getDataObject(db_Keys_1.DBkeys.LANGUAGE);
-            this.translationService.changeLanguage(this._language);
-        }
-        else {
-            this.resetLanguage();
-        }
-        if (this.localStorage.exists(db_Keys_1.DBkeys.HOME_URL))
-            this._homeUrl = this.localStorage.getDataObject(db_Keys_1.DBkeys.HOME_URL);
-        if (this.localStorage.exists(db_Keys_1.DBkeys.THEME))
-            this._theme = this.localStorage.getDataObject(db_Keys_1.DBkeys.THEME);
-        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS))
-            this._showDashboardStatistics = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS);
-        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS))
-            this._showDashboardNotifications = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS);
-        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO))
-            this._showDashboardTodo = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO);
-        if (this.localStorage.exists(db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER))
-            this._showDashboardBanner = this.localStorage.getDataObject(db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER);
-    };
-    ConfigurationService.prototype.saveToLocalStore = function (data, key) {
-        var _this = this;
-        setTimeout(function () { return _this.localStorage.savePermanentData(data, key); });
-    };
-    ConfigurationService.prototype.import = function (jsonValue) {
-        this.clearLocalChanges();
-        if (!jsonValue)
-            return;
-        var importValue = utilities_1.Utilities.JSonTryParse(jsonValue);
-        if (importValue.language != null)
-            this.language = importValue.language;
-        if (importValue.homeUrl != null)
-            this.homeUrl = importValue.homeUrl;
-        if (importValue.theme != null)
-            this.theme = importValue.theme;
-        if (importValue.showDashboardStatistics != null)
-            this.showDashboardStatistics = importValue.showDashboardStatistics;
-        if (importValue.showDashboardNotifications != null)
-            this.showDashboardNotifications = importValue.showDashboardNotifications;
-        if (importValue.showDashboardTodo != null)
-            this.showDashboardTodo = importValue.showDashboardTodo;
-        if (importValue.showDashboardBanner != null)
-            this.showDashboardBanner = importValue.showDashboardBanner;
-    };
-    ConfigurationService.prototype.export = function (changesOnly) {
-        if (changesOnly === void 0) { changesOnly = true; }
-        var exportValue = {
-            language: changesOnly ? this._language : this.language,
-            homeUrl: changesOnly ? this._homeUrl : this.homeUrl,
-            theme: changesOnly ? this._theme : this.theme,
-            showDashboardStatistics: changesOnly ? this._showDashboardStatistics : this.showDashboardStatistics,
-            showDashboardNotifications: changesOnly ? this._showDashboardNotifications : this.showDashboardNotifications,
-            showDashboardTodo: changesOnly ? this._showDashboardTodo : this.showDashboardTodo,
-            showDashboardBanner: changesOnly ? this._showDashboardBanner : this.showDashboardBanner
-        };
-        return JSON.stringify(exportValue);
-    };
-    ConfigurationService.prototype.clearLocalChanges = function () {
-        this._language = null;
-        this._homeUrl = null;
-        this._theme = null;
-        this._showDashboardStatistics = null;
-        this._showDashboardNotifications = null;
-        this._showDashboardTodo = null;
-        this._showDashboardBanner = null;
-        this.localStorage.deleteData(db_Keys_1.DBkeys.LANGUAGE);
-        this.localStorage.deleteData(db_Keys_1.DBkeys.HOME_URL);
-        this.localStorage.deleteData(db_Keys_1.DBkeys.THEME);
-        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS);
-        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS);
-        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO);
-        this.localStorage.deleteData(db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER);
-        this.resetLanguage();
-    };
-    ConfigurationService.prototype.resetLanguage = function () {
-        var language = this.translationService.useBrowserLanguage();
-        if (language) {
-            this._language = language;
-        }
-        else {
-            this._language = this.translationService.changeLanguage();
-        }
-    };
-    Object.defineProperty(ConfigurationService.prototype, "language", {
-        get: function () {
-            if (this._language != null)
-                return this._language;
-            return ConfigurationService_1.defaultLanguage;
-        },
-        set: function (value) {
-            this._language = value;
-            this.saveToLocalStore(value, db_Keys_1.DBkeys.LANGUAGE);
-            this.translationService.changeLanguage(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ConfigurationService.prototype, "homeUrl", {
-        get: function () {
-            if (this._homeUrl != null)
-                return this._homeUrl;
-            return ConfigurationService_1.defaultHomeUrl;
-        },
-        set: function (value) {
-            this._homeUrl = value;
-            this.saveToLocalStore(value, db_Keys_1.DBkeys.HOME_URL);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ConfigurationService.prototype, "theme", {
-        get: function () {
-            if (this._theme != null)
-                return this._theme;
-            return ConfigurationService_1.defaultTheme;
-        },
-        set: function (value) {
-            this._theme = value;
-            this.saveToLocalStore(value, db_Keys_1.DBkeys.THEME);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ConfigurationService.prototype, "showDashboardStatistics", {
-        get: function () {
-            if (this._showDashboardStatistics != null)
-                return this._showDashboardStatistics;
-            return ConfigurationService_1.defaultShowDashboardStatistics;
-        },
-        set: function (value) {
-            this._showDashboardStatistics = value;
-            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_STATISTICS);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ConfigurationService.prototype, "showDashboardNotifications", {
-        get: function () {
-            if (this._showDashboardNotifications != null)
-                return this._showDashboardNotifications;
-            return ConfigurationService_1.defaultShowDashboardNotifications;
-        },
-        set: function (value) {
-            this._showDashboardNotifications = value;
-            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_NOTIFICATIONS);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ConfigurationService.prototype, "showDashboardTodo", {
-        get: function () {
-            if (this._showDashboardTodo != null)
-                return this._showDashboardTodo;
-            return ConfigurationService_1.defaultShowDashboardTodo;
-        },
-        set: function (value) {
-            this._showDashboardTodo = value;
-            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_TODO);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ConfigurationService.prototype, "showDashboardBanner", {
-        get: function () {
-            if (this._showDashboardBanner != null)
-                return this._showDashboardBanner;
-            return ConfigurationService_1.defaultShowDashboardBanner;
-        },
-        set: function (value) {
-            this._showDashboardBanner = value;
-            this.saveToLocalStore(value, db_Keys_1.DBkeys.SHOW_DASHBOARD_BANNER);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    ConfigurationService.appVersion = "1.0.0";
-    //***Specify default configurations here***
-    ConfigurationService.defaultLanguage = "en";
-    ConfigurationService.defaultHomeUrl = "/";
-    ConfigurationService.defaultTheme = "Default";
-    ConfigurationService.defaultShowDashboardStatistics = true;
-    ConfigurationService.defaultShowDashboardNotifications = true;
-    ConfigurationService.defaultShowDashboardTodo = false;
-    ConfigurationService.defaultShowDashboardBanner = true;
-    ConfigurationService = ConfigurationService_1 = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [local_store_manager_service_1.LocalStoreManager, app_translation_service_1.AppTranslationService])
-    ], ConfigurationService);
-    return ConfigurationService;
-    var ConfigurationService_1;
-}());
-exports.ConfigurationService = ConfigurationService;
-
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var map_1 = __webpack_require__(212);
-Observable_1.Observable.prototype.map = map_1.map;
-//# sourceMappingURL=map.js.map
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(1))(190);
-
-/***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2245,27 +2246,27 @@ module.exports = (__webpack_require__(1))(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_concat__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_concat__ = __webpack_require__(164);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_concat___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_concat__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__ = __webpack_require__(166);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_toArray__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_toArray__ = __webpack_require__(169);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_toArray___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_toArray__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__translate_store__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__translate_loader__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__missing_translation_handler__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__translate_parser__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__util__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__translate_store__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__translate_loader__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__missing_translation_handler__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__translate_parser__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__util__ = __webpack_require__(20);
 
 
 
@@ -3093,10 +3094,16 @@ exports.LocalStoreManager = LocalStoreManager;
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(1))(3);
+module.exports = (__webpack_require__(1))(211);
 
 /***/ }),
 /* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(3);
+
+/***/ }),
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3194,7 +3201,7 @@ function mergeDeep(target, source) {
 
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3234,176 +3241,9 @@ exports.User = User;
 
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = (__webpack_require__(1))(211);
-
-/***/ }),
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(1))(9);
-
-/***/ }),
-/* 23 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MissingTranslationHandler; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FakeMissingTranslationHandler; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-
-var MissingTranslationHandler = (function () {
-    function MissingTranslationHandler() {
-    }
-    return MissingTranslationHandler;
-}());
-
-/**
- * This handler is just a placeholder that does nothing, in case you don't need a missing translation handler at all
- */
-var FakeMissingTranslationHandler = (function () {
-    function FakeMissingTranslationHandler() {
-    }
-    FakeMissingTranslationHandler.prototype.handle = function (params) {
-        return params.key;
-    };
-    return FakeMissingTranslationHandler;
-}());
-
-FakeMissingTranslationHandler.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-FakeMissingTranslationHandler.ctorParameters = function () { return []; };
-
-
-/***/ }),
-/* 24 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateLoader; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateFakeLoader; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TranslateLoader = (function () {
-    function TranslateLoader() {
-    }
-    return TranslateLoader;
-}());
-
-/**
- * This loader is just a placeholder that does nothing, in case you don't need a loader at all
- */
-var TranslateFakeLoader = (function (_super) {
-    __extends(TranslateFakeLoader, _super);
-    function TranslateFakeLoader() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    TranslateFakeLoader.prototype.getTranslation = function (lang) {
-        return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].of({});
-    };
-    return TranslateFakeLoader;
-}(TranslateLoader));
-
-TranslateFakeLoader.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-TranslateFakeLoader.ctorParameters = function () { return []; };
-
-
-/***/ }),
-/* 25 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateParser; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateDefaultParser; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(19);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TranslateParser = (function () {
-    function TranslateParser() {
-    }
-    return TranslateParser;
-}());
-
-var TranslateDefaultParser = (function (_super) {
-    __extends(TranslateDefaultParser, _super);
-    function TranslateDefaultParser() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
-        return _this;
-    }
-    TranslateDefaultParser.prototype.interpolate = function (expr, params) {
-        var _this = this;
-        if (typeof expr !== 'string' || !params) {
-            return expr;
-        }
-        return expr.replace(this.templateMatcher, function (substring, b) {
-            var r = _this.getValue(params, b);
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(r) ? r : substring;
-        });
-    };
-    TranslateDefaultParser.prototype.getValue = function (target, key) {
-        var keys = key.split('.');
-        key = '';
-        do {
-            key += keys.shift();
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target[key]) && (typeof target[key] === 'object' || !keys.length)) {
-                target = target[key];
-                key = '';
-            }
-            else if (!keys.length) {
-                target = undefined;
-            }
-            else {
-                key += '.';
-            }
-        } while (keys.length);
-        return target;
-    };
-    return TranslateDefaultParser;
-}(TranslateParser));
-
-TranslateDefaultParser.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-TranslateDefaultParser.ctorParameters = function () { return []; };
-
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 // ======================================
@@ -3424,181 +3264,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var alert_service_1 = __webpack_require__(5);
-var auth_service_1 = __webpack_require__(10);
-var configuration_service_1 = __webpack_require__(11);
-var utilities_1 = __webpack_require__(4);
-var user_login_model_1 = __webpack_require__(97);
-var LoginComponent = (function () {
-    function LoginComponent(alertService, authService, configurations) {
-        this.alertService = alertService;
-        this.authService = authService;
-        this.configurations = configurations;
-        this.userLogin = new user_login_model_1.UserLogin();
-        this.isLoading = false;
-        this.formResetToggle = true;
-        this.isModal = false;
-    }
-    LoginComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.userLogin.rememberMe = this.authService.rememberMe;
-        if (this.getShouldRedirect()) {
-            this.authService.redirectLoginUser();
-        }
-        else {
-            this.loginStatusSubscription = this.authService.getLoginStatusEvent().subscribe(function (isLoggedIn) {
-                if (_this.getShouldRedirect()) {
-                    _this.authService.redirectLoginUser();
-                }
-            });
-        }
-    };
-    LoginComponent.prototype.ngOnDestroy = function () {
-        if (this.loginStatusSubscription)
-            this.loginStatusSubscription.unsubscribe();
-    };
-    LoginComponent.prototype.getShouldRedirect = function () {
-        return !this.isModal && this.authService.isLoggedIn && !this.authService.isSessionExpired;
-    };
-    LoginComponent.prototype.showErrorAlert = function (caption, message) {
-        this.alertService.showMessage(caption, message, alert_service_1.MessageSeverity.error);
-    };
-    LoginComponent.prototype.closeModal = function () {
-        if (this.modalClosedCallback) {
-            this.modalClosedCallback();
-        }
-    };
-    LoginComponent.prototype.login = function () {
-        var _this = this;
-        this.isLoading = true;
-        this.alertService.startLoadingMessage("", "Attempting login...");
-        this.authService.login(this.userLogin.email, this.userLogin.password, this.userLogin.rememberMe)
-            .subscribe(function (user) {
-            setTimeout(function () {
-                _this.alertService.stopLoadingMessage();
-                _this.isLoading = false;
-                _this.reset();
-                if (!_this.isModal) {
-                    _this.alertService.showMessage("Login", "Welcome " + user.userName + "!", alert_service_1.MessageSeverity.success);
-                }
-                else {
-                    _this.alertService.showMessage("Login", "Session for " + user.userName + " restored!", alert_service_1.MessageSeverity.success);
-                    setTimeout(function () {
-                        _this.alertService.showStickyMessage("Session Restored", "Please try your last operation again", alert_service_1.MessageSeverity.default);
-                    }, 500);
-                    _this.closeModal();
-                }
-            }, 500);
-        }, function (error) {
-            _this.alertService.stopLoadingMessage();
-            if (utilities_1.Utilities.checkNoNetwork(error)) {
-                _this.alertService.showStickyMessage(utilities_1.Utilities.noNetworkMessageCaption, utilities_1.Utilities.noNetworkMessageDetail, alert_service_1.MessageSeverity.error, error);
-                _this.offerAlternateHost();
-            }
-            else {
-                var errorMessage = utilities_1.Utilities.findHttpResponseMessage("error_description", error);
-                if (errorMessage)
-                    _this.alertService.showStickyMessage("Unable to login", errorMessage, alert_service_1.MessageSeverity.error, error);
-                else
-                    _this.alertService.showStickyMessage("Unable to login", "An error occured whilst logging in, please try again later.\nError: " + error.statusText || error.status, alert_service_1.MessageSeverity.error, error);
-            }
-            setTimeout(function () {
-                _this.isLoading = false;
-            }, 500);
-        });
-    };
-    LoginComponent.prototype.offerAlternateHost = function () {
-        var _this = this;
-        if (utilities_1.Utilities.checkIsLocalHost(location.origin) && utilities_1.Utilities.checkIsLocalHost(this.configurations.baseUrl)) {
-            this.alertService.showDialog("Dear Developer!\nIt appears your backend Web API service is not running...\n" +
-                "Would you want to temporarily switch to the online Demo API below?(Or specify another)", alert_service_1.DialogType.prompt, function (value) {
-                _this.configurations.baseUrl = value;
-                _this.alertService.showStickyMessage("API Changed!", "The target Web API has been changed to: " + value, alert_service_1.MessageSeverity.warn);
-            }, null, null, null, this.configurations.fallbackBaseUrl);
-        }
-    };
-    LoginComponent.prototype.reset = function () {
-        var _this = this;
-        this.formResetToggle = false;
-        setTimeout(function () {
-            _this.formResetToggle = true;
-        });
-    };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Object)
-    ], LoginComponent.prototype, "isModal", void 0);
-    LoginComponent = __decorate([
-        core_1.Component({
-            selector: "app-login",
-            template: __webpack_require__(143),
-            styles: [__webpack_require__(195)]
-        }),
-        __metadata("design:paramtypes", [alert_service_1.AlertService, auth_service_1.AuthService, configuration_service_1.ConfigurationService])
-    ], LoginComponent);
-    return LoginComponent;
-}());
-exports.LoginComponent = LoginComponent;
-
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// ======================================
-// Author: Ebenezer Monney
-// Email:  info@ebenmonney.com
-// Copyright (c) 2017 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-Object.defineProperty(exports, "__esModule", { value: true });
-var Role = (function () {
-    function Role(name, description, permissions) {
-        this.name = name;
-        this.description = description;
-        this.permissions = permissions;
-    }
-    return Role;
-}());
-exports.Role = Role;
-
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// ======================================
-// Author: Ebenezer Monney
-// Email:  info@ebenmonney.com
-// Copyright (c) 2017 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(13);
+var http_1 = __webpack_require__(11);
 var Observable_1 = __webpack_require__(2);
 var Subject_1 = __webpack_require__(15);
-__webpack_require__(155);
-__webpack_require__(12);
-__webpack_require__(55);
-__webpack_require__(156);
-var auth_service_1 = __webpack_require__(10);
-var configuration_service_1 = __webpack_require__(11);
+__webpack_require__(162);
+__webpack_require__(8);
+__webpack_require__(60);
+__webpack_require__(163);
+var auth_service_1 = __webpack_require__(13);
+var configuration_service_1 = __webpack_require__(10);
 var EndpointFactory = (function () {
     var EndpointFactory = EndpointFactory_1 = function EndpointFactory(http, configurations, injector) {
         this.http = http;
@@ -3719,6 +3393,333 @@ exports.EndpointFactory = EndpointFactory;
 
 
 /***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(9);
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MissingTranslationHandler; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FakeMissingTranslationHandler; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+
+var MissingTranslationHandler = (function () {
+    function MissingTranslationHandler() {
+    }
+    return MissingTranslationHandler;
+}());
+
+/**
+ * This handler is just a placeholder that does nothing, in case you don't need a missing translation handler at all
+ */
+var FakeMissingTranslationHandler = (function () {
+    function FakeMissingTranslationHandler() {
+    }
+    FakeMissingTranslationHandler.prototype.handle = function (params) {
+        return params.key;
+    };
+    return FakeMissingTranslationHandler;
+}());
+
+FakeMissingTranslationHandler.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+FakeMissingTranslationHandler.ctorParameters = function () { return []; };
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateLoader; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateFakeLoader; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TranslateLoader = (function () {
+    function TranslateLoader() {
+    }
+    return TranslateLoader;
+}());
+
+/**
+ * This loader is just a placeholder that does nothing, in case you don't need a loader at all
+ */
+var TranslateFakeLoader = (function (_super) {
+    __extends(TranslateFakeLoader, _super);
+    function TranslateFakeLoader() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TranslateFakeLoader.prototype.getTranslation = function (lang) {
+        return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].of({});
+    };
+    return TranslateFakeLoader;
+}(TranslateLoader));
+
+TranslateFakeLoader.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+TranslateFakeLoader.ctorParameters = function () { return []; };
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateParser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return TranslateDefaultParser; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(20);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TranslateParser = (function () {
+    function TranslateParser() {
+    }
+    return TranslateParser;
+}());
+
+var TranslateDefaultParser = (function (_super) {
+    __extends(TranslateDefaultParser, _super);
+    function TranslateDefaultParser() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
+        return _this;
+    }
+    TranslateDefaultParser.prototype.interpolate = function (expr, params) {
+        var _this = this;
+        if (typeof expr !== 'string' || !params) {
+            return expr;
+        }
+        return expr.replace(this.templateMatcher, function (substring, b) {
+            var r = _this.getValue(params, b);
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(r) ? r : substring;
+        });
+    };
+    TranslateDefaultParser.prototype.getValue = function (target, key) {
+        var keys = key.split('.');
+        key = '';
+        do {
+            key += keys.shift();
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target) && __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util__["b" /* isDefined */])(target[key]) && (typeof target[key] === 'object' || !keys.length)) {
+                target = target[key];
+                key = '';
+            }
+            else if (!keys.length) {
+                target = undefined;
+            }
+            else {
+                key += '.';
+            }
+        } while (keys.length);
+        return target;
+    };
+    return TranslateDefaultParser;
+}(TranslateParser));
+
+TranslateDefaultParser.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+TranslateDefaultParser.ctorParameters = function () { return []; };
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
+var alert_service_1 = __webpack_require__(5);
+var auth_service_1 = __webpack_require__(13);
+var configuration_service_1 = __webpack_require__(10);
+var utilities_1 = __webpack_require__(4);
+var user_login_model_1 = __webpack_require__(103);
+var LoginComponent = (function () {
+    function LoginComponent(alertService, authService, configurations) {
+        this.alertService = alertService;
+        this.authService = authService;
+        this.configurations = configurations;
+        this.userLogin = new user_login_model_1.UserLogin();
+        this.isLoading = false;
+        this.formResetToggle = true;
+        this.isModal = false;
+    }
+    LoginComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userLogin.rememberMe = this.authService.rememberMe;
+        if (this.getShouldRedirect()) {
+            this.authService.redirectLoginUser();
+        }
+        else {
+            this.loginStatusSubscription = this.authService.getLoginStatusEvent().subscribe(function (isLoggedIn) {
+                if (_this.getShouldRedirect()) {
+                    _this.authService.redirectLoginUser();
+                }
+            });
+        }
+    };
+    LoginComponent.prototype.ngOnDestroy = function () {
+        if (this.loginStatusSubscription)
+            this.loginStatusSubscription.unsubscribe();
+    };
+    LoginComponent.prototype.getShouldRedirect = function () {
+        return !this.isModal && this.authService.isLoggedIn && !this.authService.isSessionExpired;
+    };
+    LoginComponent.prototype.showErrorAlert = function (caption, message) {
+        this.alertService.showMessage(caption, message, alert_service_1.MessageSeverity.error);
+    };
+    LoginComponent.prototype.closeModal = function () {
+        if (this.modalClosedCallback) {
+            this.modalClosedCallback();
+        }
+    };
+    LoginComponent.prototype.login = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.alertService.startLoadingMessage("", "Attempting login...");
+        this.authService.login(this.userLogin.email, this.userLogin.password, this.userLogin.rememberMe)
+            .subscribe(function (user) {
+            setTimeout(function () {
+                _this.alertService.stopLoadingMessage();
+                _this.isLoading = false;
+                _this.reset();
+                if (!_this.isModal) {
+                    _this.alertService.showMessage("Login", "Welcome " + user.userName + "!", alert_service_1.MessageSeverity.success);
+                }
+                else {
+                    _this.alertService.showMessage("Login", "Session for " + user.userName + " restored!", alert_service_1.MessageSeverity.success);
+                    setTimeout(function () {
+                        _this.alertService.showStickyMessage("Session Restored", "Please try your last operation again", alert_service_1.MessageSeverity.default);
+                    }, 500);
+                    _this.closeModal();
+                }
+            }, 500);
+        }, function (error) {
+            _this.alertService.stopLoadingMessage();
+            if (utilities_1.Utilities.checkNoNetwork(error)) {
+                _this.alertService.showStickyMessage(utilities_1.Utilities.noNetworkMessageCaption, utilities_1.Utilities.noNetworkMessageDetail, alert_service_1.MessageSeverity.error, error);
+                _this.offerAlternateHost();
+            }
+            else {
+                var errorMessage = utilities_1.Utilities.findHttpResponseMessage("error_description", error);
+                if (errorMessage)
+                    _this.alertService.showStickyMessage("Unable to login", errorMessage, alert_service_1.MessageSeverity.error, error);
+                else
+                    _this.alertService.showStickyMessage("Unable to login", "An error occured whilst logging in, please try again later.\nError: " + error.statusText || error.status, alert_service_1.MessageSeverity.error, error);
+            }
+            setTimeout(function () {
+                _this.isLoading = false;
+            }, 500);
+        });
+    };
+    LoginComponent.prototype.offerAlternateHost = function () {
+        var _this = this;
+        if (utilities_1.Utilities.checkIsLocalHost(location.origin) && utilities_1.Utilities.checkIsLocalHost(this.configurations.baseUrl)) {
+            this.alertService.showDialog("Dear Developer!\nIt appears your backend Web API service is not running...\n" +
+                "Would you want to temporarily switch to the online Demo API below?(Or specify another)", alert_service_1.DialogType.prompt, function (value) {
+                _this.configurations.baseUrl = value;
+                _this.alertService.showStickyMessage("API Changed!", "The target Web API has been changed to: " + value, alert_service_1.MessageSeverity.warn);
+            }, null, null, null, this.configurations.fallbackBaseUrl);
+        }
+    };
+    LoginComponent.prototype.reset = function () {
+        var _this = this;
+        this.formResetToggle = false;
+        setTimeout(function () {
+            _this.formResetToggle = true;
+        });
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], LoginComponent.prototype, "isModal", void 0);
+    LoginComponent = __decorate([
+        core_1.Component({
+            selector: "app-login",
+            template: __webpack_require__(150),
+            styles: [__webpack_require__(201)]
+        }),
+        __metadata("design:paramtypes", [alert_service_1.AlertService, auth_service_1.AuthService, configuration_service_1.ConfigurationService])
+    ], LoginComponent);
+    return LoginComponent;
+}());
+exports.LoginComponent = LoginComponent;
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+Object.defineProperty(exports, "__esModule", { value: true });
+var Role = (function () {
+    function Role(name, description, permissions) {
+        this.name = name;
+        this.description = description;
+        this.permissions = permissions;
+    }
+    return Role;
+}());
+exports.Role = Role;
+
+
+/***/ }),
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3743,12 +3744,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var Observable_1 = __webpack_require__(2);
-__webpack_require__(154);
 __webpack_require__(161);
-__webpack_require__(12);
-var auth_service_1 = __webpack_require__(10);
-var notification_endpoint_service_1 = __webpack_require__(53);
-var notification_model_1 = __webpack_require__(95);
+__webpack_require__(167);
+__webpack_require__(8);
+var auth_service_1 = __webpack_require__(13);
+var notification_endpoint_service_1 = __webpack_require__(55);
+var notification_model_1 = __webpack_require__(100);
 var NotificationService = (function () {
     function NotificationService(notificationEndpoint, authService) {
         this.notificationEndpoint = notificationEndpoint;
@@ -3860,10 +3861,57 @@ exports.NotificationService = NotificationService;
 
 "use strict";
 
-var Observable_1 = __webpack_require__(2);
-var fromEvent_1 = __webpack_require__(167);
-Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
-//# sourceMappingURL=fromEvent.js.map
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(14);
+var http_1 = __webpack_require__(11);
+__webpack_require__(58);
+__webpack_require__(59);
+__webpack_require__(8);
+var players_endpoint_service_1 = __webpack_require__(56);
+var PlayersService = (function () {
+    function PlayersService(router, http, playersEndpoint) {
+        this.router = router;
+        this.http = http;
+        this.playersEndpoint = playersEndpoint;
+    }
+    PlayersService.prototype.updatePlayer = function (player) {
+        return this.playersEndpoint.getUpdatePlayerEndpoint(player, player.id);
+    };
+    PlayersService.prototype.newPlayer = function (player) {
+        return this.playersEndpoint.getNewPlayerEndpoint(player)
+            .map(function (response) { return response.json(); });
+    };
+    PlayersService.prototype.deletePlayer = function (playerId) {
+        return this.playersEndpoint.deletePlayerEndpoint(playerId)
+            .map(function (response) { return response.json(); });
+    };
+    PlayersService.prototype.getPlayer = function (playerId) {
+        return this.playersEndpoint.getPlayerEndpoint(playerId)
+            .map(function (response) { return response.json(); });
+    };
+    PlayersService.prototype.getPlayers = function (page, pageSize) {
+        return this.playersEndpoint.getPlayersEndpoint(page, pageSize)
+            .map(function (response) { return response.json(); });
+    };
+    PlayersService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [router_1.Router, http_1.Http,
+            players_endpoint_service_1.PlayersEndpoint])
+    ], PlayersService);
+    return PlayersService;
+}());
+exports.PlayersService = PlayersService;
+
 
 /***/ }),
 /* 31 */
@@ -3872,37 +3920,48 @@ Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var of_1 = __webpack_require__(232);
-Observable_1.Observable.of = of_1.of;
-//# sourceMappingURL=of.js.map
+var fromEvent_1 = __webpack_require__(173);
+Observable_1.Observable.fromEvent = fromEvent_1.fromEvent;
+//# sourceMappingURL=fromEvent.js.map
 
 /***/ }),
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(1))(188);
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var of_1 = __webpack_require__(239);
+Observable_1.Observable.of = of_1.of;
+//# sourceMappingURL=of.js.map
 
 /***/ }),
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(1))(4);
+module.exports = (__webpack_require__(1))(188);
 
 /***/ }),
 /* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(4);
+
+/***/ }),
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TranslateModule", function() { return TranslateModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_translate_loader__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src_translate_loader__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__src_translate_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_missing_translation_handler__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_translate_parser__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_translate_directive__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_translate_pipe__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_translate_store__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__src_missing_translation_handler__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__src_translate_parser__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__src_translate_directive__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__src_translate_pipe__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__src_translate_store__ = __webpack_require__(38);
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "TranslateLoader", function() { return __WEBPACK_IMPORTED_MODULE_1__src_translate_loader__["a"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "TranslateFakeLoader", function() { return __WEBPACK_IMPORTED_MODULE_1__src_translate_loader__["b"]; });
 /* harmony namespace reexport (by provided) */ __webpack_require__.d(__webpack_exports__, "USE_STORE", function() { return __WEBPACK_IMPORTED_MODULE_2__src_translate_service__["a"]; });
@@ -3988,13 +4047,13 @@ TranslateModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslateDirective; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__translate_service__ = __webpack_require__(16);
 
 
@@ -4164,14 +4223,14 @@ TranslateDirective.propDecorators = {
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TranslatePipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__translate_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util__ = __webpack_require__(20);
 
 
 
@@ -4307,7 +4366,7 @@ TranslatePipe.ctorParameters = function () { return [
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4362,7 +4421,7 @@ var TranslateStore = (function () {
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4382,15 +4441,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var animations_1 = __webpack_require__(9);
+var animations_1 = __webpack_require__(12);
 var AboutComponent = (function () {
     function AboutComponent() {
     }
     AboutComponent = __decorate([
         core_1.Component({
             selector: 'about',
-            template: __webpack_require__(129),
-            styles: [__webpack_require__(182)],
+            template: __webpack_require__(136),
+            styles: [__webpack_require__(188)],
             animations: [animations_1.fadeInOut]
         })
     ], AboutComponent);
@@ -4400,7 +4459,7 @@ exports.AboutComponent = AboutComponent;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4425,8 +4484,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var alert_service_1 = __webpack_require__(5);
 var account_service_1 = __webpack_require__(6);
-var role_model_1 = __webpack_require__(27);
-var permission_model_1 = __webpack_require__(8);
+var role_model_1 = __webpack_require__(28);
+var permission_model_1 = __webpack_require__(9);
 var RoleEditorComponent = (function () {
     function RoleEditorComponent(alertService, accountService) {
         this.alertService = alertService;
@@ -4572,8 +4631,8 @@ var RoleEditorComponent = (function () {
     RoleEditorComponent = __decorate([
         core_1.Component({
             selector: 'role-editor',
-            template: __webpack_require__(133),
-            styles: [__webpack_require__(185)]
+            template: __webpack_require__(140),
+            styles: [__webpack_require__(191)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService, account_service_1.AccountService])
     ], RoleEditorComponent);
@@ -4583,7 +4642,7 @@ exports.RoleEditorComponent = RoleEditorComponent;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4609,10 +4668,10 @@ var core_1 = __webpack_require__(0);
 var alert_service_1 = __webpack_require__(5);
 var account_service_1 = __webpack_require__(6);
 var utilities_1 = __webpack_require__(4);
-var user_model_1 = __webpack_require__(20);
-var user_edit_model_1 = __webpack_require__(96);
-var role_model_1 = __webpack_require__(27);
-var permission_model_1 = __webpack_require__(8);
+var user_model_1 = __webpack_require__(21);
+var user_edit_model_1 = __webpack_require__(102);
+var role_model_1 = __webpack_require__(28);
+var permission_model_1 = __webpack_require__(9);
 var UserInfoComponent = (function () {
     function UserInfoComponent(alertService, accountService) {
         this.alertService = alertService;
@@ -4905,8 +4964,8 @@ var UserInfoComponent = (function () {
     UserInfoComponent = __decorate([
         core_1.Component({
             selector: 'user-info',
-            template: __webpack_require__(138),
-            styles: [__webpack_require__(190)]
+            template: __webpack_require__(145),
+            styles: [__webpack_require__(196)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService, account_service_1.AccountService])
     ], UserInfoComponent);
@@ -4916,7 +4975,7 @@ exports.UserInfoComponent = UserInfoComponent;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4936,15 +4995,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var animations_1 = __webpack_require__(9);
+var animations_1 = __webpack_require__(12);
 var CustomersComponent = (function () {
     function CustomersComponent() {
     }
     CustomersComponent = __decorate([
         core_1.Component({
             selector: 'customers',
-            template: __webpack_require__(141),
-            styles: [__webpack_require__(193)],
+            template: __webpack_require__(148),
+            styles: [__webpack_require__(199)],
             animations: [animations_1.fadeInOut]
         })
     ], CustomersComponent);
@@ -4954,7 +5013,7 @@ exports.CustomersComponent = CustomersComponent;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4977,8 +5036,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var animations_1 = __webpack_require__(9);
-var configuration_service_1 = __webpack_require__(11);
+var animations_1 = __webpack_require__(12);
+var configuration_service_1 = __webpack_require__(10);
 var HomeComponent = (function () {
     function HomeComponent(configurations) {
         this.configurations = configurations;
@@ -4986,8 +5045,8 @@ var HomeComponent = (function () {
     HomeComponent = __decorate([
         core_1.Component({
             selector: 'home',
-            template: __webpack_require__(142),
-            styles: [__webpack_require__(194)],
+            template: __webpack_require__(149),
+            styles: [__webpack_require__(200)],
             animations: [animations_1.fadeInOut]
         }),
         __metadata("design:paramtypes", [configuration_service_1.ConfigurationService])
@@ -4995,44 +5054,6 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 exports.HomeComponent = HomeComponent;
-
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// ======================================
-// Author: Ebenezer Monney
-// Email:  info@ebenmonney.com
-// Copyright (c) 2017 www.ebenmonney.com
-// 
-// ==> Gun4Hire: contact@ebenmonney.com
-// ======================================
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(0);
-var animations_1 = __webpack_require__(9);
-var NotFoundComponent = (function () {
-    function NotFoundComponent() {
-    }
-    NotFoundComponent = __decorate([
-        core_1.Component({
-            selector: 'not-found',
-            template: __webpack_require__(144),
-            styles: [__webpack_require__(196)],
-            animations: [animations_1.fadeInOut]
-        })
-    ], NotFoundComponent);
-    return NotFoundComponent;
-}());
-exports.NotFoundComponent = NotFoundComponent;
 
 
 /***/ }),
@@ -5056,21 +5077,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var animations_1 = __webpack_require__(9);
-var OrdersComponent = (function () {
-    function OrdersComponent() {
+var animations_1 = __webpack_require__(12);
+var NotFoundComponent = (function () {
+    function NotFoundComponent() {
     }
-    OrdersComponent = __decorate([
+    NotFoundComponent = __decorate([
         core_1.Component({
-            selector: 'orders',
-            template: __webpack_require__(145),
-            styles: [__webpack_require__(197)],
+            selector: 'not-found',
+            template: __webpack_require__(151),
+            styles: [__webpack_require__(202)],
             animations: [animations_1.fadeInOut]
         })
-    ], OrdersComponent);
-    return OrdersComponent;
+    ], NotFoundComponent);
+    return NotFoundComponent;
 }());
-exports.OrdersComponent = OrdersComponent;
+exports.NotFoundComponent = NotFoundComponent;
 
 
 /***/ }),
@@ -5094,21 +5115,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var animations_1 = __webpack_require__(9);
-var PlayersComponent = (function () {
-    function PlayersComponent() {
+var animations_1 = __webpack_require__(12);
+var OrdersComponent = (function () {
+    function OrdersComponent() {
     }
-    PlayersComponent = __decorate([
+    OrdersComponent = __decorate([
         core_1.Component({
-            selector: 'players',
-            template: __webpack_require__(146),
-            styles: [__webpack_require__(198)],
+            selector: 'orders',
+            template: __webpack_require__(152),
+            styles: [__webpack_require__(203)],
             animations: [animations_1.fadeInOut]
         })
-    ], PlayersComponent);
-    return PlayersComponent;
+    ], OrdersComponent);
+    return OrdersComponent;
 }());
-exports.PlayersComponent = PlayersComponent;
+exports.OrdersComponent = OrdersComponent;
 
 
 /***/ }),
@@ -5130,23 +5151,208 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var animations_1 = __webpack_require__(9);
-var ProductsComponent = (function () {
-    function ProductsComponent() {
+var alert_service_1 = __webpack_require__(5);
+var account_service_1 = __webpack_require__(6);
+var players_service_1 = __webpack_require__(30);
+var utilities_1 = __webpack_require__(4);
+var player_model_1 = __webpack_require__(101);
+var PlayerInfoComponent = (function () {
+    function PlayerInfoComponent(alertService, playersService, accountService) {
+        this.alertService = alertService;
+        this.playersService = playersService;
+        this.accountService = accountService;
+        this.isEditMode = false;
+        this.isNewPlayer = false;
+        this.isSaving = false;
+        this.showValidationErrors = false;
+        this.formResetToggle = true;
+        this.uniqueId = utilities_1.Utilities.uniqueId();
+        this.player = new player_model_1.Player();
+        this.allRoles = [];
+        this.isGeneralEditor = false;
     }
-    ProductsComponent = __decorate([
+    PlayerInfoComponent.prototype.ngOnInit = function () {
+        if (!this.isGeneralEditor) {
+            this.loadCurrentPlayerData();
+        }
+    };
+    PlayerInfoComponent.prototype.loadCurrentPlayerData = function () {
+        var _this = this;
+        this.alertService.startLoadingMessage();
+        this.playersService.getPlayer().subscribe(function (player) { return _this.onCurrentUserDataLoadSuccessful(player); }, function (error) { return _this.onCurrentUserDataLoadFailed(error); });
+    };
+    PlayerInfoComponent.prototype.onCurrentUserDataLoadSuccessful = function (player) {
+        this.alertService.stopLoadingMessage();
+        this.player = player;
+    };
+    PlayerInfoComponent.prototype.onCurrentUserDataLoadFailed = function (error) {
+        this.alertService.stopLoadingMessage();
+        this.alertService.showStickyMessage("Load Error", "Unable to retrieve user data from the server.\r\nErrors: \"" + utilities_1.Utilities.getHttpResponseMessage(error) + "\"", alert_service_1.MessageSeverity.error, error);
+        this.player = new player_model_1.Player();
+    };
+    PlayerInfoComponent.prototype.showErrorAlert = function (caption, message) {
+        this.alertService.showMessage(caption, message, alert_service_1.MessageSeverity.error);
+    };
+    PlayerInfoComponent.prototype.edit = function () {
+        if (!this.isGeneralEditor) {
+            this.playerEdit = new player_model_1.Player();
+            Object.assign(this.playerEdit, this.player);
+        }
+        else {
+            if (!this.playerEdit)
+                this.playerEdit = new player_model_1.Player();
+        }
+        this.isEditMode = true;
+        this.showValidationErrors = true;
+    };
+    PlayerInfoComponent.prototype.save = function () {
+        var _this = this;
+        this.isSaving = true;
+        this.alertService.startLoadingMessage("Saving changes...");
+        if (this.isNewPlayer) {
+            this.playersService.newPlayer(this.playerEdit).subscribe(function (player) { return _this.saveSuccessHelper(player); }, function (error) { return _this.saveFailedHelper(error); });
+        }
+        else {
+            this.playersService.updatePlayer(this.playerEdit).subscribe(function (response) { return _this.saveSuccessHelper(); }, function (error) { return _this.saveFailedHelper(error); });
+        }
+    };
+    PlayerInfoComponent.prototype.saveSuccessHelper = function (player) {
+        if (player)
+            Object.assign(this.playerEdit, player);
+        this.isSaving = false;
+        this.alertService.stopLoadingMessage();
+        this.showValidationErrors = false;
+        Object.assign(this.player, this.playerEdit);
+        this.playerEdit = new player_model_1.Player();
+        this.resetForm();
+        if (this.isGeneralEditor) {
+            if (this.isNewPlayer)
+                this.alertService.showMessage("Success", "Player \"" + this.player.fullName + "\" was created successfully", alert_service_1.MessageSeverity.success);
+            else
+                this.alertService.showMessage("Success", "Changes to user \"" + this.player.fullName + "\" was saved successfully", alert_service_1.MessageSeverity.success);
+        }
+        this.isEditMode = false;
+        if (this.changesSavedCallback)
+            this.changesSavedCallback();
+    };
+    PlayerInfoComponent.prototype.saveFailedHelper = function (error) {
+        this.isSaving = false;
+        this.alertService.stopLoadingMessage();
+        this.alertService.showStickyMessage("Save player Error", "The below errors occured whilst saving your changes:", alert_service_1.MessageSeverity.error, error);
+        this.alertService.showStickyMessage(error, null, alert_service_1.MessageSeverity.error);
+        if (this.changesFailedCallback)
+            this.changesFailedCallback();
+    };
+    PlayerInfoComponent.prototype.cancel = function () {
+        if (this.isGeneralEditor)
+            this.playerEdit = this.player = new player_model_1.Player();
+        else
+            this.player = new player_model_1.Player();
+        this.showValidationErrors = false;
+        this.resetForm();
+        this.alertService.showMessage("Cancelled", "Operation cancelled by user", alert_service_1.MessageSeverity.default);
+        this.alertService.resetStickyMessage();
+        if (!this.isGeneralEditor)
+            this.isEditMode = false;
+        if (this.changesCancelledCallback)
+            this.changesCancelledCallback();
+    };
+    PlayerInfoComponent.prototype.close = function () {
+        this.playerEdit = this.player = new player_model_1.Player();
+        this.showValidationErrors = false;
+        this.resetForm();
+        this.isEditMode = false;
+        if (this.changesSavedCallback)
+            this.changesSavedCallback();
+    };
+    PlayerInfoComponent.prototype.resetForm = function (replace) {
+        var _this = this;
+        if (replace === void 0) { replace = false; }
+        if (!replace) {
+            this.form.reset();
+        }
+        else {
+            this.formResetToggle = false;
+            setTimeout(function () {
+                _this.formResetToggle = true;
+            });
+        }
+    };
+    PlayerInfoComponent.prototype.newPlayer = function () {
+        this.isGeneralEditor = true;
+        this.isNewPlayer = true;
+        this.player = this.playerEdit = new player_model_1.Player();
+        this.playerEdit.isActive = true;
+        this.edit();
+        return this.playerEdit;
+    };
+    PlayerInfoComponent.prototype.editPlayer = function (player) {
+        if (player) {
+            this.isGeneralEditor = true;
+            this.isNewPlayer = false;
+            this.player = new player_model_1.Player();
+            this.playerEdit = new player_model_1.Player();
+            Object.assign(this.player, player);
+            Object.assign(this.playerEdit, player);
+            this.edit();
+            return this.playerEdit;
+        }
+        else {
+            return this.newPlayer();
+        }
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], PlayerInfoComponent.prototype, "isViewOnly", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "isGeneralEditor", void 0);
+    __decorate([
+        core_1.ViewChild('f'),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "form", void 0);
+    __decorate([
+        core_1.ViewChild('firstName'),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "firstName", void 0);
+    __decorate([
+        core_1.ViewChild('lastName'),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "lastName", void 0);
+    __decorate([
+        core_1.ViewChild('yearOfBirth'),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "yearOfBirth", void 0);
+    __decorate([
+        core_1.ViewChild('dateOfBirth'),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "dateOfBirth", void 0);
+    __decorate([
+        core_1.ViewChild('team'),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "team", void 0);
+    __decorate([
+        core_1.ViewChild('position'),
+        __metadata("design:type", Object)
+    ], PlayerInfoComponent.prototype, "position", void 0);
+    PlayerInfoComponent = __decorate([
         core_1.Component({
-            selector: 'products',
-            template: __webpack_require__(147),
-            styles: [__webpack_require__(199)],
-            animations: [animations_1.fadeInOut]
-        })
-    ], ProductsComponent);
-    return ProductsComponent;
+            selector: 'player-info',
+            template: __webpack_require__(153),
+            styles: [__webpack_require__(204)]
+        }),
+        __metadata("design:paramtypes", [alert_service_1.AlertService, players_service_1.PlayersService, account_service_1.AccountService])
+    ], PlayerInfoComponent);
+    return PlayerInfoComponent;
 }());
-exports.ProductsComponent = ProductsComponent;
+exports.PlayerInfoComponent = PlayerInfoComponent;
 
 
 /***/ }),
@@ -5173,13 +5379,224 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var router_1 = __webpack_require__(14);
-__webpack_require__(56);
-var animations_1 = __webpack_require__(9);
-var bootstrap_tab_directive_1 = __webpack_require__(49);
+var animations_1 = __webpack_require__(12);
+var modal_1 = __webpack_require__(18);
+var players_service_1 = __webpack_require__(30);
+var alert_service_1 = __webpack_require__(5);
 var app_translation_service_1 = __webpack_require__(7);
 var account_service_1 = __webpack_require__(6);
-var permission_model_1 = __webpack_require__(8);
+var utilities_1 = __webpack_require__(4);
+var permission_model_1 = __webpack_require__(9);
+var player_info_component_1 = __webpack_require__(46);
+var PlayersComponent = (function () {
+    function PlayersComponent(playersService, translationService, accountService, alertService) {
+        this.playersService = playersService;
+        this.translationService = translationService;
+        this.accountService = accountService;
+        this.alertService = alertService;
+        this.columns = [];
+        this.rows = [];
+        this.rowsCache = [];
+        this.allRoles = [];
+    }
+    PlayersComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var gT = function (key) { return _this.translationService.getTranslation(key); };
+        this.columns = [
+            { prop: "index", name: '#', width: 40, cellTemplate: this.indexTemplate, canAutoResize: false },
+            { prop: 'firstName', name: gT('Players.management.FirstName'), width: 100 },
+            { prop: 'lastName', name: gT('Players.management.LastName'), width: 100 },
+            { prop: 'yearOfBirth', name: gT('Players.management.YearOfBirth'), width: 50 },
+            { prop: 'position', name: gT('Players.management.Position'), width: 100 },
+            { prop: 'team', name: gT('Players.management.Team'), width: 100 }
+        ];
+        if (this.canManagePlayers)
+            this.columns.push({ name: '', width: 130, cellTemplate: this.actionsTemplate, resizeable: false, canAutoResize: false, sortable: false, draggable: false });
+        this.loadData();
+    };
+    PlayersComponent.prototype.loadData = function () {
+        var _this = this;
+        this.alertService.startLoadingMessage();
+        this.loadingIndicator = true;
+        this.playersService.getPlayers().subscribe(function (players) { return _this.onDataLoadSuccessful(players); }, function (error) { return _this.onDataLoadFailed(error); });
+    };
+    PlayersComponent.prototype.onDataLoadSuccessful = function (players) {
+        this.alertService.stopLoadingMessage();
+        this.loadingIndicator = false;
+        players.forEach(function (player, index, players) {
+            player.index = index + 1;
+        });
+        this.rowsCache = players.slice();
+        this.rows = players;
+    };
+    PlayersComponent.prototype.onDataLoadFailed = function (error) {
+        this.alertService.stopLoadingMessage();
+        this.loadingIndicator = false;
+        this.alertService.showStickyMessage("Load Error", "Unable to retrieve Players from the server.\r\nErrors: \"" + utilities_1.Utilities.getHttpResponseMessage(error) + "\"", alert_service_1.MessageSeverity.error, error);
+    };
+    PlayersComponent.prototype.onSearchChanged = function (value) {
+        if (value) {
+            value = value.toLowerCase();
+            var filteredRows = this.rowsCache.filter(function (r) {
+                var isChosen = !value
+                    || r.firstName.toLowerCase().indexOf(value) !== -1
+                    || r.team.toLowerCase().indexOf(value) !== -1
+                    || r.position.toLowerCase().indexOf(value) !== -1;
+                return isChosen;
+            });
+            this.rows = filteredRows;
+        }
+        else {
+            this.rows = this.rowsCache.slice();
+        }
+    };
+    PlayersComponent.prototype.onEditorModalHidden = function () {
+        this.playerEditor.resetForm(true);
+    };
+    PlayersComponent.prototype.newPlayer = function () {
+        this.sourcePlayer = null;
+        this.editedPlayer = this.playerEditor.newPlayer();
+        this.editorModal.show();
+    };
+    PlayersComponent.prototype.editPlayer = function (row) {
+        this.sourcePlayer = row;
+        this.editedPlayer = this.playerEditor.editPlayer(row);
+        this.editorModal.show();
+    };
+    PlayersComponent.prototype.deletePlayer = function (row) {
+        var _this = this;
+        this.alertService.showDialog('Are you sure you want to delete \"' + row.fullName + '\"?', alert_service_1.DialogType.confirm, function () { return _this.deletePlayerHelper(row); });
+    };
+    PlayersComponent.prototype.deletePlayerHelper = function (row) {
+        var _this = this;
+        this.alertService.startLoadingMessage("Deleting...");
+        this.loadingIndicator = true;
+        this.playersService.deletePlayer(row.id)
+            .subscribe(function (results) {
+            _this.alertService.stopLoadingMessage();
+            _this.loadingIndicator = false;
+            _this.rowsCache = _this.rowsCache.filter(function (item) { return item !== row; });
+            _this.rows = _this.rows.filter(function (item) { return item !== row; });
+        }, function (error) {
+            _this.alertService.stopLoadingMessage();
+            _this.loadingIndicator = false;
+            _this.alertService.showStickyMessage("Delete Error", "An error occured whilst deleting the Player.\r\nError: \"" + utilities_1.Utilities.getHttpResponseMessage(error) + "\"", alert_service_1.MessageSeverity.error, error);
+        });
+    };
+    Object.defineProperty(PlayersComponent.prototype, "canManagePlayers", {
+        get: function () {
+            return this.accountService.userHasPermission(permission_model_1.Permission.managePlayersPermission);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    __decorate([
+        core_1.ViewChild('indexTemplate'),
+        __metadata("design:type", core_1.TemplateRef)
+    ], PlayersComponent.prototype, "indexTemplate", void 0);
+    __decorate([
+        core_1.ViewChild('userNameTemplate'),
+        __metadata("design:type", core_1.TemplateRef)
+    ], PlayersComponent.prototype, "userNameTemplate", void 0);
+    __decorate([
+        core_1.ViewChild('rolesTemplate'),
+        __metadata("design:type", core_1.TemplateRef)
+    ], PlayersComponent.prototype, "rolesTemplate", void 0);
+    __decorate([
+        core_1.ViewChild('actionsTemplate'),
+        __metadata("design:type", core_1.TemplateRef)
+    ], PlayersComponent.prototype, "actionsTemplate", void 0);
+    __decorate([
+        core_1.ViewChild('editorModal'),
+        __metadata("design:type", modal_1.ModalDirective)
+    ], PlayersComponent.prototype, "editorModal", void 0);
+    __decorate([
+        core_1.ViewChild('playerEditor'),
+        __metadata("design:type", player_info_component_1.PlayerInfoComponent)
+    ], PlayersComponent.prototype, "playerEditor", void 0);
+    PlayersComponent = __decorate([
+        core_1.Component({
+            selector: 'players',
+            template: __webpack_require__(154),
+            styles: [__webpack_require__(205)],
+            animations: [animations_1.fadeInOut]
+        }),
+        __metadata("design:paramtypes", [players_service_1.PlayersService, app_translation_service_1.AppTranslationService, account_service_1.AccountService, alert_service_1.AlertService])
+    ], PlayersComponent);
+    return PlayersComponent;
+}());
+exports.PlayersComponent = PlayersComponent;
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
+var animations_1 = __webpack_require__(12);
+var ProductsComponent = (function () {
+    function ProductsComponent() {
+    }
+    ProductsComponent = __decorate([
+        core_1.Component({
+            selector: 'products',
+            template: __webpack_require__(155),
+            styles: [__webpack_require__(206)],
+            animations: [animations_1.fadeInOut]
+        })
+    ], ProductsComponent);
+    return ProductsComponent;
+}());
+exports.ProductsComponent = ProductsComponent;
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(14);
+__webpack_require__(61);
+var animations_1 = __webpack_require__(12);
+var bootstrap_tab_directive_1 = __webpack_require__(51);
+var app_translation_service_1 = __webpack_require__(7);
+var account_service_1 = __webpack_require__(6);
+var permission_model_1 = __webpack_require__(9);
 var SettingsComponent = (function () {
     function SettingsComponent(route, translationService, accountService) {
         this.route = route;
@@ -5283,8 +5700,8 @@ var SettingsComponent = (function () {
     SettingsComponent = __decorate([
         core_1.Component({
             selector: 'settings',
-            template: __webpack_require__(148),
-            styles: [__webpack_require__(200)],
+            template: __webpack_require__(156),
+            styles: [__webpack_require__(207)],
             animations: [animations_1.fadeInOut]
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute, app_translation_service_1.AppTranslationService, account_service_1.AccountService])
@@ -5295,7 +5712,7 @@ exports.SettingsComponent = SettingsComponent;
 
 
 /***/ }),
-/* 48 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5318,8 +5735,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var $ = __webpack_require__(18);
-__webpack_require__(218);
+var $ = __webpack_require__(19);
+__webpack_require__(225);
 var BootstrapSelectDirective = (function () {
     function BootstrapSelectDirective(el) {
         this.el = el;
@@ -5404,7 +5821,7 @@ exports.BootstrapSelectDirective = BootstrapSelectDirective;
 
 
 /***/ }),
-/* 49 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5428,8 +5845,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var Observable_1 = __webpack_require__(2);
-__webpack_require__(30);
-var $ = __webpack_require__(18);
+__webpack_require__(31);
+var $ = __webpack_require__(19);
 var BootstrapTabDirective = (function () {
     function BootstrapTabDirective(el, zone) {
         var _this = this;
@@ -5479,7 +5896,7 @@ exports.BootstrapTabDirective = BootstrapTabDirective;
 
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5512,10 +5929,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(13);
-__webpack_require__(12);
-var endpoint_factory_service_1 = __webpack_require__(28);
-var configuration_service_1 = __webpack_require__(11);
+var http_1 = __webpack_require__(11);
+__webpack_require__(8);
+var endpoint_factory_service_1 = __webpack_require__(22);
+var configuration_service_1 = __webpack_require__(10);
 var AccountEndpoint = (function (_super) {
     __extends(AccountEndpoint, _super);
     function AccountEndpoint(http, configurations, injector) {
@@ -5773,7 +6190,7 @@ exports.AccountEndpoint = AccountEndpoint;
 
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5797,10 +6214,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(14);
-var platform_browser_1 = __webpack_require__(22);
-__webpack_require__(12);
-__webpack_require__(55);
-__webpack_require__(230);
+var platform_browser_1 = __webpack_require__(23);
+__webpack_require__(8);
+__webpack_require__(60);
+__webpack_require__(237);
 var utilities_1 = __webpack_require__(4);
 var AppTitleService = (function () {
     function AppTitleService(titleService, router) {
@@ -5841,7 +6258,7 @@ exports.AppTitleService = AppTitleService;
 
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5887,7 +6304,7 @@ exports.DBkeys = DBkeys;
 
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5907,10 +6324,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var http_1 = __webpack_require__(13);
+var http_1 = __webpack_require__(11);
 var Observable_1 = __webpack_require__(2);
-__webpack_require__(31);
-__webpack_require__(12);
+__webpack_require__(32);
+__webpack_require__(8);
 var NotificationEndpoint = (function () {
     function NotificationEndpoint() {
         this.demoNotifications = [
@@ -6020,7 +6437,126 @@ exports.NotificationEndpoint = NotificationEndpoint;
 
 
 /***/ }),
-/* 54 */
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(0);
+var http_1 = __webpack_require__(11);
+__webpack_require__(8);
+var endpoint_factory_service_1 = __webpack_require__(22);
+var configuration_service_1 = __webpack_require__(10);
+var PlayersEndpoint = (function (_super) {
+    __extends(PlayersEndpoint, _super);
+    function PlayersEndpoint(http, configurations, injector) {
+        var _this = _super.call(this, http, configurations, injector) || this;
+        _this._playersUrl = "/api/evaludius/players";
+        _this._playerUrl = "/api/evaludius/player";
+        return _this;
+    }
+    Object.defineProperty(PlayersEndpoint.prototype, "playersUrl", {
+        get: function () { return this.configurations.baseUrl + this._playersUrl; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(PlayersEndpoint.prototype, "playerUrl", {
+        get: function () { return this.configurations.baseUrl + this._playerUrl; },
+        enumerable: true,
+        configurable: true
+    });
+    PlayersEndpoint.prototype.getNewPlayerEndpoint = function (playerObject) {
+        var _this = this;
+        return this.http.post(this.playersUrl, JSON.stringify(playerObject), this.getAuthHeader(true))
+            .map(function (response) {
+            return response;
+        })
+            .catch(function (error) {
+            return _this.handleError(error, function () { return _this.getNewPlayerEndpoint(playerObject); });
+        });
+    };
+    PlayersEndpoint.prototype.getUpdatePlayerEndpoint = function (playerObject, playerId) {
+        var _this = this;
+        var endpointUrl = playerId ? this.playersUrl + "/" + playerId : this.playerUrl;
+        return this.http.put(endpointUrl, JSON.stringify(playerObject), this.getAuthHeader(true))
+            .map(function (response) {
+            return response;
+        })
+            .catch(function (error) {
+            return _this.handleError(error, function () { return _this.getUpdatePlayerEndpoint(playerObject, playerId); });
+        });
+    };
+    PlayersEndpoint.prototype.deletePlayerEndpoint = function (playerId) {
+        var _this = this;
+        var endpointUrl = playerId ? this.playersUrl + "/" + playerId : this.playerUrl;
+        return this.http.delete(endpointUrl, this.getAuthHeader())
+            .map(function (response) {
+            return response;
+        })
+            .catch(function (error) {
+            return _this.handleError(error, function () { return _this.getPlayerEndpoint(playerId); });
+        });
+    };
+    PlayersEndpoint.prototype.getPlayerEndpoint = function (playerId) {
+        var _this = this;
+        var endpointUrl = playerId ? this.playersUrl + "/" + playerId : this.playerUrl;
+        return this.http.get(endpointUrl, this.getAuthHeader())
+            .map(function (response) {
+            return response;
+        })
+            .catch(function (error) {
+            return _this.handleError(error, function () { return _this.getPlayerEndpoint(playerId); });
+        });
+    };
+    PlayersEndpoint.prototype.getPlayersEndpoint = function (page, pageSize) {
+        var _this = this;
+        var endpointUrl = page && pageSize ? this.playersUrl + "/" + page + "/" + pageSize : this.playersUrl;
+        return this.http.get(endpointUrl, this.getAuthHeader())
+            .map(function (response) {
+            return response;
+        })
+            .catch(function (error) {
+            return _this.handleError(error, function () { return _this.getPlayersEndpoint(page, pageSize); });
+        });
+    };
+    PlayersEndpoint = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, configuration_service_1.ConfigurationService, core_1.Injector])
+    ], PlayersEndpoint);
+    return PlayersEndpoint;
+}(endpoint_factory_service_1.EndpointFactory));
+exports.PlayersEndpoint = PlayersEndpoint;
+
+
+/***/ }),
+/* 57 */
 /***/ (function(module, exports) {
 
 var ENTITIES = [['Aacute', [193]], ['aacute', [225]], ['Abreve', [258]], ['abreve', [259]], ['ac', [8766]], ['acd', [8767]], ['acE', [8766, 819]], ['Acirc', [194]], ['acirc', [226]], ['acute', [180]], ['Acy', [1040]], ['acy', [1072]], ['AElig', [198]], ['aelig', [230]], ['af', [8289]], ['Afr', [120068]], ['afr', [120094]], ['Agrave', [192]], ['agrave', [224]], ['alefsym', [8501]], ['aleph', [8501]], ['Alpha', [913]], ['alpha', [945]], ['Amacr', [256]], ['amacr', [257]], ['amalg', [10815]], ['amp', [38]], ['AMP', [38]], ['andand', [10837]], ['And', [10835]], ['and', [8743]], ['andd', [10844]], ['andslope', [10840]], ['andv', [10842]], ['ang', [8736]], ['ange', [10660]], ['angle', [8736]], ['angmsdaa', [10664]], ['angmsdab', [10665]], ['angmsdac', [10666]], ['angmsdad', [10667]], ['angmsdae', [10668]], ['angmsdaf', [10669]], ['angmsdag', [10670]], ['angmsdah', [10671]], ['angmsd', [8737]], ['angrt', [8735]], ['angrtvb', [8894]], ['angrtvbd', [10653]], ['angsph', [8738]], ['angst', [197]], ['angzarr', [9084]], ['Aogon', [260]], ['aogon', [261]], ['Aopf', [120120]], ['aopf', [120146]], ['apacir', [10863]], ['ap', [8776]], ['apE', [10864]], ['ape', [8778]], ['apid', [8779]], ['apos', [39]], ['ApplyFunction', [8289]], ['approx', [8776]], ['approxeq', [8778]], ['Aring', [197]], ['aring', [229]], ['Ascr', [119964]], ['ascr', [119990]], ['Assign', [8788]], ['ast', [42]], ['asymp', [8776]], ['asympeq', [8781]], ['Atilde', [195]], ['atilde', [227]], ['Auml', [196]], ['auml', [228]], ['awconint', [8755]], ['awint', [10769]], ['backcong', [8780]], ['backepsilon', [1014]], ['backprime', [8245]], ['backsim', [8765]], ['backsimeq', [8909]], ['Backslash', [8726]], ['Barv', [10983]], ['barvee', [8893]], ['barwed', [8965]], ['Barwed', [8966]], ['barwedge', [8965]], ['bbrk', [9141]], ['bbrktbrk', [9142]], ['bcong', [8780]], ['Bcy', [1041]], ['bcy', [1073]], ['bdquo', [8222]], ['becaus', [8757]], ['because', [8757]], ['Because', [8757]], ['bemptyv', [10672]], ['bepsi', [1014]], ['bernou', [8492]], ['Bernoullis', [8492]], ['Beta', [914]], ['beta', [946]], ['beth', [8502]], ['between', [8812]], ['Bfr', [120069]], ['bfr', [120095]], ['bigcap', [8898]], ['bigcirc', [9711]], ['bigcup', [8899]], ['bigodot', [10752]], ['bigoplus', [10753]], ['bigotimes', [10754]], ['bigsqcup', [10758]], ['bigstar', [9733]], ['bigtriangledown', [9661]], ['bigtriangleup', [9651]], ['biguplus', [10756]], ['bigvee', [8897]], ['bigwedge', [8896]], ['bkarow', [10509]], ['blacklozenge', [10731]], ['blacksquare', [9642]], ['blacktriangle', [9652]], ['blacktriangledown', [9662]], ['blacktriangleleft', [9666]], ['blacktriangleright', [9656]], ['blank', [9251]], ['blk12', [9618]], ['blk14', [9617]], ['blk34', [9619]], ['block', [9608]], ['bne', [61, 8421]], ['bnequiv', [8801, 8421]], ['bNot', [10989]], ['bnot', [8976]], ['Bopf', [120121]], ['bopf', [120147]], ['bot', [8869]], ['bottom', [8869]], ['bowtie', [8904]], ['boxbox', [10697]], ['boxdl', [9488]], ['boxdL', [9557]], ['boxDl', [9558]], ['boxDL', [9559]], ['boxdr', [9484]], ['boxdR', [9554]], ['boxDr', [9555]], ['boxDR', [9556]], ['boxh', [9472]], ['boxH', [9552]], ['boxhd', [9516]], ['boxHd', [9572]], ['boxhD', [9573]], ['boxHD', [9574]], ['boxhu', [9524]], ['boxHu', [9575]], ['boxhU', [9576]], ['boxHU', [9577]], ['boxminus', [8863]], ['boxplus', [8862]], ['boxtimes', [8864]], ['boxul', [9496]], ['boxuL', [9563]], ['boxUl', [9564]], ['boxUL', [9565]], ['boxur', [9492]], ['boxuR', [9560]], ['boxUr', [9561]], ['boxUR', [9562]], ['boxv', [9474]], ['boxV', [9553]], ['boxvh', [9532]], ['boxvH', [9578]], ['boxVh', [9579]], ['boxVH', [9580]], ['boxvl', [9508]], ['boxvL', [9569]], ['boxVl', [9570]], ['boxVL', [9571]], ['boxvr', [9500]], ['boxvR', [9566]], ['boxVr', [9567]], ['boxVR', [9568]], ['bprime', [8245]], ['breve', [728]], ['Breve', [728]], ['brvbar', [166]], ['bscr', [119991]], ['Bscr', [8492]], ['bsemi', [8271]], ['bsim', [8765]], ['bsime', [8909]], ['bsolb', [10693]], ['bsol', [92]], ['bsolhsub', [10184]], ['bull', [8226]], ['bullet', [8226]], ['bump', [8782]], ['bumpE', [10926]], ['bumpe', [8783]], ['Bumpeq', [8782]], ['bumpeq', [8783]], ['Cacute', [262]], ['cacute', [263]], ['capand', [10820]], ['capbrcup', [10825]], ['capcap', [10827]], ['cap', [8745]], ['Cap', [8914]], ['capcup', [10823]], ['capdot', [10816]], ['CapitalDifferentialD', [8517]], ['caps', [8745, 65024]], ['caret', [8257]], ['caron', [711]], ['Cayleys', [8493]], ['ccaps', [10829]], ['Ccaron', [268]], ['ccaron', [269]], ['Ccedil', [199]], ['ccedil', [231]], ['Ccirc', [264]], ['ccirc', [265]], ['Cconint', [8752]], ['ccups', [10828]], ['ccupssm', [10832]], ['Cdot', [266]], ['cdot', [267]], ['cedil', [184]], ['Cedilla', [184]], ['cemptyv', [10674]], ['cent', [162]], ['centerdot', [183]], ['CenterDot', [183]], ['cfr', [120096]], ['Cfr', [8493]], ['CHcy', [1063]], ['chcy', [1095]], ['check', [10003]], ['checkmark', [10003]], ['Chi', [935]], ['chi', [967]], ['circ', [710]], ['circeq', [8791]], ['circlearrowleft', [8634]], ['circlearrowright', [8635]], ['circledast', [8859]], ['circledcirc', [8858]], ['circleddash', [8861]], ['CircleDot', [8857]], ['circledR', [174]], ['circledS', [9416]], ['CircleMinus', [8854]], ['CirclePlus', [8853]], ['CircleTimes', [8855]], ['cir', [9675]], ['cirE', [10691]], ['cire', [8791]], ['cirfnint', [10768]], ['cirmid', [10991]], ['cirscir', [10690]], ['ClockwiseContourIntegral', [8754]], ['clubs', [9827]], ['clubsuit', [9827]], ['colon', [58]], ['Colon', [8759]], ['Colone', [10868]], ['colone', [8788]], ['coloneq', [8788]], ['comma', [44]], ['commat', [64]], ['comp', [8705]], ['compfn', [8728]], ['complement', [8705]], ['complexes', [8450]], ['cong', [8773]], ['congdot', [10861]], ['Congruent', [8801]], ['conint', [8750]], ['Conint', [8751]], ['ContourIntegral', [8750]], ['copf', [120148]], ['Copf', [8450]], ['coprod', [8720]], ['Coproduct', [8720]], ['copy', [169]], ['COPY', [169]], ['copysr', [8471]], ['CounterClockwiseContourIntegral', [8755]], ['crarr', [8629]], ['cross', [10007]], ['Cross', [10799]], ['Cscr', [119966]], ['cscr', [119992]], ['csub', [10959]], ['csube', [10961]], ['csup', [10960]], ['csupe', [10962]], ['ctdot', [8943]], ['cudarrl', [10552]], ['cudarrr', [10549]], ['cuepr', [8926]], ['cuesc', [8927]], ['cularr', [8630]], ['cularrp', [10557]], ['cupbrcap', [10824]], ['cupcap', [10822]], ['CupCap', [8781]], ['cup', [8746]], ['Cup', [8915]], ['cupcup', [10826]], ['cupdot', [8845]], ['cupor', [10821]], ['cups', [8746, 65024]], ['curarr', [8631]], ['curarrm', [10556]], ['curlyeqprec', [8926]], ['curlyeqsucc', [8927]], ['curlyvee', [8910]], ['curlywedge', [8911]], ['curren', [164]], ['curvearrowleft', [8630]], ['curvearrowright', [8631]], ['cuvee', [8910]], ['cuwed', [8911]], ['cwconint', [8754]], ['cwint', [8753]], ['cylcty', [9005]], ['dagger', [8224]], ['Dagger', [8225]], ['daleth', [8504]], ['darr', [8595]], ['Darr', [8609]], ['dArr', [8659]], ['dash', [8208]], ['Dashv', [10980]], ['dashv', [8867]], ['dbkarow', [10511]], ['dblac', [733]], ['Dcaron', [270]], ['dcaron', [271]], ['Dcy', [1044]], ['dcy', [1076]], ['ddagger', [8225]], ['ddarr', [8650]], ['DD', [8517]], ['dd', [8518]], ['DDotrahd', [10513]], ['ddotseq', [10871]], ['deg', [176]], ['Del', [8711]], ['Delta', [916]], ['delta', [948]], ['demptyv', [10673]], ['dfisht', [10623]], ['Dfr', [120071]], ['dfr', [120097]], ['dHar', [10597]], ['dharl', [8643]], ['dharr', [8642]], ['DiacriticalAcute', [180]], ['DiacriticalDot', [729]], ['DiacriticalDoubleAcute', [733]], ['DiacriticalGrave', [96]], ['DiacriticalTilde', [732]], ['diam', [8900]], ['diamond', [8900]], ['Diamond', [8900]], ['diamondsuit', [9830]], ['diams', [9830]], ['die', [168]], ['DifferentialD', [8518]], ['digamma', [989]], ['disin', [8946]], ['div', [247]], ['divide', [247]], ['divideontimes', [8903]], ['divonx', [8903]], ['DJcy', [1026]], ['djcy', [1106]], ['dlcorn', [8990]], ['dlcrop', [8973]], ['dollar', [36]], ['Dopf', [120123]], ['dopf', [120149]], ['Dot', [168]], ['dot', [729]], ['DotDot', [8412]], ['doteq', [8784]], ['doteqdot', [8785]], ['DotEqual', [8784]], ['dotminus', [8760]], ['dotplus', [8724]], ['dotsquare', [8865]], ['doublebarwedge', [8966]], ['DoubleContourIntegral', [8751]], ['DoubleDot', [168]], ['DoubleDownArrow', [8659]], ['DoubleLeftArrow', [8656]], ['DoubleLeftRightArrow', [8660]], ['DoubleLeftTee', [10980]], ['DoubleLongLeftArrow', [10232]], ['DoubleLongLeftRightArrow', [10234]], ['DoubleLongRightArrow', [10233]], ['DoubleRightArrow', [8658]], ['DoubleRightTee', [8872]], ['DoubleUpArrow', [8657]], ['DoubleUpDownArrow', [8661]], ['DoubleVerticalBar', [8741]], ['DownArrowBar', [10515]], ['downarrow', [8595]], ['DownArrow', [8595]], ['Downarrow', [8659]], ['DownArrowUpArrow', [8693]], ['DownBreve', [785]], ['downdownarrows', [8650]], ['downharpoonleft', [8643]], ['downharpoonright', [8642]], ['DownLeftRightVector', [10576]], ['DownLeftTeeVector', [10590]], ['DownLeftVectorBar', [10582]], ['DownLeftVector', [8637]], ['DownRightTeeVector', [10591]], ['DownRightVectorBar', [10583]], ['DownRightVector', [8641]], ['DownTeeArrow', [8615]], ['DownTee', [8868]], ['drbkarow', [10512]], ['drcorn', [8991]], ['drcrop', [8972]], ['Dscr', [119967]], ['dscr', [119993]], ['DScy', [1029]], ['dscy', [1109]], ['dsol', [10742]], ['Dstrok', [272]], ['dstrok', [273]], ['dtdot', [8945]], ['dtri', [9663]], ['dtrif', [9662]], ['duarr', [8693]], ['duhar', [10607]], ['dwangle', [10662]], ['DZcy', [1039]], ['dzcy', [1119]], ['dzigrarr', [10239]], ['Eacute', [201]], ['eacute', [233]], ['easter', [10862]], ['Ecaron', [282]], ['ecaron', [283]], ['Ecirc', [202]], ['ecirc', [234]], ['ecir', [8790]], ['ecolon', [8789]], ['Ecy', [1069]], ['ecy', [1101]], ['eDDot', [10871]], ['Edot', [278]], ['edot', [279]], ['eDot', [8785]], ['ee', [8519]], ['efDot', [8786]], ['Efr', [120072]], ['efr', [120098]], ['eg', [10906]], ['Egrave', [200]], ['egrave', [232]], ['egs', [10902]], ['egsdot', [10904]], ['el', [10905]], ['Element', [8712]], ['elinters', [9191]], ['ell', [8467]], ['els', [10901]], ['elsdot', [10903]], ['Emacr', [274]], ['emacr', [275]], ['empty', [8709]], ['emptyset', [8709]], ['EmptySmallSquare', [9723]], ['emptyv', [8709]], ['EmptyVerySmallSquare', [9643]], ['emsp13', [8196]], ['emsp14', [8197]], ['emsp', [8195]], ['ENG', [330]], ['eng', [331]], ['ensp', [8194]], ['Eogon', [280]], ['eogon', [281]], ['Eopf', [120124]], ['eopf', [120150]], ['epar', [8917]], ['eparsl', [10723]], ['eplus', [10865]], ['epsi', [949]], ['Epsilon', [917]], ['epsilon', [949]], ['epsiv', [1013]], ['eqcirc', [8790]], ['eqcolon', [8789]], ['eqsim', [8770]], ['eqslantgtr', [10902]], ['eqslantless', [10901]], ['Equal', [10869]], ['equals', [61]], ['EqualTilde', [8770]], ['equest', [8799]], ['Equilibrium', [8652]], ['equiv', [8801]], ['equivDD', [10872]], ['eqvparsl', [10725]], ['erarr', [10609]], ['erDot', [8787]], ['escr', [8495]], ['Escr', [8496]], ['esdot', [8784]], ['Esim', [10867]], ['esim', [8770]], ['Eta', [919]], ['eta', [951]], ['ETH', [208]], ['eth', [240]], ['Euml', [203]], ['euml', [235]], ['euro', [8364]], ['excl', [33]], ['exist', [8707]], ['Exists', [8707]], ['expectation', [8496]], ['exponentiale', [8519]], ['ExponentialE', [8519]], ['fallingdotseq', [8786]], ['Fcy', [1060]], ['fcy', [1092]], ['female', [9792]], ['ffilig', [64259]], ['fflig', [64256]], ['ffllig', [64260]], ['Ffr', [120073]], ['ffr', [120099]], ['filig', [64257]], ['FilledSmallSquare', [9724]], ['FilledVerySmallSquare', [9642]], ['fjlig', [102, 106]], ['flat', [9837]], ['fllig', [64258]], ['fltns', [9649]], ['fnof', [402]], ['Fopf', [120125]], ['fopf', [120151]], ['forall', [8704]], ['ForAll', [8704]], ['fork', [8916]], ['forkv', [10969]], ['Fouriertrf', [8497]], ['fpartint', [10765]], ['frac12', [189]], ['frac13', [8531]], ['frac14', [188]], ['frac15', [8533]], ['frac16', [8537]], ['frac18', [8539]], ['frac23', [8532]], ['frac25', [8534]], ['frac34', [190]], ['frac35', [8535]], ['frac38', [8540]], ['frac45', [8536]], ['frac56', [8538]], ['frac58', [8541]], ['frac78', [8542]], ['frasl', [8260]], ['frown', [8994]], ['fscr', [119995]], ['Fscr', [8497]], ['gacute', [501]], ['Gamma', [915]], ['gamma', [947]], ['Gammad', [988]], ['gammad', [989]], ['gap', [10886]], ['Gbreve', [286]], ['gbreve', [287]], ['Gcedil', [290]], ['Gcirc', [284]], ['gcirc', [285]], ['Gcy', [1043]], ['gcy', [1075]], ['Gdot', [288]], ['gdot', [289]], ['ge', [8805]], ['gE', [8807]], ['gEl', [10892]], ['gel', [8923]], ['geq', [8805]], ['geqq', [8807]], ['geqslant', [10878]], ['gescc', [10921]], ['ges', [10878]], ['gesdot', [10880]], ['gesdoto', [10882]], ['gesdotol', [10884]], ['gesl', [8923, 65024]], ['gesles', [10900]], ['Gfr', [120074]], ['gfr', [120100]], ['gg', [8811]], ['Gg', [8921]], ['ggg', [8921]], ['gimel', [8503]], ['GJcy', [1027]], ['gjcy', [1107]], ['gla', [10917]], ['gl', [8823]], ['glE', [10898]], ['glj', [10916]], ['gnap', [10890]], ['gnapprox', [10890]], ['gne', [10888]], ['gnE', [8809]], ['gneq', [10888]], ['gneqq', [8809]], ['gnsim', [8935]], ['Gopf', [120126]], ['gopf', [120152]], ['grave', [96]], ['GreaterEqual', [8805]], ['GreaterEqualLess', [8923]], ['GreaterFullEqual', [8807]], ['GreaterGreater', [10914]], ['GreaterLess', [8823]], ['GreaterSlantEqual', [10878]], ['GreaterTilde', [8819]], ['Gscr', [119970]], ['gscr', [8458]], ['gsim', [8819]], ['gsime', [10894]], ['gsiml', [10896]], ['gtcc', [10919]], ['gtcir', [10874]], ['gt', [62]], ['GT', [62]], ['Gt', [8811]], ['gtdot', [8919]], ['gtlPar', [10645]], ['gtquest', [10876]], ['gtrapprox', [10886]], ['gtrarr', [10616]], ['gtrdot', [8919]], ['gtreqless', [8923]], ['gtreqqless', [10892]], ['gtrless', [8823]], ['gtrsim', [8819]], ['gvertneqq', [8809, 65024]], ['gvnE', [8809, 65024]], ['Hacek', [711]], ['hairsp', [8202]], ['half', [189]], ['hamilt', [8459]], ['HARDcy', [1066]], ['hardcy', [1098]], ['harrcir', [10568]], ['harr', [8596]], ['hArr', [8660]], ['harrw', [8621]], ['Hat', [94]], ['hbar', [8463]], ['Hcirc', [292]], ['hcirc', [293]], ['hearts', [9829]], ['heartsuit', [9829]], ['hellip', [8230]], ['hercon', [8889]], ['hfr', [120101]], ['Hfr', [8460]], ['HilbertSpace', [8459]], ['hksearow', [10533]], ['hkswarow', [10534]], ['hoarr', [8703]], ['homtht', [8763]], ['hookleftarrow', [8617]], ['hookrightarrow', [8618]], ['hopf', [120153]], ['Hopf', [8461]], ['horbar', [8213]], ['HorizontalLine', [9472]], ['hscr', [119997]], ['Hscr', [8459]], ['hslash', [8463]], ['Hstrok', [294]], ['hstrok', [295]], ['HumpDownHump', [8782]], ['HumpEqual', [8783]], ['hybull', [8259]], ['hyphen', [8208]], ['Iacute', [205]], ['iacute', [237]], ['ic', [8291]], ['Icirc', [206]], ['icirc', [238]], ['Icy', [1048]], ['icy', [1080]], ['Idot', [304]], ['IEcy', [1045]], ['iecy', [1077]], ['iexcl', [161]], ['iff', [8660]], ['ifr', [120102]], ['Ifr', [8465]], ['Igrave', [204]], ['igrave', [236]], ['ii', [8520]], ['iiiint', [10764]], ['iiint', [8749]], ['iinfin', [10716]], ['iiota', [8489]], ['IJlig', [306]], ['ijlig', [307]], ['Imacr', [298]], ['imacr', [299]], ['image', [8465]], ['ImaginaryI', [8520]], ['imagline', [8464]], ['imagpart', [8465]], ['imath', [305]], ['Im', [8465]], ['imof', [8887]], ['imped', [437]], ['Implies', [8658]], ['incare', [8453]], ['in', [8712]], ['infin', [8734]], ['infintie', [10717]], ['inodot', [305]], ['intcal', [8890]], ['int', [8747]], ['Int', [8748]], ['integers', [8484]], ['Integral', [8747]], ['intercal', [8890]], ['Intersection', [8898]], ['intlarhk', [10775]], ['intprod', [10812]], ['InvisibleComma', [8291]], ['InvisibleTimes', [8290]], ['IOcy', [1025]], ['iocy', [1105]], ['Iogon', [302]], ['iogon', [303]], ['Iopf', [120128]], ['iopf', [120154]], ['Iota', [921]], ['iota', [953]], ['iprod', [10812]], ['iquest', [191]], ['iscr', [119998]], ['Iscr', [8464]], ['isin', [8712]], ['isindot', [8949]], ['isinE', [8953]], ['isins', [8948]], ['isinsv', [8947]], ['isinv', [8712]], ['it', [8290]], ['Itilde', [296]], ['itilde', [297]], ['Iukcy', [1030]], ['iukcy', [1110]], ['Iuml', [207]], ['iuml', [239]], ['Jcirc', [308]], ['jcirc', [309]], ['Jcy', [1049]], ['jcy', [1081]], ['Jfr', [120077]], ['jfr', [120103]], ['jmath', [567]], ['Jopf', [120129]], ['jopf', [120155]], ['Jscr', [119973]], ['jscr', [119999]], ['Jsercy', [1032]], ['jsercy', [1112]], ['Jukcy', [1028]], ['jukcy', [1108]], ['Kappa', [922]], ['kappa', [954]], ['kappav', [1008]], ['Kcedil', [310]], ['kcedil', [311]], ['Kcy', [1050]], ['kcy', [1082]], ['Kfr', [120078]], ['kfr', [120104]], ['kgreen', [312]], ['KHcy', [1061]], ['khcy', [1093]], ['KJcy', [1036]], ['kjcy', [1116]], ['Kopf', [120130]], ['kopf', [120156]], ['Kscr', [119974]], ['kscr', [120000]], ['lAarr', [8666]], ['Lacute', [313]], ['lacute', [314]], ['laemptyv', [10676]], ['lagran', [8466]], ['Lambda', [923]], ['lambda', [955]], ['lang', [10216]], ['Lang', [10218]], ['langd', [10641]], ['langle', [10216]], ['lap', [10885]], ['Laplacetrf', [8466]], ['laquo', [171]], ['larrb', [8676]], ['larrbfs', [10527]], ['larr', [8592]], ['Larr', [8606]], ['lArr', [8656]], ['larrfs', [10525]], ['larrhk', [8617]], ['larrlp', [8619]], ['larrpl', [10553]], ['larrsim', [10611]], ['larrtl', [8610]], ['latail', [10521]], ['lAtail', [10523]], ['lat', [10923]], ['late', [10925]], ['lates', [10925, 65024]], ['lbarr', [10508]], ['lBarr', [10510]], ['lbbrk', [10098]], ['lbrace', [123]], ['lbrack', [91]], ['lbrke', [10635]], ['lbrksld', [10639]], ['lbrkslu', [10637]], ['Lcaron', [317]], ['lcaron', [318]], ['Lcedil', [315]], ['lcedil', [316]], ['lceil', [8968]], ['lcub', [123]], ['Lcy', [1051]], ['lcy', [1083]], ['ldca', [10550]], ['ldquo', [8220]], ['ldquor', [8222]], ['ldrdhar', [10599]], ['ldrushar', [10571]], ['ldsh', [8626]], ['le', [8804]], ['lE', [8806]], ['LeftAngleBracket', [10216]], ['LeftArrowBar', [8676]], ['leftarrow', [8592]], ['LeftArrow', [8592]], ['Leftarrow', [8656]], ['LeftArrowRightArrow', [8646]], ['leftarrowtail', [8610]], ['LeftCeiling', [8968]], ['LeftDoubleBracket', [10214]], ['LeftDownTeeVector', [10593]], ['LeftDownVectorBar', [10585]], ['LeftDownVector', [8643]], ['LeftFloor', [8970]], ['leftharpoondown', [8637]], ['leftharpoonup', [8636]], ['leftleftarrows', [8647]], ['leftrightarrow', [8596]], ['LeftRightArrow', [8596]], ['Leftrightarrow', [8660]], ['leftrightarrows', [8646]], ['leftrightharpoons', [8651]], ['leftrightsquigarrow', [8621]], ['LeftRightVector', [10574]], ['LeftTeeArrow', [8612]], ['LeftTee', [8867]], ['LeftTeeVector', [10586]], ['leftthreetimes', [8907]], ['LeftTriangleBar', [10703]], ['LeftTriangle', [8882]], ['LeftTriangleEqual', [8884]], ['LeftUpDownVector', [10577]], ['LeftUpTeeVector', [10592]], ['LeftUpVectorBar', [10584]], ['LeftUpVector', [8639]], ['LeftVectorBar', [10578]], ['LeftVector', [8636]], ['lEg', [10891]], ['leg', [8922]], ['leq', [8804]], ['leqq', [8806]], ['leqslant', [10877]], ['lescc', [10920]], ['les', [10877]], ['lesdot', [10879]], ['lesdoto', [10881]], ['lesdotor', [10883]], ['lesg', [8922, 65024]], ['lesges', [10899]], ['lessapprox', [10885]], ['lessdot', [8918]], ['lesseqgtr', [8922]], ['lesseqqgtr', [10891]], ['LessEqualGreater', [8922]], ['LessFullEqual', [8806]], ['LessGreater', [8822]], ['lessgtr', [8822]], ['LessLess', [10913]], ['lesssim', [8818]], ['LessSlantEqual', [10877]], ['LessTilde', [8818]], ['lfisht', [10620]], ['lfloor', [8970]], ['Lfr', [120079]], ['lfr', [120105]], ['lg', [8822]], ['lgE', [10897]], ['lHar', [10594]], ['lhard', [8637]], ['lharu', [8636]], ['lharul', [10602]], ['lhblk', [9604]], ['LJcy', [1033]], ['ljcy', [1113]], ['llarr', [8647]], ['ll', [8810]], ['Ll', [8920]], ['llcorner', [8990]], ['Lleftarrow', [8666]], ['llhard', [10603]], ['lltri', [9722]], ['Lmidot', [319]], ['lmidot', [320]], ['lmoustache', [9136]], ['lmoust', [9136]], ['lnap', [10889]], ['lnapprox', [10889]], ['lne', [10887]], ['lnE', [8808]], ['lneq', [10887]], ['lneqq', [8808]], ['lnsim', [8934]], ['loang', [10220]], ['loarr', [8701]], ['lobrk', [10214]], ['longleftarrow', [10229]], ['LongLeftArrow', [10229]], ['Longleftarrow', [10232]], ['longleftrightarrow', [10231]], ['LongLeftRightArrow', [10231]], ['Longleftrightarrow', [10234]], ['longmapsto', [10236]], ['longrightarrow', [10230]], ['LongRightArrow', [10230]], ['Longrightarrow', [10233]], ['looparrowleft', [8619]], ['looparrowright', [8620]], ['lopar', [10629]], ['Lopf', [120131]], ['lopf', [120157]], ['loplus', [10797]], ['lotimes', [10804]], ['lowast', [8727]], ['lowbar', [95]], ['LowerLeftArrow', [8601]], ['LowerRightArrow', [8600]], ['loz', [9674]], ['lozenge', [9674]], ['lozf', [10731]], ['lpar', [40]], ['lparlt', [10643]], ['lrarr', [8646]], ['lrcorner', [8991]], ['lrhar', [8651]], ['lrhard', [10605]], ['lrm', [8206]], ['lrtri', [8895]], ['lsaquo', [8249]], ['lscr', [120001]], ['Lscr', [8466]], ['lsh', [8624]], ['Lsh', [8624]], ['lsim', [8818]], ['lsime', [10893]], ['lsimg', [10895]], ['lsqb', [91]], ['lsquo', [8216]], ['lsquor', [8218]], ['Lstrok', [321]], ['lstrok', [322]], ['ltcc', [10918]], ['ltcir', [10873]], ['lt', [60]], ['LT', [60]], ['Lt', [8810]], ['ltdot', [8918]], ['lthree', [8907]], ['ltimes', [8905]], ['ltlarr', [10614]], ['ltquest', [10875]], ['ltri', [9667]], ['ltrie', [8884]], ['ltrif', [9666]], ['ltrPar', [10646]], ['lurdshar', [10570]], ['luruhar', [10598]], ['lvertneqq', [8808, 65024]], ['lvnE', [8808, 65024]], ['macr', [175]], ['male', [9794]], ['malt', [10016]], ['maltese', [10016]], ['Map', [10501]], ['map', [8614]], ['mapsto', [8614]], ['mapstodown', [8615]], ['mapstoleft', [8612]], ['mapstoup', [8613]], ['marker', [9646]], ['mcomma', [10793]], ['Mcy', [1052]], ['mcy', [1084]], ['mdash', [8212]], ['mDDot', [8762]], ['measuredangle', [8737]], ['MediumSpace', [8287]], ['Mellintrf', [8499]], ['Mfr', [120080]], ['mfr', [120106]], ['mho', [8487]], ['micro', [181]], ['midast', [42]], ['midcir', [10992]], ['mid', [8739]], ['middot', [183]], ['minusb', [8863]], ['minus', [8722]], ['minusd', [8760]], ['minusdu', [10794]], ['MinusPlus', [8723]], ['mlcp', [10971]], ['mldr', [8230]], ['mnplus', [8723]], ['models', [8871]], ['Mopf', [120132]], ['mopf', [120158]], ['mp', [8723]], ['mscr', [120002]], ['Mscr', [8499]], ['mstpos', [8766]], ['Mu', [924]], ['mu', [956]], ['multimap', [8888]], ['mumap', [8888]], ['nabla', [8711]], ['Nacute', [323]], ['nacute', [324]], ['nang', [8736, 8402]], ['nap', [8777]], ['napE', [10864, 824]], ['napid', [8779, 824]], ['napos', [329]], ['napprox', [8777]], ['natural', [9838]], ['naturals', [8469]], ['natur', [9838]], ['nbsp', [160]], ['nbump', [8782, 824]], ['nbumpe', [8783, 824]], ['ncap', [10819]], ['Ncaron', [327]], ['ncaron', [328]], ['Ncedil', [325]], ['ncedil', [326]], ['ncong', [8775]], ['ncongdot', [10861, 824]], ['ncup', [10818]], ['Ncy', [1053]], ['ncy', [1085]], ['ndash', [8211]], ['nearhk', [10532]], ['nearr', [8599]], ['neArr', [8663]], ['nearrow', [8599]], ['ne', [8800]], ['nedot', [8784, 824]], ['NegativeMediumSpace', [8203]], ['NegativeThickSpace', [8203]], ['NegativeThinSpace', [8203]], ['NegativeVeryThinSpace', [8203]], ['nequiv', [8802]], ['nesear', [10536]], ['nesim', [8770, 824]], ['NestedGreaterGreater', [8811]], ['NestedLessLess', [8810]], ['nexist', [8708]], ['nexists', [8708]], ['Nfr', [120081]], ['nfr', [120107]], ['ngE', [8807, 824]], ['nge', [8817]], ['ngeq', [8817]], ['ngeqq', [8807, 824]], ['ngeqslant', [10878, 824]], ['nges', [10878, 824]], ['nGg', [8921, 824]], ['ngsim', [8821]], ['nGt', [8811, 8402]], ['ngt', [8815]], ['ngtr', [8815]], ['nGtv', [8811, 824]], ['nharr', [8622]], ['nhArr', [8654]], ['nhpar', [10994]], ['ni', [8715]], ['nis', [8956]], ['nisd', [8954]], ['niv', [8715]], ['NJcy', [1034]], ['njcy', [1114]], ['nlarr', [8602]], ['nlArr', [8653]], ['nldr', [8229]], ['nlE', [8806, 824]], ['nle', [8816]], ['nleftarrow', [8602]], ['nLeftarrow', [8653]], ['nleftrightarrow', [8622]], ['nLeftrightarrow', [8654]], ['nleq', [8816]], ['nleqq', [8806, 824]], ['nleqslant', [10877, 824]], ['nles', [10877, 824]], ['nless', [8814]], ['nLl', [8920, 824]], ['nlsim', [8820]], ['nLt', [8810, 8402]], ['nlt', [8814]], ['nltri', [8938]], ['nltrie', [8940]], ['nLtv', [8810, 824]], ['nmid', [8740]], ['NoBreak', [8288]], ['NonBreakingSpace', [160]], ['nopf', [120159]], ['Nopf', [8469]], ['Not', [10988]], ['not', [172]], ['NotCongruent', [8802]], ['NotCupCap', [8813]], ['NotDoubleVerticalBar', [8742]], ['NotElement', [8713]], ['NotEqual', [8800]], ['NotEqualTilde', [8770, 824]], ['NotExists', [8708]], ['NotGreater', [8815]], ['NotGreaterEqual', [8817]], ['NotGreaterFullEqual', [8807, 824]], ['NotGreaterGreater', [8811, 824]], ['NotGreaterLess', [8825]], ['NotGreaterSlantEqual', [10878, 824]], ['NotGreaterTilde', [8821]], ['NotHumpDownHump', [8782, 824]], ['NotHumpEqual', [8783, 824]], ['notin', [8713]], ['notindot', [8949, 824]], ['notinE', [8953, 824]], ['notinva', [8713]], ['notinvb', [8951]], ['notinvc', [8950]], ['NotLeftTriangleBar', [10703, 824]], ['NotLeftTriangle', [8938]], ['NotLeftTriangleEqual', [8940]], ['NotLess', [8814]], ['NotLessEqual', [8816]], ['NotLessGreater', [8824]], ['NotLessLess', [8810, 824]], ['NotLessSlantEqual', [10877, 824]], ['NotLessTilde', [8820]], ['NotNestedGreaterGreater', [10914, 824]], ['NotNestedLessLess', [10913, 824]], ['notni', [8716]], ['notniva', [8716]], ['notnivb', [8958]], ['notnivc', [8957]], ['NotPrecedes', [8832]], ['NotPrecedesEqual', [10927, 824]], ['NotPrecedesSlantEqual', [8928]], ['NotReverseElement', [8716]], ['NotRightTriangleBar', [10704, 824]], ['NotRightTriangle', [8939]], ['NotRightTriangleEqual', [8941]], ['NotSquareSubset', [8847, 824]], ['NotSquareSubsetEqual', [8930]], ['NotSquareSuperset', [8848, 824]], ['NotSquareSupersetEqual', [8931]], ['NotSubset', [8834, 8402]], ['NotSubsetEqual', [8840]], ['NotSucceeds', [8833]], ['NotSucceedsEqual', [10928, 824]], ['NotSucceedsSlantEqual', [8929]], ['NotSucceedsTilde', [8831, 824]], ['NotSuperset', [8835, 8402]], ['NotSupersetEqual', [8841]], ['NotTilde', [8769]], ['NotTildeEqual', [8772]], ['NotTildeFullEqual', [8775]], ['NotTildeTilde', [8777]], ['NotVerticalBar', [8740]], ['nparallel', [8742]], ['npar', [8742]], ['nparsl', [11005, 8421]], ['npart', [8706, 824]], ['npolint', [10772]], ['npr', [8832]], ['nprcue', [8928]], ['nprec', [8832]], ['npreceq', [10927, 824]], ['npre', [10927, 824]], ['nrarrc', [10547, 824]], ['nrarr', [8603]], ['nrArr', [8655]], ['nrarrw', [8605, 824]], ['nrightarrow', [8603]], ['nRightarrow', [8655]], ['nrtri', [8939]], ['nrtrie', [8941]], ['nsc', [8833]], ['nsccue', [8929]], ['nsce', [10928, 824]], ['Nscr', [119977]], ['nscr', [120003]], ['nshortmid', [8740]], ['nshortparallel', [8742]], ['nsim', [8769]], ['nsime', [8772]], ['nsimeq', [8772]], ['nsmid', [8740]], ['nspar', [8742]], ['nsqsube', [8930]], ['nsqsupe', [8931]], ['nsub', [8836]], ['nsubE', [10949, 824]], ['nsube', [8840]], ['nsubset', [8834, 8402]], ['nsubseteq', [8840]], ['nsubseteqq', [10949, 824]], ['nsucc', [8833]], ['nsucceq', [10928, 824]], ['nsup', [8837]], ['nsupE', [10950, 824]], ['nsupe', [8841]], ['nsupset', [8835, 8402]], ['nsupseteq', [8841]], ['nsupseteqq', [10950, 824]], ['ntgl', [8825]], ['Ntilde', [209]], ['ntilde', [241]], ['ntlg', [8824]], ['ntriangleleft', [8938]], ['ntrianglelefteq', [8940]], ['ntriangleright', [8939]], ['ntrianglerighteq', [8941]], ['Nu', [925]], ['nu', [957]], ['num', [35]], ['numero', [8470]], ['numsp', [8199]], ['nvap', [8781, 8402]], ['nvdash', [8876]], ['nvDash', [8877]], ['nVdash', [8878]], ['nVDash', [8879]], ['nvge', [8805, 8402]], ['nvgt', [62, 8402]], ['nvHarr', [10500]], ['nvinfin', [10718]], ['nvlArr', [10498]], ['nvle', [8804, 8402]], ['nvlt', [60, 8402]], ['nvltrie', [8884, 8402]], ['nvrArr', [10499]], ['nvrtrie', [8885, 8402]], ['nvsim', [8764, 8402]], ['nwarhk', [10531]], ['nwarr', [8598]], ['nwArr', [8662]], ['nwarrow', [8598]], ['nwnear', [10535]], ['Oacute', [211]], ['oacute', [243]], ['oast', [8859]], ['Ocirc', [212]], ['ocirc', [244]], ['ocir', [8858]], ['Ocy', [1054]], ['ocy', [1086]], ['odash', [8861]], ['Odblac', [336]], ['odblac', [337]], ['odiv', [10808]], ['odot', [8857]], ['odsold', [10684]], ['OElig', [338]], ['oelig', [339]], ['ofcir', [10687]], ['Ofr', [120082]], ['ofr', [120108]], ['ogon', [731]], ['Ograve', [210]], ['ograve', [242]], ['ogt', [10689]], ['ohbar', [10677]], ['ohm', [937]], ['oint', [8750]], ['olarr', [8634]], ['olcir', [10686]], ['olcross', [10683]], ['oline', [8254]], ['olt', [10688]], ['Omacr', [332]], ['omacr', [333]], ['Omega', [937]], ['omega', [969]], ['Omicron', [927]], ['omicron', [959]], ['omid', [10678]], ['ominus', [8854]], ['Oopf', [120134]], ['oopf', [120160]], ['opar', [10679]], ['OpenCurlyDoubleQuote', [8220]], ['OpenCurlyQuote', [8216]], ['operp', [10681]], ['oplus', [8853]], ['orarr', [8635]], ['Or', [10836]], ['or', [8744]], ['ord', [10845]], ['order', [8500]], ['orderof', [8500]], ['ordf', [170]], ['ordm', [186]], ['origof', [8886]], ['oror', [10838]], ['orslope', [10839]], ['orv', [10843]], ['oS', [9416]], ['Oscr', [119978]], ['oscr', [8500]], ['Oslash', [216]], ['oslash', [248]], ['osol', [8856]], ['Otilde', [213]], ['otilde', [245]], ['otimesas', [10806]], ['Otimes', [10807]], ['otimes', [8855]], ['Ouml', [214]], ['ouml', [246]], ['ovbar', [9021]], ['OverBar', [8254]], ['OverBrace', [9182]], ['OverBracket', [9140]], ['OverParenthesis', [9180]], ['para', [182]], ['parallel', [8741]], ['par', [8741]], ['parsim', [10995]], ['parsl', [11005]], ['part', [8706]], ['PartialD', [8706]], ['Pcy', [1055]], ['pcy', [1087]], ['percnt', [37]], ['period', [46]], ['permil', [8240]], ['perp', [8869]], ['pertenk', [8241]], ['Pfr', [120083]], ['pfr', [120109]], ['Phi', [934]], ['phi', [966]], ['phiv', [981]], ['phmmat', [8499]], ['phone', [9742]], ['Pi', [928]], ['pi', [960]], ['pitchfork', [8916]], ['piv', [982]], ['planck', [8463]], ['planckh', [8462]], ['plankv', [8463]], ['plusacir', [10787]], ['plusb', [8862]], ['pluscir', [10786]], ['plus', [43]], ['plusdo', [8724]], ['plusdu', [10789]], ['pluse', [10866]], ['PlusMinus', [177]], ['plusmn', [177]], ['plussim', [10790]], ['plustwo', [10791]], ['pm', [177]], ['Poincareplane', [8460]], ['pointint', [10773]], ['popf', [120161]], ['Popf', [8473]], ['pound', [163]], ['prap', [10935]], ['Pr', [10939]], ['pr', [8826]], ['prcue', [8828]], ['precapprox', [10935]], ['prec', [8826]], ['preccurlyeq', [8828]], ['Precedes', [8826]], ['PrecedesEqual', [10927]], ['PrecedesSlantEqual', [8828]], ['PrecedesTilde', [8830]], ['preceq', [10927]], ['precnapprox', [10937]], ['precneqq', [10933]], ['precnsim', [8936]], ['pre', [10927]], ['prE', [10931]], ['precsim', [8830]], ['prime', [8242]], ['Prime', [8243]], ['primes', [8473]], ['prnap', [10937]], ['prnE', [10933]], ['prnsim', [8936]], ['prod', [8719]], ['Product', [8719]], ['profalar', [9006]], ['profline', [8978]], ['profsurf', [8979]], ['prop', [8733]], ['Proportional', [8733]], ['Proportion', [8759]], ['propto', [8733]], ['prsim', [8830]], ['prurel', [8880]], ['Pscr', [119979]], ['pscr', [120005]], ['Psi', [936]], ['psi', [968]], ['puncsp', [8200]], ['Qfr', [120084]], ['qfr', [120110]], ['qint', [10764]], ['qopf', [120162]], ['Qopf', [8474]], ['qprime', [8279]], ['Qscr', [119980]], ['qscr', [120006]], ['quaternions', [8461]], ['quatint', [10774]], ['quest', [63]], ['questeq', [8799]], ['quot', [34]], ['QUOT', [34]], ['rAarr', [8667]], ['race', [8765, 817]], ['Racute', [340]], ['racute', [341]], ['radic', [8730]], ['raemptyv', [10675]], ['rang', [10217]], ['Rang', [10219]], ['rangd', [10642]], ['range', [10661]], ['rangle', [10217]], ['raquo', [187]], ['rarrap', [10613]], ['rarrb', [8677]], ['rarrbfs', [10528]], ['rarrc', [10547]], ['rarr', [8594]], ['Rarr', [8608]], ['rArr', [8658]], ['rarrfs', [10526]], ['rarrhk', [8618]], ['rarrlp', [8620]], ['rarrpl', [10565]], ['rarrsim', [10612]], ['Rarrtl', [10518]], ['rarrtl', [8611]], ['rarrw', [8605]], ['ratail', [10522]], ['rAtail', [10524]], ['ratio', [8758]], ['rationals', [8474]], ['rbarr', [10509]], ['rBarr', [10511]], ['RBarr', [10512]], ['rbbrk', [10099]], ['rbrace', [125]], ['rbrack', [93]], ['rbrke', [10636]], ['rbrksld', [10638]], ['rbrkslu', [10640]], ['Rcaron', [344]], ['rcaron', [345]], ['Rcedil', [342]], ['rcedil', [343]], ['rceil', [8969]], ['rcub', [125]], ['Rcy', [1056]], ['rcy', [1088]], ['rdca', [10551]], ['rdldhar', [10601]], ['rdquo', [8221]], ['rdquor', [8221]], ['CloseCurlyDoubleQuote', [8221]], ['rdsh', [8627]], ['real', [8476]], ['realine', [8475]], ['realpart', [8476]], ['reals', [8477]], ['Re', [8476]], ['rect', [9645]], ['reg', [174]], ['REG', [174]], ['ReverseElement', [8715]], ['ReverseEquilibrium', [8651]], ['ReverseUpEquilibrium', [10607]], ['rfisht', [10621]], ['rfloor', [8971]], ['rfr', [120111]], ['Rfr', [8476]], ['rHar', [10596]], ['rhard', [8641]], ['rharu', [8640]], ['rharul', [10604]], ['Rho', [929]], ['rho', [961]], ['rhov', [1009]], ['RightAngleBracket', [10217]], ['RightArrowBar', [8677]], ['rightarrow', [8594]], ['RightArrow', [8594]], ['Rightarrow', [8658]], ['RightArrowLeftArrow', [8644]], ['rightarrowtail', [8611]], ['RightCeiling', [8969]], ['RightDoubleBracket', [10215]], ['RightDownTeeVector', [10589]], ['RightDownVectorBar', [10581]], ['RightDownVector', [8642]], ['RightFloor', [8971]], ['rightharpoondown', [8641]], ['rightharpoonup', [8640]], ['rightleftarrows', [8644]], ['rightleftharpoons', [8652]], ['rightrightarrows', [8649]], ['rightsquigarrow', [8605]], ['RightTeeArrow', [8614]], ['RightTee', [8866]], ['RightTeeVector', [10587]], ['rightthreetimes', [8908]], ['RightTriangleBar', [10704]], ['RightTriangle', [8883]], ['RightTriangleEqual', [8885]], ['RightUpDownVector', [10575]], ['RightUpTeeVector', [10588]], ['RightUpVectorBar', [10580]], ['RightUpVector', [8638]], ['RightVectorBar', [10579]], ['RightVector', [8640]], ['ring', [730]], ['risingdotseq', [8787]], ['rlarr', [8644]], ['rlhar', [8652]], ['rlm', [8207]], ['rmoustache', [9137]], ['rmoust', [9137]], ['rnmid', [10990]], ['roang', [10221]], ['roarr', [8702]], ['robrk', [10215]], ['ropar', [10630]], ['ropf', [120163]], ['Ropf', [8477]], ['roplus', [10798]], ['rotimes', [10805]], ['RoundImplies', [10608]], ['rpar', [41]], ['rpargt', [10644]], ['rppolint', [10770]], ['rrarr', [8649]], ['Rrightarrow', [8667]], ['rsaquo', [8250]], ['rscr', [120007]], ['Rscr', [8475]], ['rsh', [8625]], ['Rsh', [8625]], ['rsqb', [93]], ['rsquo', [8217]], ['rsquor', [8217]], ['CloseCurlyQuote', [8217]], ['rthree', [8908]], ['rtimes', [8906]], ['rtri', [9657]], ['rtrie', [8885]], ['rtrif', [9656]], ['rtriltri', [10702]], ['RuleDelayed', [10740]], ['ruluhar', [10600]], ['rx', [8478]], ['Sacute', [346]], ['sacute', [347]], ['sbquo', [8218]], ['scap', [10936]], ['Scaron', [352]], ['scaron', [353]], ['Sc', [10940]], ['sc', [8827]], ['sccue', [8829]], ['sce', [10928]], ['scE', [10932]], ['Scedil', [350]], ['scedil', [351]], ['Scirc', [348]], ['scirc', [349]], ['scnap', [10938]], ['scnE', [10934]], ['scnsim', [8937]], ['scpolint', [10771]], ['scsim', [8831]], ['Scy', [1057]], ['scy', [1089]], ['sdotb', [8865]], ['sdot', [8901]], ['sdote', [10854]], ['searhk', [10533]], ['searr', [8600]], ['seArr', [8664]], ['searrow', [8600]], ['sect', [167]], ['semi', [59]], ['seswar', [10537]], ['setminus', [8726]], ['setmn', [8726]], ['sext', [10038]], ['Sfr', [120086]], ['sfr', [120112]], ['sfrown', [8994]], ['sharp', [9839]], ['SHCHcy', [1065]], ['shchcy', [1097]], ['SHcy', [1064]], ['shcy', [1096]], ['ShortDownArrow', [8595]], ['ShortLeftArrow', [8592]], ['shortmid', [8739]], ['shortparallel', [8741]], ['ShortRightArrow', [8594]], ['ShortUpArrow', [8593]], ['shy', [173]], ['Sigma', [931]], ['sigma', [963]], ['sigmaf', [962]], ['sigmav', [962]], ['sim', [8764]], ['simdot', [10858]], ['sime', [8771]], ['simeq', [8771]], ['simg', [10910]], ['simgE', [10912]], ['siml', [10909]], ['simlE', [10911]], ['simne', [8774]], ['simplus', [10788]], ['simrarr', [10610]], ['slarr', [8592]], ['SmallCircle', [8728]], ['smallsetminus', [8726]], ['smashp', [10803]], ['smeparsl', [10724]], ['smid', [8739]], ['smile', [8995]], ['smt', [10922]], ['smte', [10924]], ['smtes', [10924, 65024]], ['SOFTcy', [1068]], ['softcy', [1100]], ['solbar', [9023]], ['solb', [10692]], ['sol', [47]], ['Sopf', [120138]], ['sopf', [120164]], ['spades', [9824]], ['spadesuit', [9824]], ['spar', [8741]], ['sqcap', [8851]], ['sqcaps', [8851, 65024]], ['sqcup', [8852]], ['sqcups', [8852, 65024]], ['Sqrt', [8730]], ['sqsub', [8847]], ['sqsube', [8849]], ['sqsubset', [8847]], ['sqsubseteq', [8849]], ['sqsup', [8848]], ['sqsupe', [8850]], ['sqsupset', [8848]], ['sqsupseteq', [8850]], ['square', [9633]], ['Square', [9633]], ['SquareIntersection', [8851]], ['SquareSubset', [8847]], ['SquareSubsetEqual', [8849]], ['SquareSuperset', [8848]], ['SquareSupersetEqual', [8850]], ['SquareUnion', [8852]], ['squarf', [9642]], ['squ', [9633]], ['squf', [9642]], ['srarr', [8594]], ['Sscr', [119982]], ['sscr', [120008]], ['ssetmn', [8726]], ['ssmile', [8995]], ['sstarf', [8902]], ['Star', [8902]], ['star', [9734]], ['starf', [9733]], ['straightepsilon', [1013]], ['straightphi', [981]], ['strns', [175]], ['sub', [8834]], ['Sub', [8912]], ['subdot', [10941]], ['subE', [10949]], ['sube', [8838]], ['subedot', [10947]], ['submult', [10945]], ['subnE', [10955]], ['subne', [8842]], ['subplus', [10943]], ['subrarr', [10617]], ['subset', [8834]], ['Subset', [8912]], ['subseteq', [8838]], ['subseteqq', [10949]], ['SubsetEqual', [8838]], ['subsetneq', [8842]], ['subsetneqq', [10955]], ['subsim', [10951]], ['subsub', [10965]], ['subsup', [10963]], ['succapprox', [10936]], ['succ', [8827]], ['succcurlyeq', [8829]], ['Succeeds', [8827]], ['SucceedsEqual', [10928]], ['SucceedsSlantEqual', [8829]], ['SucceedsTilde', [8831]], ['succeq', [10928]], ['succnapprox', [10938]], ['succneqq', [10934]], ['succnsim', [8937]], ['succsim', [8831]], ['SuchThat', [8715]], ['sum', [8721]], ['Sum', [8721]], ['sung', [9834]], ['sup1', [185]], ['sup2', [178]], ['sup3', [179]], ['sup', [8835]], ['Sup', [8913]], ['supdot', [10942]], ['supdsub', [10968]], ['supE', [10950]], ['supe', [8839]], ['supedot', [10948]], ['Superset', [8835]], ['SupersetEqual', [8839]], ['suphsol', [10185]], ['suphsub', [10967]], ['suplarr', [10619]], ['supmult', [10946]], ['supnE', [10956]], ['supne', [8843]], ['supplus', [10944]], ['supset', [8835]], ['Supset', [8913]], ['supseteq', [8839]], ['supseteqq', [10950]], ['supsetneq', [8843]], ['supsetneqq', [10956]], ['supsim', [10952]], ['supsub', [10964]], ['supsup', [10966]], ['swarhk', [10534]], ['swarr', [8601]], ['swArr', [8665]], ['swarrow', [8601]], ['swnwar', [10538]], ['szlig', [223]], ['Tab', [9]], ['target', [8982]], ['Tau', [932]], ['tau', [964]], ['tbrk', [9140]], ['Tcaron', [356]], ['tcaron', [357]], ['Tcedil', [354]], ['tcedil', [355]], ['Tcy', [1058]], ['tcy', [1090]], ['tdot', [8411]], ['telrec', [8981]], ['Tfr', [120087]], ['tfr', [120113]], ['there4', [8756]], ['therefore', [8756]], ['Therefore', [8756]], ['Theta', [920]], ['theta', [952]], ['thetasym', [977]], ['thetav', [977]], ['thickapprox', [8776]], ['thicksim', [8764]], ['ThickSpace', [8287, 8202]], ['ThinSpace', [8201]], ['thinsp', [8201]], ['thkap', [8776]], ['thksim', [8764]], ['THORN', [222]], ['thorn', [254]], ['tilde', [732]], ['Tilde', [8764]], ['TildeEqual', [8771]], ['TildeFullEqual', [8773]], ['TildeTilde', [8776]], ['timesbar', [10801]], ['timesb', [8864]], ['times', [215]], ['timesd', [10800]], ['tint', [8749]], ['toea', [10536]], ['topbot', [9014]], ['topcir', [10993]], ['top', [8868]], ['Topf', [120139]], ['topf', [120165]], ['topfork', [10970]], ['tosa', [10537]], ['tprime', [8244]], ['trade', [8482]], ['TRADE', [8482]], ['triangle', [9653]], ['triangledown', [9663]], ['triangleleft', [9667]], ['trianglelefteq', [8884]], ['triangleq', [8796]], ['triangleright', [9657]], ['trianglerighteq', [8885]], ['tridot', [9708]], ['trie', [8796]], ['triminus', [10810]], ['TripleDot', [8411]], ['triplus', [10809]], ['trisb', [10701]], ['tritime', [10811]], ['trpezium', [9186]], ['Tscr', [119983]], ['tscr', [120009]], ['TScy', [1062]], ['tscy', [1094]], ['TSHcy', [1035]], ['tshcy', [1115]], ['Tstrok', [358]], ['tstrok', [359]], ['twixt', [8812]], ['twoheadleftarrow', [8606]], ['twoheadrightarrow', [8608]], ['Uacute', [218]], ['uacute', [250]], ['uarr', [8593]], ['Uarr', [8607]], ['uArr', [8657]], ['Uarrocir', [10569]], ['Ubrcy', [1038]], ['ubrcy', [1118]], ['Ubreve', [364]], ['ubreve', [365]], ['Ucirc', [219]], ['ucirc', [251]], ['Ucy', [1059]], ['ucy', [1091]], ['udarr', [8645]], ['Udblac', [368]], ['udblac', [369]], ['udhar', [10606]], ['ufisht', [10622]], ['Ufr', [120088]], ['ufr', [120114]], ['Ugrave', [217]], ['ugrave', [249]], ['uHar', [10595]], ['uharl', [8639]], ['uharr', [8638]], ['uhblk', [9600]], ['ulcorn', [8988]], ['ulcorner', [8988]], ['ulcrop', [8975]], ['ultri', [9720]], ['Umacr', [362]], ['umacr', [363]], ['uml', [168]], ['UnderBar', [95]], ['UnderBrace', [9183]], ['UnderBracket', [9141]], ['UnderParenthesis', [9181]], ['Union', [8899]], ['UnionPlus', [8846]], ['Uogon', [370]], ['uogon', [371]], ['Uopf', [120140]], ['uopf', [120166]], ['UpArrowBar', [10514]], ['uparrow', [8593]], ['UpArrow', [8593]], ['Uparrow', [8657]], ['UpArrowDownArrow', [8645]], ['updownarrow', [8597]], ['UpDownArrow', [8597]], ['Updownarrow', [8661]], ['UpEquilibrium', [10606]], ['upharpoonleft', [8639]], ['upharpoonright', [8638]], ['uplus', [8846]], ['UpperLeftArrow', [8598]], ['UpperRightArrow', [8599]], ['upsi', [965]], ['Upsi', [978]], ['upsih', [978]], ['Upsilon', [933]], ['upsilon', [965]], ['UpTeeArrow', [8613]], ['UpTee', [8869]], ['upuparrows', [8648]], ['urcorn', [8989]], ['urcorner', [8989]], ['urcrop', [8974]], ['Uring', [366]], ['uring', [367]], ['urtri', [9721]], ['Uscr', [119984]], ['uscr', [120010]], ['utdot', [8944]], ['Utilde', [360]], ['utilde', [361]], ['utri', [9653]], ['utrif', [9652]], ['uuarr', [8648]], ['Uuml', [220]], ['uuml', [252]], ['uwangle', [10663]], ['vangrt', [10652]], ['varepsilon', [1013]], ['varkappa', [1008]], ['varnothing', [8709]], ['varphi', [981]], ['varpi', [982]], ['varpropto', [8733]], ['varr', [8597]], ['vArr', [8661]], ['varrho', [1009]], ['varsigma', [962]], ['varsubsetneq', [8842, 65024]], ['varsubsetneqq', [10955, 65024]], ['varsupsetneq', [8843, 65024]], ['varsupsetneqq', [10956, 65024]], ['vartheta', [977]], ['vartriangleleft', [8882]], ['vartriangleright', [8883]], ['vBar', [10984]], ['Vbar', [10987]], ['vBarv', [10985]], ['Vcy', [1042]], ['vcy', [1074]], ['vdash', [8866]], ['vDash', [8872]], ['Vdash', [8873]], ['VDash', [8875]], ['Vdashl', [10982]], ['veebar', [8891]], ['vee', [8744]], ['Vee', [8897]], ['veeeq', [8794]], ['vellip', [8942]], ['verbar', [124]], ['Verbar', [8214]], ['vert', [124]], ['Vert', [8214]], ['VerticalBar', [8739]], ['VerticalLine', [124]], ['VerticalSeparator', [10072]], ['VerticalTilde', [8768]], ['VeryThinSpace', [8202]], ['Vfr', [120089]], ['vfr', [120115]], ['vltri', [8882]], ['vnsub', [8834, 8402]], ['vnsup', [8835, 8402]], ['Vopf', [120141]], ['vopf', [120167]], ['vprop', [8733]], ['vrtri', [8883]], ['Vscr', [119985]], ['vscr', [120011]], ['vsubnE', [10955, 65024]], ['vsubne', [8842, 65024]], ['vsupnE', [10956, 65024]], ['vsupne', [8843, 65024]], ['Vvdash', [8874]], ['vzigzag', [10650]], ['Wcirc', [372]], ['wcirc', [373]], ['wedbar', [10847]], ['wedge', [8743]], ['Wedge', [8896]], ['wedgeq', [8793]], ['weierp', [8472]], ['Wfr', [120090]], ['wfr', [120116]], ['Wopf', [120142]], ['wopf', [120168]], ['wp', [8472]], ['wr', [8768]], ['wreath', [8768]], ['Wscr', [119986]], ['wscr', [120012]], ['xcap', [8898]], ['xcirc', [9711]], ['xcup', [8899]], ['xdtri', [9661]], ['Xfr', [120091]], ['xfr', [120117]], ['xharr', [10231]], ['xhArr', [10234]], ['Xi', [926]], ['xi', [958]], ['xlarr', [10229]], ['xlArr', [10232]], ['xmap', [10236]], ['xnis', [8955]], ['xodot', [10752]], ['Xopf', [120143]], ['xopf', [120169]], ['xoplus', [10753]], ['xotime', [10754]], ['xrarr', [10230]], ['xrArr', [10233]], ['Xscr', [119987]], ['xscr', [120013]], ['xsqcup', [10758]], ['xuplus', [10756]], ['xutri', [9651]], ['xvee', [8897]], ['xwedge', [8896]], ['Yacute', [221]], ['yacute', [253]], ['YAcy', [1071]], ['yacy', [1103]], ['Ycirc', [374]], ['ycirc', [375]], ['Ycy', [1067]], ['ycy', [1099]], ['yen', [165]], ['Yfr', [120092]], ['yfr', [120118]], ['YIcy', [1031]], ['yicy', [1111]], ['Yopf', [120144]], ['yopf', [120170]], ['Yscr', [119988]], ['yscr', [120014]], ['YUcy', [1070]], ['yucy', [1102]], ['yuml', [255]], ['Yuml', [376]], ['Zacute', [377]], ['zacute', [378]], ['Zcaron', [381]], ['zcaron', [382]], ['Zcy', [1047]], ['zcy', [1079]], ['Zdot', [379]], ['zdot', [380]], ['zeetrf', [8488]], ['ZeroWidthSpace', [8203]], ['Zeta', [918]], ['zeta', [950]], ['zfr', [120119]], ['Zfr', [8488]], ['ZHcy', [1046]], ['zhcy', [1078]], ['zigrarr', [8669]], ['zopf', [120171]], ['Zopf', [8484]], ['Zscr', [119989]], ['zscr', [120015]], ['zwj', [8205]], ['zwnj', [8204]]];
@@ -6216,38 +6752,61 @@ module.exports = Html5Entities;
 
 
 /***/ }),
-/* 55 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var mergeMap_1 = __webpack_require__(213);
+var forkJoin_1 = __webpack_require__(238);
+Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
+//# sourceMappingURL=forkJoin.js.map
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var do_1 = __webpack_require__(176);
+Observable_1.Observable.prototype.do = do_1._do;
+Observable_1.Observable.prototype._do = do_1._do;
+//# sourceMappingURL=do.js.map
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var mergeMap_1 = __webpack_require__(220);
 Observable_1.Observable.prototype.mergeMap = mergeMap_1.mergeMap;
 Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 56 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var switchMap_1 = __webpack_require__(172);
+var switchMap_1 = __webpack_require__(178);
 Observable_1.Observable.prototype.switchMap = switchMap_1.switchMap;
 //# sourceMappingURL=switchMap.js.map
 
 /***/ }),
-/* 57 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var isScheduler_1 = __webpack_require__(59);
-var ArrayObservable_1 = __webpack_require__(62);
-var mergeAll_1 = __webpack_require__(233);
+var isScheduler_1 = __webpack_require__(64);
+var ArrayObservable_1 = __webpack_require__(67);
+var mergeAll_1 = __webpack_require__(240);
 /* tslint:enable:max-line-length */
 /**
  * Creates an output Observable which sequentially emits all values from every
@@ -6419,49 +6978,49 @@ exports.concatStatic = concatStatic;
 //# sourceMappingURL=concat.js.map
 
 /***/ }),
-/* 58 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(18);
 
 /***/ }),
-/* 59 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(187);
 
 /***/ }),
-/* 60 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(189);
 
 /***/ }),
-/* 61 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(208);
 
 /***/ }),
-/* 62 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(28);
 
 /***/ }),
-/* 63 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(29);
 
 /***/ }),
-/* 64 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(6);
 
 /***/ }),
-/* 65 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6474,12 +7033,12 @@ module.exports = (__webpack_require__(1))(6);
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(221);
-__webpack_require__(227);
 __webpack_require__(228);
+__webpack_require__(234);
+__webpack_require__(235);
 var core_1 = __webpack_require__(0);
-var platform_browser_dynamic_1 = __webpack_require__(217);
-var app_module_1 = __webpack_require__(80);
+var platform_browser_dynamic_1 = __webpack_require__(224);
+var app_module_1 = __webpack_require__(85);
 if (true) {
     module['hot'].accept();
     module['hot'].dispose(function () {
@@ -6495,7 +7054,7 @@ var modulePromise = platform_browser_dynamic_1.platformBrowserDynamic().bootstra
 
 
 /***/ }),
-/* 66 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__resourceQuery, module) {/*eslint-env browser*/
@@ -6511,7 +7070,7 @@ var options = {
   name: ''
 };
 if (true) {
-  var querystring = __webpack_require__(151);
+  var querystring = __webpack_require__(159);
   var overrides = querystring.parse(__resourceQuery.slice(1));
   if (overrides.path) options.path = overrides.path;
   if (overrides.timeout) options.timeout = overrides.timeout;
@@ -6631,11 +7190,11 @@ if (typeof window !== 'undefined') {
 }
 
 function createReporter() {
-  var strip = __webpack_require__(181);
+  var strip = __webpack_require__(187);
 
   var overlay;
   if (typeof document !== 'undefined' && options.overlay) {
-    overlay = __webpack_require__(208);
+    overlay = __webpack_require__(215);
   }
 
   var styles = {
@@ -6688,7 +7247,7 @@ function createReporter() {
   };
 }
 
-var processUpdate = __webpack_require__(209);
+var processUpdate = __webpack_require__(216);
 
 var customHandler;
 var subscribeAllHandler;
@@ -6753,16 +7312,16 @@ if (module) {
   };
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(238)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, "?path=%2F__webpack_hmr", __webpack_require__(245)(module)))
 
 /***/ }),
-/* 67 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(197);
 
 /***/ }),
-/* 68 */
+/* 73 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6770,6 +7329,9 @@ module.exports = {
 		"Welcome": "أهلا بك",
 		"Notifications": "إعلام",
 		"New": "جديد"
+	},
+	"common": {
+		"firstName": "الاسم الشخصي"
 	},
 	"mainMenu": {
 		"Appointments": "المواعيد",
@@ -6787,7 +7349,8 @@ module.exports = {
 		"Orders": "الأوامر",
 		"NotFound": "لا يوجد",
 		"About": "حول منجز التطبيق",
-		"Settings": "إعدادات"
+		"Settings": "إعدادات",
+		"Players": "اللاعبين"
 	},
 	"home": {
 		"NoWidgets1": "لم يتم عرض أية أدوات. اذهب إلى",
@@ -6958,7 +7521,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 69 */
+/* 74 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -6966,6 +7529,9 @@ module.exports = {
 		"Welcome": "Welcome",
 		"Notifications": "Notifications",
 		"New": "New"
+	},
+	"common": {
+		"firstName": "First Name"
 	},
 	"mainMenu": {
 		"Appointments": "Appointments",
@@ -6983,7 +7549,8 @@ module.exports = {
 		"Orders": "Orders",
 		"NotFound": "Not-Found",
 		"About": "About",
-		"Settings": "Settings"
+		"Settings": "Settings",
+		"Players": "Players"
 	},
 	"home": {
 		"NoWidgets1": "You have no widgets displayed. Goto",
@@ -7058,7 +7625,13 @@ module.exports = {
 			"FullName": "Full Name",
 			"Email": "Email",
 			"Roles": "Roles",
-			"PhoneNumber": "Phone Number"
+			"PhoneNumber": "Phone Number",
+			"FirstName": "First Name",
+			"LastName": "Last Name",
+			"Position": "Position",
+			"Team": "Team",
+			"YearOfBirth": "Year of Birth",
+			"NewPlayer": "New Player"
 		},
 		"editor": {
 			"JobTitle": "Job Title: ",
@@ -7156,7 +7729,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 70 */
+/* 75 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -7181,7 +7754,8 @@ module.exports = {
 		"Orders": "Les ordres",
 		"NotFound": "Pas trouvé",
 		"About": "À Propos",
-		"Settings": "Paramètres"
+		"Settings": "Paramètres",
+		"Players": "Joueurs"
 	},
 	"home": {
 		"NoWidgets1": "Vous n'avez pas de widgets affichés. Aller à",
@@ -7352,7 +7926,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 71 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -7377,7 +7951,8 @@ module.exports = {
 		"Orders": "명령",
 		"NotFound": "발견되지 않음",
 		"About": "약",
-		"Settings": "설정"
+		"Settings": "설정",
+		"Players": "플레이어"
 	},
 	"home": {
 		"NoWidgets1": "위젯이 표시되지 않았습니다. 고토",
@@ -7548,7 +8123,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 72 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// ======================================
@@ -8199,7 +8774,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// =============
 
 
 /***/ }),
-/* 73 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8213,8 +8788,8 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// =============
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return WebAnimationsDriver; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return supportsWebAnimations; });
 /* unused harmony export ɵWebAnimationsPlayer */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__(33);
 
 /**
  * @license Angular v4.2.5
@@ -13157,7 +13732,7 @@ function supportsWebAnimations() {
 
 
 /***/ }),
-/* 74 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13175,11 +13750,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return instantiateDefaultStyleNormalizer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵe", function() { return instantiateRendererFactory; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return instantiateSupportedAnimationDriver; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations_browser__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_animations_browser__ = __webpack_require__(78);
 
 /**
  * @license Angular v4.2.5
@@ -13893,7 +14468,7 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
 
 
 /***/ }),
-/* 75 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -13903,7 +14478,7 @@ NoopAnimationsModule.ctorParameters = function () { return []; };
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
-		module.exports = factory(__webpack_require__(0), __webpack_require__(22), __webpack_require__(240));
+		module.exports = factory(__webpack_require__(0), __webpack_require__(23), __webpack_require__(247));
 	else if(typeof define === 'function' && define.amd)
 		define("ngxDatatable", ["@angular/core", "@angular/platform-browser", "@angular/common"], factory);
 	else if(typeof exports === 'object')
@@ -23445,7 +24020,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 //# sourceMappingURL=index.map
 
 /***/ }),
-/* 76 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23628,7 +24203,7 @@ ansiHTML.reset()
 
 
 /***/ }),
-/* 77 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23639,7 +24214,7 @@ module.exports = function () {
 
 
 /***/ }),
-/* 78 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23693,7 +24268,7 @@ exports.AppErrorHandler = AppErrorHandler;
 
 
 /***/ }),
-/* 79 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23714,17 +24289,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(14);
-var login_component_1 = __webpack_require__(26);
-var home_component_1 = __webpack_require__(42);
-var customers_component_1 = __webpack_require__(41);
-var products_component_1 = __webpack_require__(46);
-var players_component_1 = __webpack_require__(45);
-var orders_component_1 = __webpack_require__(44);
-var settings_component_1 = __webpack_require__(47);
-var about_component_1 = __webpack_require__(38);
-var not_found_component_1 = __webpack_require__(43);
-var auth_service_1 = __webpack_require__(10);
-var auth_guard_service_1 = __webpack_require__(99);
+var login_component_1 = __webpack_require__(27);
+var home_component_1 = __webpack_require__(43);
+var customers_component_1 = __webpack_require__(42);
+var products_component_1 = __webpack_require__(48);
+var players_component_1 = __webpack_require__(47);
+var orders_component_1 = __webpack_require__(45);
+var settings_component_1 = __webpack_require__(49);
+var about_component_1 = __webpack_require__(39);
+var not_found_component_1 = __webpack_require__(44);
+var auth_service_1 = __webpack_require__(13);
+var auth_guard_service_1 = __webpack_require__(105);
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
     }
@@ -23758,7 +24333,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 
 /***/ }),
-/* 80 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23778,60 +24353,63 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(60);
-var platform_browser_1 = __webpack_require__(22);
-var animations_1 = __webpack_require__(74);
-var http_1 = __webpack_require__(13);
-__webpack_require__(220);
-var core_2 = __webpack_require__(34);
-var ngx_datatable_1 = __webpack_require__(75);
-var ng2_toasty_1 = __webpack_require__(61);
-var modal_1 = __webpack_require__(21);
-var tooltip_1 = __webpack_require__(226);
-var popover_1 = __webpack_require__(225);
-var dropdown_1 = __webpack_require__(224);
-var carousel_1 = __webpack_require__(223);
-var ng2_charts_1 = __webpack_require__(222);
-var app_routing_module_1 = __webpack_require__(79);
-var app_error_handler_1 = __webpack_require__(78);
-var app_title_service_1 = __webpack_require__(51);
+var forms_1 = __webpack_require__(65);
+var platform_browser_1 = __webpack_require__(23);
+var animations_1 = __webpack_require__(79);
+var http_1 = __webpack_require__(11);
+__webpack_require__(227);
+var core_2 = __webpack_require__(35);
+var ngx_datatable_1 = __webpack_require__(80);
+var ng2_toasty_1 = __webpack_require__(66);
+var modal_1 = __webpack_require__(18);
+var tooltip_1 = __webpack_require__(233);
+var popover_1 = __webpack_require__(232);
+var dropdown_1 = __webpack_require__(231);
+var carousel_1 = __webpack_require__(230);
+var ng2_charts_1 = __webpack_require__(229);
+var app_routing_module_1 = __webpack_require__(84);
+var app_error_handler_1 = __webpack_require__(83);
+var app_title_service_1 = __webpack_require__(53);
 var app_translation_service_1 = __webpack_require__(7);
-var configuration_service_1 = __webpack_require__(11);
+var configuration_service_1 = __webpack_require__(10);
 var alert_service_1 = __webpack_require__(5);
 var local_store_manager_service_1 = __webpack_require__(17);
-var endpoint_factory_service_1 = __webpack_require__(28);
+var endpoint_factory_service_1 = __webpack_require__(22);
 var notification_service_1 = __webpack_require__(29);
-var notification_endpoint_service_1 = __webpack_require__(53);
+var notification_endpoint_service_1 = __webpack_require__(55);
 var account_service_1 = __webpack_require__(6);
-var account_endpoint_service_1 = __webpack_require__(50);
-var equal_validator_directive_1 = __webpack_require__(93);
-var last_element_directive_1 = __webpack_require__(94);
-var autofocus_directive_1 = __webpack_require__(90);
-var bootstrap_tab_directive_1 = __webpack_require__(49);
-var bootstrap_toggle_directive_1 = __webpack_require__(92);
-var bootstrap_select_directive_1 = __webpack_require__(48);
-var bootstrap_datepicker_directive_1 = __webpack_require__(91);
-var group_by_pipe_1 = __webpack_require__(98);
-var app_component_1 = __webpack_require__(81);
-var login_component_1 = __webpack_require__(26);
-var home_component_1 = __webpack_require__(42);
-var customers_component_1 = __webpack_require__(41);
-var products_component_1 = __webpack_require__(46);
-var players_component_1 = __webpack_require__(45);
-var orders_component_1 = __webpack_require__(44);
-var settings_component_1 = __webpack_require__(47);
-var about_component_1 = __webpack_require__(38);
-var not_found_component_1 = __webpack_require__(43);
-var banner1_demo_component_1 = __webpack_require__(82);
-var todo_demo_component_1 = __webpack_require__(87);
-var statistics_demo_component_1 = __webpack_require__(86);
-var notifications_viewer_component_1 = __webpack_require__(83);
-var search_box_component_1 = __webpack_require__(85);
-var user_info_component_1 = __webpack_require__(40);
-var user_preferences_component_1 = __webpack_require__(88);
-var users_management_component_1 = __webpack_require__(89);
-var roles_management_component_1 = __webpack_require__(84);
-var role_editor_component_1 = __webpack_require__(39);
+var account_endpoint_service_1 = __webpack_require__(52);
+var players_service_1 = __webpack_require__(30);
+var players_endpoint_service_1 = __webpack_require__(56);
+var equal_validator_directive_1 = __webpack_require__(98);
+var last_element_directive_1 = __webpack_require__(99);
+var autofocus_directive_1 = __webpack_require__(95);
+var bootstrap_tab_directive_1 = __webpack_require__(51);
+var bootstrap_toggle_directive_1 = __webpack_require__(97);
+var bootstrap_select_directive_1 = __webpack_require__(50);
+var bootstrap_datepicker_directive_1 = __webpack_require__(96);
+var group_by_pipe_1 = __webpack_require__(104);
+var app_component_1 = __webpack_require__(86);
+var login_component_1 = __webpack_require__(27);
+var home_component_1 = __webpack_require__(43);
+var customers_component_1 = __webpack_require__(42);
+var products_component_1 = __webpack_require__(48);
+var orders_component_1 = __webpack_require__(45);
+var settings_component_1 = __webpack_require__(49);
+var about_component_1 = __webpack_require__(39);
+var not_found_component_1 = __webpack_require__(44);
+var banner1_demo_component_1 = __webpack_require__(87);
+var todo_demo_component_1 = __webpack_require__(92);
+var statistics_demo_component_1 = __webpack_require__(91);
+var notifications_viewer_component_1 = __webpack_require__(88);
+var search_box_component_1 = __webpack_require__(90);
+var user_info_component_1 = __webpack_require__(41);
+var player_info_component_1 = __webpack_require__(46);
+var players_component_1 = __webpack_require__(47);
+var user_preferences_component_1 = __webpack_require__(93);
+var users_management_component_1 = __webpack_require__(94);
+var roles_management_component_1 = __webpack_require__(89);
+var role_editor_component_1 = __webpack_require__(40);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23881,7 +24459,7 @@ var AppModule = (function () {
                 bootstrap_toggle_directive_1.BootstrapToggleDirective,
                 bootstrap_select_directive_1.BootstrapSelectDirective,
                 bootstrap_datepicker_directive_1.BootstrapDatepickerDirective,
-                group_by_pipe_1.GroupByPipe
+                group_by_pipe_1.GroupByPipe, player_info_component_1.PlayerInfoComponent
             ],
             providers: [
                 { provide: core_1.ErrorHandler, useClass: app_error_handler_1.AppErrorHandler },
@@ -23894,6 +24472,8 @@ var AppModule = (function () {
                 account_service_1.AccountService,
                 account_endpoint_service_1.AccountEndpoint,
                 local_store_manager_service_1.LocalStoreManager,
+                players_service_1.PlayersService,
+                players_endpoint_service_1.PlayersEndpoint,
                 endpoint_factory_service_1.EndpointFactory
             ],
             bootstrap: [app_component_1.AppComponent]
@@ -23905,7 +24485,7 @@ exports.AppModule = AppModule;
 
 
 /***/ }),
-/* 81 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23929,18 +24509,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(14);
-var ng2_toasty_1 = __webpack_require__(61);
+var ng2_toasty_1 = __webpack_require__(66);
 var alert_service_1 = __webpack_require__(5);
 var notification_service_1 = __webpack_require__(29);
 var app_translation_service_1 = __webpack_require__(7);
 var account_service_1 = __webpack_require__(6);
 var local_store_manager_service_1 = __webpack_require__(17);
-var app_title_service_1 = __webpack_require__(51);
-var auth_service_1 = __webpack_require__(10);
-var configuration_service_1 = __webpack_require__(11);
-var permission_model_1 = __webpack_require__(8);
-var login_component_1 = __webpack_require__(26);
-var alertify = __webpack_require__(72);
+var app_title_service_1 = __webpack_require__(53);
+var auth_service_1 = __webpack_require__(13);
+var configuration_service_1 = __webpack_require__(10);
+var permission_model_1 = __webpack_require__(9);
+var login_component_1 = __webpack_require__(27);
+var alertify = __webpack_require__(77);
 var AppComponent = (function () {
     function AppComponent(storageManager, router, toastyService, toastyConfig, accountService, alertService, notificationService, appTitleService, authService, configurations, translationService) {
         this.router = router;
@@ -23955,7 +24535,7 @@ var AppComponent = (function () {
         this.translationService = translationService;
         this.newNotificationCount = 0;
         this.appTitle = "Evaludius";
-        this.appLogo = __webpack_require__(207);
+        this.appLogo = __webpack_require__(214);
         this.stickyToasties = [];
         this.dataLoadingConsecutiveFailurs = 0;
         storageManager.initialiseStorageSyncListener();
@@ -24228,8 +24808,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: "main-app",
-            template: __webpack_require__(130),
-            styles: [__webpack_require__(183), __webpack_require__(201), __webpack_require__(202)],
+            template: __webpack_require__(137),
+            styles: [__webpack_require__(189), __webpack_require__(208), __webpack_require__(209)],
             encapsulation: core_1.ViewEncapsulation.None
         }),
         __metadata("design:paramtypes", [local_store_manager_service_1.LocalStoreManager, router_1.Router, ng2_toasty_1.ToastyService, ng2_toasty_1.ToastyConfig,
@@ -24242,7 +24822,7 @@ exports.AppComponent = AppComponent;
 
 
 /***/ }),
-/* 82 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24264,15 +24844,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var BannerDemoComponent = (function () {
     function BannerDemoComponent() {
-        this.banner1 = __webpack_require__(203);
-        this.banner2 = __webpack_require__(204);
-        this.banner3 = __webpack_require__(205);
-        this.banner4 = __webpack_require__(206);
+        this.banner1 = __webpack_require__(210);
+        this.banner2 = __webpack_require__(211);
+        this.banner3 = __webpack_require__(212);
+        this.banner4 = __webpack_require__(213);
     }
     BannerDemoComponent = __decorate([
         core_1.Component({
             selector: 'banner1-demo',
-            template: __webpack_require__(131)
+            template: __webpack_require__(138)
         })
     ], BannerDemoComponent);
     return BannerDemoComponent;
@@ -24281,7 +24861,7 @@ exports.BannerDemoComponent = BannerDemoComponent;
 
 
 /***/ }),
-/* 83 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24308,7 +24888,7 @@ var alert_service_1 = __webpack_require__(5);
 var app_translation_service_1 = __webpack_require__(7);
 var notification_service_1 = __webpack_require__(29);
 var account_service_1 = __webpack_require__(6);
-var permission_model_1 = __webpack_require__(8);
+var permission_model_1 = __webpack_require__(9);
 var utilities_1 = __webpack_require__(4);
 var NotificationsViewerComponent = (function () {
     function NotificationsViewerComponent(alertService, translationService, accountService, notificationService) {
@@ -24462,8 +25042,8 @@ var NotificationsViewerComponent = (function () {
     NotificationsViewerComponent = __decorate([
         core_1.Component({
             selector: 'notifications-viewer',
-            template: __webpack_require__(132),
-            styles: [__webpack_require__(184)]
+            template: __webpack_require__(139),
+            styles: [__webpack_require__(190)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService, app_translation_service_1.AppTranslationService, account_service_1.AccountService, notification_service_1.NotificationService])
     ], NotificationsViewerComponent);
@@ -24473,7 +25053,7 @@ exports.NotificationsViewerComponent = NotificationsViewerComponent;
 
 
 /***/ }),
-/* 84 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24496,14 +25076,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var modal_1 = __webpack_require__(21);
+var modal_1 = __webpack_require__(18);
 var alert_service_1 = __webpack_require__(5);
 var app_translation_service_1 = __webpack_require__(7);
 var account_service_1 = __webpack_require__(6);
 var utilities_1 = __webpack_require__(4);
-var role_model_1 = __webpack_require__(27);
-var permission_model_1 = __webpack_require__(8);
-var role_editor_component_1 = __webpack_require__(39);
+var role_model_1 = __webpack_require__(28);
+var permission_model_1 = __webpack_require__(9);
+var role_editor_component_1 = __webpack_require__(40);
 var RolesManagementComponent = (function () {
     function RolesManagementComponent(alertService, translationService, accountService) {
         this.alertService = alertService;
@@ -24658,8 +25238,8 @@ var RolesManagementComponent = (function () {
     RolesManagementComponent = __decorate([
         core_1.Component({
             selector: 'roles-management',
-            template: __webpack_require__(134),
-            styles: [__webpack_require__(186)]
+            template: __webpack_require__(141),
+            styles: [__webpack_require__(192)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService, app_translation_service_1.AppTranslationService, account_service_1.AccountService])
     ], RolesManagementComponent);
@@ -24669,7 +25249,7 @@ exports.RolesManagementComponent = RolesManagementComponent;
 
 
 /***/ }),
-/* 85 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24720,8 +25300,8 @@ var SearchBoxComponent = (function () {
     SearchBoxComponent = __decorate([
         core_1.Component({
             selector: 'search-box',
-            template: __webpack_require__(135),
-            styles: [__webpack_require__(187)]
+            template: __webpack_require__(142),
+            styles: [__webpack_require__(193)]
         })
     ], SearchBoxComponent);
     return SearchBoxComponent;
@@ -24730,7 +25310,7 @@ exports.SearchBoxComponent = SearchBoxComponent;
 
 
 /***/ }),
-/* 86 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24754,7 +25334,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var alert_service_1 = __webpack_require__(5);
-__webpack_require__(229);
+__webpack_require__(236);
 var StatisticsDemoComponent = (function () {
     function StatisticsDemoComponent(alertService) {
         this.alertService = alertService;
@@ -24851,8 +25431,8 @@ var StatisticsDemoComponent = (function () {
     StatisticsDemoComponent = __decorate([
         core_1.Component({
             selector: 'statistics-demo',
-            template: __webpack_require__(136),
-            styles: [__webpack_require__(188)]
+            template: __webpack_require__(143),
+            styles: [__webpack_require__(194)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService])
     ], StatisticsDemoComponent);
@@ -24862,7 +25442,7 @@ exports.StatisticsDemoComponent = StatisticsDemoComponent;
 
 
 /***/ }),
-/* 87 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24885,8 +25465,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var modal_1 = __webpack_require__(21);
-var auth_service_1 = __webpack_require__(10);
+var modal_1 = __webpack_require__(18);
+var auth_service_1 = __webpack_require__(13);
 var alert_service_1 = __webpack_require__(5);
 var app_translation_service_1 = __webpack_require__(7);
 var local_store_manager_service_1 = __webpack_require__(17);
@@ -25063,8 +25643,8 @@ var TodoDemoComponent = (function () {
     TodoDemoComponent = TodoDemoComponent_1 = __decorate([
         core_1.Component({
             selector: 'todo-demo',
-            template: __webpack_require__(137),
-            styles: [__webpack_require__(189)]
+            template: __webpack_require__(144),
+            styles: [__webpack_require__(195)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService, app_translation_service_1.AppTranslationService, local_store_manager_service_1.LocalStoreManager, auth_service_1.AuthService])
     ], TodoDemoComponent);
@@ -25075,7 +25655,7 @@ exports.TodoDemoComponent = TodoDemoComponent;
 
 
 /***/ }),
-/* 88 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25099,12 +25679,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var alert_service_1 = __webpack_require__(5);
-var configuration_service_1 = __webpack_require__(11);
+var configuration_service_1 = __webpack_require__(10);
 var app_translation_service_1 = __webpack_require__(7);
-var bootstrap_select_directive_1 = __webpack_require__(48);
+var bootstrap_select_directive_1 = __webpack_require__(50);
 var account_service_1 = __webpack_require__(6);
 var utilities_1 = __webpack_require__(4);
-var permission_model_1 = __webpack_require__(8);
+var permission_model_1 = __webpack_require__(9);
 var UserPreferencesComponent = (function () {
     function UserPreferencesComponent(alertService, configurations, translationService, accountService) {
         this.alertService = alertService;
@@ -25212,8 +25792,8 @@ var UserPreferencesComponent = (function () {
     UserPreferencesComponent = __decorate([
         core_1.Component({
             selector: 'user-preferences',
-            template: __webpack_require__(139),
-            styles: [__webpack_require__(191)]
+            template: __webpack_require__(146),
+            styles: [__webpack_require__(197)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService, configuration_service_1.ConfigurationService, app_translation_service_1.AppTranslationService, account_service_1.AccountService])
     ], UserPreferencesComponent);
@@ -25223,7 +25803,7 @@ exports.UserPreferencesComponent = UserPreferencesComponent;
 
 
 /***/ }),
-/* 89 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25246,14 +25826,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var modal_1 = __webpack_require__(21);
+var modal_1 = __webpack_require__(18);
 var alert_service_1 = __webpack_require__(5);
 var app_translation_service_1 = __webpack_require__(7);
 var account_service_1 = __webpack_require__(6);
 var utilities_1 = __webpack_require__(4);
-var user_model_1 = __webpack_require__(20);
-var permission_model_1 = __webpack_require__(8);
-var user_info_component_1 = __webpack_require__(40);
+var user_model_1 = __webpack_require__(21);
+var permission_model_1 = __webpack_require__(9);
+var user_info_component_1 = __webpack_require__(41);
 var UsersManagementComponent = (function () {
     function UsersManagementComponent(alertService, translationService, accountService) {
         this.alertService = alertService;
@@ -25435,8 +26015,8 @@ var UsersManagementComponent = (function () {
     UsersManagementComponent = __decorate([
         core_1.Component({
             selector: 'users-management',
-            template: __webpack_require__(140),
-            styles: [__webpack_require__(192)]
+            template: __webpack_require__(147),
+            styles: [__webpack_require__(198)]
         }),
         __metadata("design:paramtypes", [alert_service_1.AlertService, app_translation_service_1.AppTranslationService, account_service_1.AccountService])
     ], UsersManagementComponent);
@@ -25446,7 +26026,7 @@ exports.UsersManagementComponent = UsersManagementComponent;
 
 
 /***/ }),
-/* 90 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25490,7 +26070,7 @@ exports.AutofocusDirective = AutofocusDirective;
 
 
 /***/ }),
-/* 91 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25514,9 +26094,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var Observable_1 = __webpack_require__(2);
-__webpack_require__(30);
-var $ = __webpack_require__(18);
-__webpack_require__(101);
+__webpack_require__(31);
+var $ = __webpack_require__(19);
+__webpack_require__(107);
 var BootstrapDatepickerDirective = (function () {
     function BootstrapDatepickerDirective(el) {
         var _this = this;
@@ -25629,7 +26209,7 @@ exports.BootstrapDatepickerDirective = BootstrapDatepickerDirective;
 
 
 /***/ }),
-/* 92 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25653,9 +26233,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var Observable_1 = __webpack_require__(2);
-__webpack_require__(30);
-var $ = __webpack_require__(18);
-__webpack_require__(219);
+__webpack_require__(31);
+var $ = __webpack_require__(19);
+__webpack_require__(226);
 var BootstrapToggleDirective = (function () {
     function BootstrapToggleDirective(el) {
         var _this = this;
@@ -25725,7 +26305,7 @@ exports.BootstrapToggleDirective = BootstrapToggleDirective;
 
 
 /***/ }),
-/* 93 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25751,7 +26331,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(60);
+var forms_1 = __webpack_require__(65);
 var EqualValidator = (function () {
     var EqualValidator = EqualValidator_1 = function EqualValidator(validateEqual, reverse) {
         this.validateEqual = validateEqual;
@@ -25799,7 +26379,7 @@ exports.EqualValidator = EqualValidator;
 
 
 /***/ }),
-/* 94 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25858,7 +26438,7 @@ exports.LastElementDirective = LastElementDirective;
 
 
 /***/ }),
-/* 95 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25888,7 +26468,37 @@ exports.Notification = Notification;
 
 
 /***/ }),
-/* 96 */
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// ======================================
+// Author: Ebenezer Monney
+// Email:  info@ebenmonney.com
+// Copyright (c) 2017 www.ebenmonney.com
+// 
+// ==> Gun4Hire: contact@ebenmonney.com
+// ======================================
+Object.defineProperty(exports, "__esModule", { value: true });
+var Player = (function () {
+    // Note: Using only optional constructor properties without backing store disables typescript's type checking for the type
+    function Player(id, firstName, lastName, yearOfBirth, position, isActive) {
+        this.fullName = this.firstName + " " + this.lastName;
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.yearOfBirth = yearOfBirth;
+        this.position = position;
+        this.isActive = isActive;
+    }
+    return Player;
+}());
+exports.Player = Player;
+
+
+/***/ }),
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25911,7 +26521,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var user_model_1 = __webpack_require__(20);
+var user_model_1 = __webpack_require__(21);
 var UserEdit = (function (_super) {
     __extends(UserEdit, _super);
     function UserEdit(currentPassword, newPassword, confirmPassword) {
@@ -25927,7 +26537,7 @@ exports.UserEdit = UserEdit;
 
 
 /***/ }),
-/* 97 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25952,7 +26562,7 @@ exports.UserLogin = UserLogin;
 
 
 /***/ }),
-/* 98 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25998,7 +26608,7 @@ exports.GroupByPipe = GroupByPipe;
 
 
 /***/ }),
-/* 99 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26022,7 +26632,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var router_1 = __webpack_require__(14);
-var auth_service_1 = __webpack_require__(10);
+var auth_service_1 = __webpack_require__(13);
 var AuthGuard = (function () {
     function AuthGuard(authService, router) {
         this.authService = authService;
@@ -26057,7 +26667,7 @@ exports.AuthGuard = AuthGuard;
 
 
 /***/ }),
-/* 100 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26148,7 +26758,7 @@ exports.JwtHelper = JwtHelper;
 
 
 /***/ }),
-/* 101 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -26159,7 +26769,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 (function(factory){
     if (true) {
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(18)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(19)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
 				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -28187,7 +28797,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 
 /***/ }),
-/* 102 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28201,7 +28811,7 @@ exports.push([module.i, "/**\r\n * Twitter Bootstrap Look and Feel\r\n * Based o
 
 
 /***/ }),
-/* 103 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28215,7 +28825,7 @@ exports.push([module.i, ".alertify,\r\n.alertify-show,\r\n.alertify-log {\r\n\t-
 
 
 /***/ }),
-/* 104 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28229,7 +28839,7 @@ exports.push([module.i, "\r\n.ngx-datatable.material.table-shadow {\r\n    backg
 
 
 /***/ }),
-/* 105 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28243,7 +28853,7 @@ exports.push([module.i, "\r\n.pageHeader {\r\n    margin-bottom: 30px;\r\n}\r\n\
 
 
 /***/ }),
-/* 106 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28257,7 +28867,7 @@ exports.push([module.i, "\r\n#mainContent.app-component {\r\n    position: relat
 
 
 /***/ }),
-/* 107 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28271,7 +28881,7 @@ exports.push([module.i, "\r\n.unread {\r\n    font-weight: bold;\r\n}\r\n", ""])
 
 
 /***/ }),
-/* 108 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28285,7 +28895,7 @@ exports.push([module.i, ".row:not(:last-child) {\r\n    /*border-bottom: 1px sol
 
 
 /***/ }),
-/* 109 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28299,7 +28909,7 @@ exports.push([module.i, "\r\n.control-box {\r\n    margin-bottom: 5px;\r\n}\r\n\
 
 
 /***/ }),
-/* 110 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28313,7 +28923,7 @@ exports.push([module.i, "\r\n.search-icon {\r\n    pointer-events: none;\r\n}\r\
 
 
 /***/ }),
-/* 111 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28327,7 +28937,7 @@ exports.push([module.i, "\r\n.chart-container {\r\n    display: block;\r\n}\r\n\
 
 
 /***/ }),
-/* 112 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28341,7 +28951,7 @@ exports.push([module.i, "\r\n.navbar .nav > li.toolbaritem > a {\r\n    font-wei
 
 
 /***/ }),
-/* 113 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28355,7 +28965,7 @@ exports.push([module.i, ".row:not(:last-child) {\r\n    /*border-bottom: 1px sol
 
 
 /***/ }),
-/* 114 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)(undefined);
@@ -28369,90 +28979,6 @@ exports.push([module.i, "\r\n.separator-hr {\r\n    margin: 7px 5px;\r\n    bord
 
 
 /***/ }),
-/* 115 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\r\n.user-role {\r\n    font-size: 0.8em !important;\r\n    margin-right: 1px;\r\n}\r\n\r\n.control-box {\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.search-box {\r\n    margin: 0;\r\n}\r\n\r\n.action-box {\r\n    margin: 0 50px 0 0;\r\n    min-height: 0;\r\n}\r\n\r\n    .action-box .toolbaritem a {\r\n        padding-top: 5px;\r\n        padding-bottom: 5px;\r\n        min-width: 100px;\r\n    }\r\n\r\n\r\n.user-disabled {\r\n    color: #777;\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.locked-out {\r\n    background-color: orangered;\r\n    color: whitesmoke;\r\n    width: 100%;\r\n    display: inline-block;\r\n    padding-left: 5px;\r\n}\r\n\r\n\r\n@media (max-width: 768px) {\r\n    .action-box {\r\n        margin: 0 14px;\r\n    }\r\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 116 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-/* 117 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\r\n.bottom-space {\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.no-bottom-space {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.statistics-close-btn {\r\n}\r\n\r\n.todo-close-btn {\r\n    margin: 0 10px -25px 0;\r\n    position: relative;\r\n    z-index: 1;\r\n}\r\n\r\n.banner-close-btn {\r\n    margin: 0 10px -25px 0;\r\n    position: relative;\r\n    z-index: 1;\r\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".boxshadow {\r\n    position: relative;\r\n    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);\r\n    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);\r\n    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);\r\n    padding: 10px;\r\n    background: white;\r\n}\r\n\r\n\r\n    .boxshadow::after {\r\n        content: '';\r\n        position: absolute;\r\n        z-index: -1; /* hide shadow behind image */\r\n        -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);\r\n        -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);\r\n        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);\r\n        width: 70%;\r\n        left: 15%; /* one half of the remaining 30% */\r\n        height: 100px;\r\n        bottom: 0;\r\n    }\r\n\r\n\r\n.cardshadow {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n\r\n.separator-hr {\r\n    margin: 0;\r\n}\r\n\r\n.last-control-group {\r\n    margin-bottom: -25px;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 768px) {\r\n    .login-container {\r\n        width: 700px;\r\n    }\r\n}\r\n\r\n/*@media (min-width: 992px) {\r\n    .login-container {\r\n        width: 700px;\r\n    }\r\n}*/\r\n\r\n@media (min-width: 1200px) {\r\n    .login-container {\r\n        width: 730px;\r\n    }\r\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 119 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, ".vertical-center-flex {\r\n    min-height: 60vh;\r\n}\r\n\r\n.icon-container {\r\n    font-size: 5em;\r\n}\r\n\r\n.error-description {\r\n    font-size: 1.5em;\r\n    padding-bottom: 10px;\r\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(3)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28461,7 +28987,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "\r\n.user-role {\r\n    font-size: 0.8em !important;\r\n    margin-right: 1px;\r\n}\r\n\r\n.control-box {\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.search-box {\r\n    margin: 0;\r\n}\r\n\r\n.action-box {\r\n    margin: 0 50px 0 0;\r\n    min-height: 0;\r\n}\r\n\r\n    .action-box .toolbaritem a {\r\n        padding-top: 5px;\r\n        padding-bottom: 5px;\r\n        min-width: 100px;\r\n    }\r\n\r\n\r\n.user-disabled {\r\n    color: #777;\r\n    font-style: italic;\r\n}\r\n\r\n\r\n.locked-out {\r\n    background-color: orangered;\r\n    color: whitesmoke;\r\n    width: 100%;\r\n    display: inline-block;\r\n    padding-left: 5px;\r\n}\r\n\r\n\r\n@media (max-width: 768px) {\r\n    .action-box {\r\n        margin: 0 14px;\r\n    }\r\n}\r\n", ""]);
 
 // exports
 
@@ -28489,7 +29015,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, ".side-menu {\r\n    min-width: 120px;\r\n}\r\n\r\n.separator-hr {\r\n    margin-top: 0;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n[hidden] {\r\n    display: none;\r\n}\r\n", ""]);
+exports.push([module.i, "\r\n.bottom-space {\r\n    margin-bottom: 40px;\r\n}\r\n\r\n.no-bottom-space {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.statistics-close-btn {\r\n}\r\n\r\n.todo-close-btn {\r\n    margin: 0 10px -25px 0;\r\n    position: relative;\r\n    z-index: 1;\r\n}\r\n\r\n.banner-close-btn {\r\n    margin: 0 10px -25px 0;\r\n    position: relative;\r\n    z-index: 1;\r\n}\r\n", ""]);
 
 // exports
 
@@ -28500,12 +29026,10 @@ exports.push([module.i, ".side-menu {\r\n    min-width: 120px;\r\n}\r\n\r\n.sepa
 
 exports = module.exports = __webpack_require__(3)(undefined);
 // imports
-exports.i(__webpack_require__(104), "");
-exports.i(__webpack_require__(103), "");
-exports.i(__webpack_require__(102), "");
+
 
 // module
-exports.push([module.i, ".navbar .nav li a:hover,\r\n.navbar.nav li.toolbaritem a:hover,\r\n.nav.nav-tabsNOTUSE li a:hover {\r\n    color: #E03930;\r\n}\r\n\r\n.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {\r\n    background-color: #efefef;\r\n}\r\n\r\n\r\n.nav.nav-tabsNOTUSED li.active a {\r\n    color: #555;\r\n}\r\n\r\n\r\ninput.form-control.is-required-status, textarea.form-control.is-required-status, .bootstrap-select.is-required-status > .dropdown-toggle {\r\n    border-left-width: 5px;\r\n}\r\n\r\n\r\n.ng-valid[required], .ng-valid.required {\r\n    border-left: 5px solid #42A948; /*57A83F*/\r\n}\r\n\r\n.ng-invalid:not(form) {\r\n    border-left: 5px solid #a94442; /*E03930*/\r\n}\r\n\r\n.bootstrap-select.ng-novalidation > .dropdown-toggle {\r\n    border-left-width: 5px;\r\n}\r\n\r\n\r\n\r\n.has-success .bootstrap-select .dropdown-toggle,\r\n.success .bootstrap-select .dropdown-toggle {\r\n    border-color: #3c763d;\r\n}\r\n\r\n.has-error .bootstrap-select .dropdown-toggle,\r\n.error .bootstrap-select .dropdown-toggle {\r\n    border-color: #a94442;\r\n}\r\n\r\n.bootstrap-select .btn-default .badge {\r\n    color: #fff;\r\n    background-color: #777;\r\n}\r\n\r\n\r\n.pageHeader {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n\r\n.errorMessage {\r\n    padding: 5px 10px;\r\n    color: #a94442;\r\n}\r\n\r\n.appName {\r\n    font-family: monospace;\r\n}\r\n\r\ni.page-caption {\r\n    vertical-align: baseline;\r\n    font-size: 1.2em;\r\n}\r\n\r\n\r\n\r\n.alertify {\r\n    top: 75px;\r\n}\r\n\r\n.alertify-message {\r\n    font-size: 1.2em;\r\n}\r\n\r\n\r\n\r\n#toasty.toasty-position-top-right {\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n\r\n#toasty .toast.toasty-theme-bootstrap {\r\n    font-size: 1em;\r\n}\r\n\r\n    #toasty .toast.toasty-theme-bootstrap .toast-text .toast-title {\r\n        font-size: 1.04em;\r\n    }\r\n\r\n\r\n\r\n\r\n/*-webkit-filter: blur(5px) grayscale(90%);*/\r\n/*body.modal-open .container {\r\n    -webkit-filter: blur(1px);\r\n    -moz-filter: blur(1px);\r\n    -o-filter: blur(1px);\r\n    -ms-filter: blur(1px);\r\n    filter: blur(1px);\r\n    filter: url(\"https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur\".svg#blur);\r\n    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');\r\n}*/\r\n\r\n\r\n.notifications-popup .popover {\r\n    color: #333 !important;\r\n    max-width: 500px;\r\n    width: 500px;\r\n}\r\n\r\n\r\n.vertical-center-flex {\r\n    min-height: 80vh;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n\r\n/*Hack stop get ngx-datatable width to be full when inside bootstrap tab control*/\r\n.tab-pane .datatable-scroll {\r\n    width: 100% !important;\r\n}\r\n\r\n.ngx-datatable.scroll-vertical {\r\n    height: 64vh;\r\n}\r\n\r\n\r\n\r\n.boldFont.app-component {\r\n    font-weight: bold;\r\n}\r\n\r\n.black-anchor {\r\n    color: #333;\r\n}\r\n\r\n\r\n\r\n.form-group .icon-addon .form-control {\r\n    border-radius: 25px;\r\n}\r\n\r\n.icon-addon {\r\n    position: relative;\r\n    color: #555;\r\n    display: block;\r\n}\r\n\r\n    .icon-addon:after,\r\n    .icon-addon:before {\r\n        display: table;\r\n        content: \" \";\r\n    }\r\n\r\n    .icon-addon:after {\r\n        clear: both;\r\n    }\r\n\r\n    .icon-addon.addon-md .glyphicon,\r\n    .icon-addon .glyphicon,\r\n    .icon-addon.addon-md .fa,\r\n    .icon-addon .fa {\r\n        position: absolute;\r\n        z-index: 2;\r\n        font-size: 14px;\r\n        width: 20px;\r\n        text-align: center;\r\n        padding: 10px 0;\r\n        top: 1px;\r\n    }\r\n\r\n        .icon-addon .fa.left-icon {\r\n            left: 10px;\r\n            margin-left: -2.5px;\r\n        }\r\n\r\n        .icon-addon .fa.right-icon {\r\n            right: 10px;\r\n            margin-right: -2.5px;\r\n        }\r\n\r\n    .icon-addon.addon-lg .form-control {\r\n        line-height: 1.33;\r\n        height: 46px;\r\n        font-size: 18px;\r\n    }\r\n\r\n        .icon-addon.addon-lg .form-control.left-icon {\r\n            padding-top: 10px;\r\n            padding-right: 16px;\r\n            padding-bottom: 10px;\r\n            padding-left: 40px !important;\r\n        }\r\n\r\n        .icon-addon.addon-lg .form-control.right-icon {\r\n            padding-top: 10px;\r\n            padding-right: 40px !important;\r\n            padding-bottom: 10px;\r\n            padding-left: 16px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-sm .form-control {\r\n        height: 30px;\r\n        font-size: 12px;\r\n        line-height: 1.5;\r\n    }\r\n\r\n        .icon-addon.addon-sm .form-control.left-icon {\r\n            padding-top: 5px;\r\n            padding-right: 10px;\r\n            padding-bottom: 5px;\r\n            padding-left: 28px !important;\r\n        }\r\n\r\n        .icon-addon.addon-sm .form-control.right-icon {\r\n            padding-top: 5px;\r\n            padding-right: 28px !important;\r\n            padding-bottom: 5px;\r\n            padding-left: 10px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-lg .fa,\r\n    .icon-addon.addon-lg .glyphicon {\r\n        font-size: 18px;\r\n        top: 4px;\r\n    }\r\n\r\n        .icon-addon.addon-lg .fa.left-icon,\r\n        .icon-addon.addon-lg .glyphicon.left-icon {\r\n            margin-left: 0;\r\n            left: 11px;\r\n        }\r\n\r\n        .icon-addon.addon-lg .fa.right-icon,\r\n        .icon-addon.addon-lg .glyphicon.right-icon {\r\n            margin-right: 0;\r\n            right: 11px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-md .form-control,\r\n    .icon-addon .form-control {\r\n        font-weight: normal;\r\n    }\r\n\r\n        .icon-addon.addon-md .form-control.left-icon,\r\n        .icon-addon .form-control.left-icon {\r\n            float: left;\r\n            padding-left: 30px;\r\n        }\r\n\r\n        .icon-addon.addon-md .form-control.right-icon,\r\n        .icon-addon .form-control.right-icon {\r\n            float: right;\r\n            padding-right: 30px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-sm .fa,\r\n    .icon-addon.addon-sm .glyphicon {\r\n        font-size: 12px;\r\n        top: -1px;\r\n    }\r\n\r\n        .icon-addon.addon-sm .fa.left-icon,\r\n        .icon-addon.addon-sm .glyphicon.left-icon {\r\n            margin-left: 0;\r\n            left: 5px;\r\n        }\r\n\r\n        .icon-addon.addon-sm .fa.right-icon,\r\n        .icon-addon.addon-sm .glyphicon.right-icon {\r\n            margin-right: 0;\r\n            right: 5px;\r\n        }\r\n\r\n\r\n\r\n\r\n    .icon-addon .form-control:focus + .glyphicon,\r\n    .icon-addon:hover .glyphicon,\r\n    .icon-addon .form-control:focus + .fa,\r\n    .icon-addon:hover .fa {\r\n        color: #2580db;\r\n    }\r\n\r\n.clear-input {\r\n    text-decoration: none !important;\r\n    color: #b3b3b3 !important;\r\n}\r\n\r\n    .clear-input:hover {\r\n        color: #2580db !important;\r\n    }\r\n\r\n.inline-block {\r\n    display: inline-block;\r\n}\r\n", ""]);
+exports.push([module.i, ".boxshadow {\r\n    position: relative;\r\n    -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0,0.5);\r\n    -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);\r\n    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);\r\n    padding: 10px;\r\n    background: white;\r\n}\r\n\r\n\r\n    .boxshadow::after {\r\n        content: '';\r\n        position: absolute;\r\n        z-index: -1; /* hide shadow behind image */\r\n        -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);\r\n        -moz-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);\r\n        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);\r\n        width: 70%;\r\n        left: 15%; /* one half of the remaining 30% */\r\n        height: 100px;\r\n        bottom: 0;\r\n    }\r\n\r\n\r\n.cardshadow {\r\n    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n\r\n.separator-hr {\r\n    margin: 0;\r\n}\r\n\r\n.last-control-group {\r\n    margin-bottom: -25px;\r\n}\r\n\r\n\r\n\r\n@media (min-width: 768px) {\r\n    .login-container {\r\n        width: 700px;\r\n    }\r\n}\r\n\r\n/*@media (min-width: 992px) {\r\n    .login-container {\r\n        width: 700px;\r\n    }\r\n}*/\r\n\r\n@media (min-width: 1200px) {\r\n    .login-container {\r\n        width: 730px;\r\n    }\r\n}\r\n", ""]);
 
 // exports
 
@@ -28519,7 +29043,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\r\n/**********************************************************************************************************\r\n***********************************************************************************************************\r\nNOTE: SASS is already configured in this project template. To use SASS change your css file extension from\r\n    *.css to *.scss and you're good to go.\r\n\r\n    Example: To use SASS for this file instead of regular CSS follow the below steps\r\n    1. Uncomment the below SASS and comment out the CSS version of this document\r\n    2. Change file extension from css to scss\r\n    3. Change references to this file to use the sass extension\r\n        i.e. This file is being referenced from \"app.component.ts\". So replace references to\r\n            \"../themes.css\" with \"../themes.scss\"\r\n***********************************************************************************************************\r\n**********************************************************************************************************/\r\n\r\n\r\n\r\n\r\n/*//*********** SASS VERSION ***********\r\n        \r\n    @mixin app-theme($theme, $color, $footer:#f5f5f5) {\r\n    .#{$theme}-theme .navbar-inner.app-component {\r\n        background-color: $color; //#027FF4;\r\n    }\r\n             \r\n    .#{$theme}-theme .panel-primary > .panel-heading {\r\n        background-color: $color;\r\n        border-color: $color;\r\n    }\r\n\r\n    .#{$theme}-theme .panel-primary {\r\n        border-color: $color;\r\n    }\r\n\r\n    .#{$theme}-theme .navbar-inner.footer.app-component {\r\n        background-color: $footer;\r\n    }\r\n\r\n\r\n    .#{$theme}-theme .icon-addon .form-control:focus + .glyphicon,\r\n    .#{$theme}-theme .icon-addon:hover .glyphicon,\r\n    .#{$theme}-theme .icon-addon .form-control:focus + .fa,\r\n    .#{$theme}-theme .icon-addon:hover .fa {\r\n        color: $color; //#2580db;\r\n    }\r\n\r\n    .#{$theme}-theme .clear-input:hover {\r\n        color: $color !important; //#2580db !important;\r\n    }\r\n\r\n    .#{$theme}-theme .ngx-datatable.material.colored-header .datatable-header {\r\n        background-color: $color; //#027FF4;\r\n    }\r\n              \r\n\r\n    .#{$theme}-theme-option {\r\n        background: $color;        \r\n        color:white;\r\n        font-weight:bold;\r\n        display:inline-block;\r\n        width:100%;\r\n        height:100%;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n\r\n.default-theme-option {\r\n    background: #027FF4;\r\n    color:white;\r\n    font-weight:bold;\r\n    display:inline-block;\r\n    width:100%;\r\n    height:100%;\r\n    text-align:center;\r\n}\r\n\r\n\r\n//----------- black theme -----------\r\n@include app-theme('black', black);\r\n\r\n\r\n//----------- red theme -----------\r\n@include app-theme('red', red);\r\n\r\n\r\n//----------- orange theme -----------\r\n@include app-theme('orange', orange);\r\n\r\n\r\n//----------- green theme -----------\r\n@include app-theme('green', green);\r\n\r\n\r\n//----------- gray theme -----------\r\n@include app-theme('gray', gray);\r\n\r\n\r\n*/\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*********** CSS VERSION ***********/\r\n\r\n.default-theme-option {\r\n  background: #027FF4;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- black theme -----------*/\r\n.black-theme .navbar-inner.app-component {\r\n  background-color: black;  /*#027FF4;*/\r\n}\r\n\r\n.black-theme .panel-primary > .panel-heading {\r\n  background-color: black;\r\n  border-color: black;\r\n}\r\n\r\n.black-theme .panel-primary {\r\n  border-color: black;\r\n}\r\n\r\n.black-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.black-theme .icon-addon .form-control:focus + .glyphicon,\r\n.black-theme .icon-addon:hover .glyphicon,\r\n.black-theme .icon-addon .form-control:focus + .fa,\r\n.black-theme .icon-addon:hover .fa {\r\n  color: black;  /*#2580db;*/\r\n}\r\n\r\n.black-theme .clear-input:hover {\r\n  color: black !important;  /*#2580db !important;*/\r\n}\r\n\r\n.black-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: black;  /*#027FF4;*/\r\n}\r\n\r\n.black-theme-option {\r\n  background: black;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- red theme -----------*/\r\n.red-theme .navbar-inner.app-component {\r\n  background-color: red;  /*#027FF4;*/\r\n}\r\n\r\n.red-theme .panel-primary > .panel-heading {\r\n  background-color: red;\r\n  border-color: red;\r\n}\r\n\r\n.red-theme .panel-primary {\r\n  border-color: red;\r\n}\r\n\r\n.red-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.red-theme .icon-addon .form-control:focus + .glyphicon,\r\n.red-theme .icon-addon:hover .glyphicon,\r\n.red-theme .icon-addon .form-control:focus + .fa,\r\n.red-theme .icon-addon:hover .fa {\r\n  color: red;  /*#2580db;*/\r\n}\r\n\r\n.red-theme .clear-input:hover {\r\n  color: red !important;  /*#2580db !important;*/\r\n}\r\n\r\n.red-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: red;  /*#027FF4;*/\r\n}\r\n\r\n.red-theme-option {\r\n  background: red;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- orange theme -----------*/\r\n.orange-theme .navbar-inner.app-component {\r\n  background-color: orange;  /*#027FF4;*/\r\n}\r\n\r\n.orange-theme .panel-primary > .panel-heading {\r\n  background-color: orange;\r\n  border-color: orange;\r\n}\r\n\r\n.orange-theme .panel-primary {\r\n  border-color: orange;\r\n}\r\n\r\n.orange-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.orange-theme .icon-addon .form-control:focus + .glyphicon,\r\n.orange-theme .icon-addon:hover .glyphicon,\r\n.orange-theme .icon-addon .form-control:focus + .fa,\r\n.orange-theme .icon-addon:hover .fa {\r\n  color: orange;  /*#2580db;*/\r\n}\r\n\r\n.orange-theme .clear-input:hover {\r\n  color: orange !important;  /*#2580db !important;*/\r\n}\r\n\r\n.orange-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: orange;  /*#027FF4;*/\r\n}\r\n\r\n.orange-theme-option {\r\n  background: orange;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- green theme -----------*/\r\n.green-theme .navbar-inner.app-component {\r\n  background-color: green;  /*#027FF4;*/\r\n}\r\n\r\n.green-theme .panel-primary > .panel-heading {\r\n  background-color: green;\r\n  border-color: green;\r\n}\r\n\r\n.green-theme .panel-primary {\r\n  border-color: green;\r\n}\r\n\r\n.green-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.green-theme .icon-addon .form-control:focus + .glyphicon,\r\n.green-theme .icon-addon:hover .glyphicon,\r\n.green-theme .icon-addon .form-control:focus + .fa,\r\n.green-theme .icon-addon:hover .fa {\r\n  color: green;  /*#2580db;*/\r\n}\r\n\r\n.green-theme .clear-input:hover {\r\n  color: green !important;  /*#2580db !important;*/\r\n}\r\n\r\n.green-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: green;  /*#027FF4;*/\r\n}\r\n\r\n.green-theme-option {\r\n  background: green;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- gray theme -----------*/\r\n.gray-theme .navbar-inner.app-component {\r\n  background-color: gray;  /*#027FF4;*/\r\n}\r\n\r\n.gray-theme .panel-primary > .panel-heading {\r\n  background-color: gray;\r\n  border-color: gray;\r\n}\r\n\r\n.gray-theme .panel-primary {\r\n  border-color: gray;\r\n}\r\n\r\n.gray-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.gray-theme .icon-addon .form-control:focus + .glyphicon,\r\n.gray-theme .icon-addon:hover .glyphicon,\r\n.gray-theme .icon-addon .form-control:focus + .fa,\r\n.gray-theme .icon-addon:hover .fa {\r\n  color: gray;  /*#2580db;*/\r\n}\r\n\r\n.gray-theme .clear-input:hover {\r\n  color: gray !important;  /*#2580db !important;*/\r\n}\r\n\r\n.gray-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: gray;  /*#027FF4;*/\r\n}\r\n\r\n.gray-theme-option {\r\n  background: gray;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n", ""]);
+exports.push([module.i, ".vertical-center-flex {\r\n    min-height: 60vh;\r\n}\r\n\r\n.icon-container {\r\n    font-size: 5em;\r\n}\r\n\r\n.error-description {\r\n    font-size: 1.5em;\r\n    padding-bottom: 10px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -28528,16 +29052,116 @@ exports.push([module.i, "\r\n/**************************************************
 /* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = {
-  XmlEntities: __webpack_require__(128),
-  Html4Entities: __webpack_require__(127),
-  Html5Entities: __webpack_require__(54),
-  AllHtmlEntities: __webpack_require__(54)
-};
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
 
 
 /***/ }),
 /* 127 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".row:not(:last-child) {\r\n    /*border-bottom: 1px solid #ccc;*/\r\n}\r\n\r\n.separator-hr {\r\n    margin: 0 5px;\r\n    border-top-style: dashed;\r\n}\r\n\r\n.edit-separator-hr {\r\n    margin: 10px 5px;\r\n    border-top-style: dashed;\r\n}\r\n\r\n.last-separator-hr {\r\n    margin-top: 5px;\r\n}\r\n\r\n.edit-last-separator-hr {\r\n    margin-top: 15px;\r\n}\r\n\r\n.password-separator-hr {\r\n    margin: 5px;\r\n    border-style: none;\r\n}\r\n\r\n\r\n.form-group {\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n}\r\n\r\ninput.form-control {\r\n    border-left-width: 5px;\r\n}\r\n\r\n\r\n.password-well {\r\n    margin-bottom: 0;\r\n}\r\n\r\n.hint-sm {\r\n    display: block;\r\n}\r\n\r\n.checkbox.user-enabled {\r\n    display: inline-block;\r\n}\r\n\r\n.unblock-user {\r\n    margin-left: 34px;\r\n}\r\n\r\n@media (min-width: 992px) {\r\n    .user-enabled {\r\n        margin-left: 40px;\r\n    }\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".side-menu {\r\n    min-width: 120px;\r\n}\r\n\r\n.separator-hr {\r\n    margin-top: 0;\r\n    margin-bottom: 10px;\r\n}\r\n\r\n[hidden] {\r\n    display: none;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+exports.i(__webpack_require__(110), "");
+exports.i(__webpack_require__(109), "");
+exports.i(__webpack_require__(108), "");
+
+// module
+exports.push([module.i, ".navbar .nav li a:hover,\r\n.navbar.nav li.toolbaritem a:hover,\r\n.nav.nav-tabsNOTUSE li a:hover {\r\n    color: #E03930;\r\n}\r\n\r\n.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {\r\n    background-color: #efefef;\r\n}\r\n\r\n\r\n.nav.nav-tabsNOTUSED li.active a {\r\n    color: #555;\r\n}\r\n\r\n\r\ninput.form-control.is-required-status, textarea.form-control.is-required-status, .bootstrap-select.is-required-status > .dropdown-toggle {\r\n    border-left-width: 5px;\r\n}\r\n\r\n\r\n.ng-valid[required], .ng-valid.required {\r\n    border-left: 5px solid #42A948; /*57A83F*/\r\n}\r\n\r\n.ng-invalid:not(form) {\r\n    border-left: 5px solid #a94442; /*E03930*/\r\n}\r\n\r\n.bootstrap-select.ng-novalidation > .dropdown-toggle {\r\n    border-left-width: 5px;\r\n}\r\n\r\n\r\n\r\n.has-success .bootstrap-select .dropdown-toggle,\r\n.success .bootstrap-select .dropdown-toggle {\r\n    border-color: #3c763d;\r\n}\r\n\r\n.has-error .bootstrap-select .dropdown-toggle,\r\n.error .bootstrap-select .dropdown-toggle {\r\n    border-color: #a94442;\r\n}\r\n\r\n.bootstrap-select .btn-default .badge {\r\n    color: #fff;\r\n    background-color: #777;\r\n}\r\n\r\n\r\n.pageHeader {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n\r\n.errorMessage {\r\n    padding: 5px 10px;\r\n    color: #a94442;\r\n}\r\n\r\n.appName {\r\n    font-family: monospace;\r\n}\r\n\r\ni.page-caption {\r\n    vertical-align: baseline;\r\n    font-size: 1.2em;\r\n}\r\n\r\n\r\n\r\n.alertify {\r\n    top: 75px;\r\n}\r\n\r\n.alertify-message {\r\n    font-size: 1.2em;\r\n}\r\n\r\n\r\n\r\n#toasty.toasty-position-top-right {\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n\r\n#toasty .toast.toasty-theme-bootstrap {\r\n    font-size: 1em;\r\n}\r\n\r\n    #toasty .toast.toasty-theme-bootstrap .toast-text .toast-title {\r\n        font-size: 1.04em;\r\n    }\r\n\r\n\r\n\r\n\r\n/*-webkit-filter: blur(5px) grayscale(90%);*/\r\n/*body.modal-open .container {\r\n    -webkit-filter: blur(1px);\r\n    -moz-filter: blur(1px);\r\n    -o-filter: blur(1px);\r\n    -ms-filter: blur(1px);\r\n    filter: blur(1px);\r\n    filter: url(\"https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur\".svg#blur);\r\n    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');\r\n}*/\r\n\r\n\r\n.notifications-popup .popover {\r\n    color: #333 !important;\r\n    max-width: 500px;\r\n    width: 500px;\r\n}\r\n\r\n\r\n.vertical-center-flex {\r\n    min-height: 80vh;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n\r\n/*Hack stop get ngx-datatable width to be full when inside bootstrap tab control*/\r\n.tab-pane .datatable-scroll {\r\n    width: 100% !important;\r\n}\r\n\r\n.ngx-datatable.scroll-vertical {\r\n    height: 64vh;\r\n}\r\n\r\n\r\n\r\n.boldFont.app-component {\r\n    font-weight: bold;\r\n}\r\n\r\n.black-anchor {\r\n    color: #333;\r\n}\r\n\r\n\r\n\r\n.form-group .icon-addon .form-control {\r\n    border-radius: 25px;\r\n}\r\n\r\n.icon-addon {\r\n    position: relative;\r\n    color: #555;\r\n    display: block;\r\n}\r\n\r\n    .icon-addon:after,\r\n    .icon-addon:before {\r\n        display: table;\r\n        content: \" \";\r\n    }\r\n\r\n    .icon-addon:after {\r\n        clear: both;\r\n    }\r\n\r\n    .icon-addon.addon-md .glyphicon,\r\n    .icon-addon .glyphicon,\r\n    .icon-addon.addon-md .fa,\r\n    .icon-addon .fa {\r\n        position: absolute;\r\n        z-index: 2;\r\n        font-size: 14px;\r\n        width: 20px;\r\n        text-align: center;\r\n        padding: 10px 0;\r\n        top: 1px;\r\n    }\r\n\r\n        .icon-addon .fa.left-icon {\r\n            left: 10px;\r\n            margin-left: -2.5px;\r\n        }\r\n\r\n        .icon-addon .fa.right-icon {\r\n            right: 10px;\r\n            margin-right: -2.5px;\r\n        }\r\n\r\n    .icon-addon.addon-lg .form-control {\r\n        line-height: 1.33;\r\n        height: 46px;\r\n        font-size: 18px;\r\n    }\r\n\r\n        .icon-addon.addon-lg .form-control.left-icon {\r\n            padding-top: 10px;\r\n            padding-right: 16px;\r\n            padding-bottom: 10px;\r\n            padding-left: 40px !important;\r\n        }\r\n\r\n        .icon-addon.addon-lg .form-control.right-icon {\r\n            padding-top: 10px;\r\n            padding-right: 40px !important;\r\n            padding-bottom: 10px;\r\n            padding-left: 16px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-sm .form-control {\r\n        height: 30px;\r\n        font-size: 12px;\r\n        line-height: 1.5;\r\n    }\r\n\r\n        .icon-addon.addon-sm .form-control.left-icon {\r\n            padding-top: 5px;\r\n            padding-right: 10px;\r\n            padding-bottom: 5px;\r\n            padding-left: 28px !important;\r\n        }\r\n\r\n        .icon-addon.addon-sm .form-control.right-icon {\r\n            padding-top: 5px;\r\n            padding-right: 28px !important;\r\n            padding-bottom: 5px;\r\n            padding-left: 10px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-lg .fa,\r\n    .icon-addon.addon-lg .glyphicon {\r\n        font-size: 18px;\r\n        top: 4px;\r\n    }\r\n\r\n        .icon-addon.addon-lg .fa.left-icon,\r\n        .icon-addon.addon-lg .glyphicon.left-icon {\r\n            margin-left: 0;\r\n            left: 11px;\r\n        }\r\n\r\n        .icon-addon.addon-lg .fa.right-icon,\r\n        .icon-addon.addon-lg .glyphicon.right-icon {\r\n            margin-right: 0;\r\n            right: 11px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-md .form-control,\r\n    .icon-addon .form-control {\r\n        font-weight: normal;\r\n    }\r\n\r\n        .icon-addon.addon-md .form-control.left-icon,\r\n        .icon-addon .form-control.left-icon {\r\n            float: left;\r\n            padding-left: 30px;\r\n        }\r\n\r\n        .icon-addon.addon-md .form-control.right-icon,\r\n        .icon-addon .form-control.right-icon {\r\n            float: right;\r\n            padding-right: 30px;\r\n        }\r\n\r\n\r\n    .icon-addon.addon-sm .fa,\r\n    .icon-addon.addon-sm .glyphicon {\r\n        font-size: 12px;\r\n        top: -1px;\r\n    }\r\n\r\n        .icon-addon.addon-sm .fa.left-icon,\r\n        .icon-addon.addon-sm .glyphicon.left-icon {\r\n            margin-left: 0;\r\n            left: 5px;\r\n        }\r\n\r\n        .icon-addon.addon-sm .fa.right-icon,\r\n        .icon-addon.addon-sm .glyphicon.right-icon {\r\n            margin-right: 0;\r\n            right: 5px;\r\n        }\r\n\r\n\r\n\r\n\r\n    .icon-addon .form-control:focus + .glyphicon,\r\n    .icon-addon:hover .glyphicon,\r\n    .icon-addon .form-control:focus + .fa,\r\n    .icon-addon:hover .fa {\r\n        color: #2580db;\r\n    }\r\n\r\n.clear-input {\r\n    text-decoration: none !important;\r\n    color: #b3b3b3 !important;\r\n}\r\n\r\n    .clear-input:hover {\r\n        color: #2580db !important;\r\n    }\r\n\r\n.inline-block {\r\n    display: inline-block;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\r\n/**********************************************************************************************************\r\n***********************************************************************************************************\r\nNOTE: SASS is already configured in this project template. To use SASS change your css file extension from\r\n    *.css to *.scss and you're good to go.\r\n\r\n    Example: To use SASS for this file instead of regular CSS follow the below steps\r\n    1. Uncomment the below SASS and comment out the CSS version of this document\r\n    2. Change file extension from css to scss\r\n    3. Change references to this file to use the sass extension\r\n        i.e. This file is being referenced from \"app.component.ts\". So replace references to\r\n            \"../themes.css\" with \"../themes.scss\"\r\n***********************************************************************************************************\r\n**********************************************************************************************************/\r\n\r\n\r\n\r\n\r\n/*//*********** SASS VERSION ***********\r\n        \r\n    @mixin app-theme($theme, $color, $footer:#f5f5f5) {\r\n    .#{$theme}-theme .navbar-inner.app-component {\r\n        background-color: $color; //#027FF4;\r\n    }\r\n             \r\n    .#{$theme}-theme .panel-primary > .panel-heading {\r\n        background-color: $color;\r\n        border-color: $color;\r\n    }\r\n\r\n    .#{$theme}-theme .panel-primary {\r\n        border-color: $color;\r\n    }\r\n\r\n    .#{$theme}-theme .navbar-inner.footer.app-component {\r\n        background-color: $footer;\r\n    }\r\n\r\n\r\n    .#{$theme}-theme .icon-addon .form-control:focus + .glyphicon,\r\n    .#{$theme}-theme .icon-addon:hover .glyphicon,\r\n    .#{$theme}-theme .icon-addon .form-control:focus + .fa,\r\n    .#{$theme}-theme .icon-addon:hover .fa {\r\n        color: $color; //#2580db;\r\n    }\r\n\r\n    .#{$theme}-theme .clear-input:hover {\r\n        color: $color !important; //#2580db !important;\r\n    }\r\n\r\n    .#{$theme}-theme .ngx-datatable.material.colored-header .datatable-header {\r\n        background-color: $color; //#027FF4;\r\n    }\r\n              \r\n\r\n    .#{$theme}-theme-option {\r\n        background: $color;        \r\n        color:white;\r\n        font-weight:bold;\r\n        display:inline-block;\r\n        width:100%;\r\n        height:100%;\r\n        text-align:center;\r\n    }\r\n}\r\n\r\n\r\n.default-theme-option {\r\n    background: #027FF4;\r\n    color:white;\r\n    font-weight:bold;\r\n    display:inline-block;\r\n    width:100%;\r\n    height:100%;\r\n    text-align:center;\r\n}\r\n\r\n\r\n//----------- black theme -----------\r\n@include app-theme('black', black);\r\n\r\n\r\n//----------- red theme -----------\r\n@include app-theme('red', red);\r\n\r\n\r\n//----------- orange theme -----------\r\n@include app-theme('orange', orange);\r\n\r\n\r\n//----------- green theme -----------\r\n@include app-theme('green', green);\r\n\r\n\r\n//----------- gray theme -----------\r\n@include app-theme('gray', gray);\r\n\r\n\r\n*/\r\n\r\n\r\n\r\n\r\n\r\n\r\n/*********** CSS VERSION ***********/\r\n\r\n.default-theme-option {\r\n  background: #027FF4;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- black theme -----------*/\r\n.black-theme .navbar-inner.app-component {\r\n  background-color: black;  /*#027FF4;*/\r\n}\r\n\r\n.black-theme .panel-primary > .panel-heading {\r\n  background-color: black;\r\n  border-color: black;\r\n}\r\n\r\n.black-theme .panel-primary {\r\n  border-color: black;\r\n}\r\n\r\n.black-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.black-theme .icon-addon .form-control:focus + .glyphicon,\r\n.black-theme .icon-addon:hover .glyphicon,\r\n.black-theme .icon-addon .form-control:focus + .fa,\r\n.black-theme .icon-addon:hover .fa {\r\n  color: black;  /*#2580db;*/\r\n}\r\n\r\n.black-theme .clear-input:hover {\r\n  color: black !important;  /*#2580db !important;*/\r\n}\r\n\r\n.black-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: black;  /*#027FF4;*/\r\n}\r\n\r\n.black-theme-option {\r\n  background: black;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- red theme -----------*/\r\n.red-theme .navbar-inner.app-component {\r\n  background-color: red;  /*#027FF4;*/\r\n}\r\n\r\n.red-theme .panel-primary > .panel-heading {\r\n  background-color: red;\r\n  border-color: red;\r\n}\r\n\r\n.red-theme .panel-primary {\r\n  border-color: red;\r\n}\r\n\r\n.red-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.red-theme .icon-addon .form-control:focus + .glyphicon,\r\n.red-theme .icon-addon:hover .glyphicon,\r\n.red-theme .icon-addon .form-control:focus + .fa,\r\n.red-theme .icon-addon:hover .fa {\r\n  color: red;  /*#2580db;*/\r\n}\r\n\r\n.red-theme .clear-input:hover {\r\n  color: red !important;  /*#2580db !important;*/\r\n}\r\n\r\n.red-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: red;  /*#027FF4;*/\r\n}\r\n\r\n.red-theme-option {\r\n  background: red;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- orange theme -----------*/\r\n.orange-theme .navbar-inner.app-component {\r\n  background-color: orange;  /*#027FF4;*/\r\n}\r\n\r\n.orange-theme .panel-primary > .panel-heading {\r\n  background-color: orange;\r\n  border-color: orange;\r\n}\r\n\r\n.orange-theme .panel-primary {\r\n  border-color: orange;\r\n}\r\n\r\n.orange-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.orange-theme .icon-addon .form-control:focus + .glyphicon,\r\n.orange-theme .icon-addon:hover .glyphicon,\r\n.orange-theme .icon-addon .form-control:focus + .fa,\r\n.orange-theme .icon-addon:hover .fa {\r\n  color: orange;  /*#2580db;*/\r\n}\r\n\r\n.orange-theme .clear-input:hover {\r\n  color: orange !important;  /*#2580db !important;*/\r\n}\r\n\r\n.orange-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: orange;  /*#027FF4;*/\r\n}\r\n\r\n.orange-theme-option {\r\n  background: orange;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- green theme -----------*/\r\n.green-theme .navbar-inner.app-component {\r\n  background-color: green;  /*#027FF4;*/\r\n}\r\n\r\n.green-theme .panel-primary > .panel-heading {\r\n  background-color: green;\r\n  border-color: green;\r\n}\r\n\r\n.green-theme .panel-primary {\r\n  border-color: green;\r\n}\r\n\r\n.green-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.green-theme .icon-addon .form-control:focus + .glyphicon,\r\n.green-theme .icon-addon:hover .glyphicon,\r\n.green-theme .icon-addon .form-control:focus + .fa,\r\n.green-theme .icon-addon:hover .fa {\r\n  color: green;  /*#2580db;*/\r\n}\r\n\r\n.green-theme .clear-input:hover {\r\n  color: green !important;  /*#2580db !important;*/\r\n}\r\n\r\n.green-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: green;  /*#027FF4;*/\r\n}\r\n\r\n.green-theme-option {\r\n  background: green;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n\r\n\r\n/*----------- gray theme -----------*/\r\n.gray-theme .navbar-inner.app-component {\r\n  background-color: gray;  /*#027FF4;*/\r\n}\r\n\r\n.gray-theme .panel-primary > .panel-heading {\r\n  background-color: gray;\r\n  border-color: gray;\r\n}\r\n\r\n.gray-theme .panel-primary {\r\n  border-color: gray;\r\n}\r\n\r\n.gray-theme .navbar-inner.footer.app-component {\r\n  background-color: #f5f5f5;\r\n}\r\n\r\n.gray-theme .icon-addon .form-control:focus + .glyphicon,\r\n.gray-theme .icon-addon:hover .glyphicon,\r\n.gray-theme .icon-addon .form-control:focus + .fa,\r\n.gray-theme .icon-addon:hover .fa {\r\n  color: gray;  /*#2580db;*/\r\n}\r\n\r\n.gray-theme .clear-input:hover {\r\n  color: gray !important;  /*#2580db !important;*/\r\n}\r\n\r\n.gray-theme .ngx-datatable.material.colored-header .datatable-header {\r\n  background-color: gray;  /*#027FF4;*/\r\n}\r\n\r\n.gray-theme-option {\r\n  background: gray;\r\n  color: white;\r\n  font-weight: bold;\r\n  display: inline-block;\r\n  width: 100%;\r\n  height: 100%;\r\n  text-align: center;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = {
+  XmlEntities: __webpack_require__(135),
+  Html4Entities: __webpack_require__(134),
+  Html5Entities: __webpack_require__(57),
+  AllHtmlEntities: __webpack_require__(57)
+};
+
+
+/***/ }),
+/* 134 */
 /***/ (function(module, exports) {
 
 var HTML_ALPHA = ['apos', 'nbsp', 'iexcl', 'cent', 'pound', 'curren', 'yen', 'brvbar', 'sect', 'uml', 'copy', 'ordf', 'laquo', 'not', 'shy', 'reg', 'macr', 'deg', 'plusmn', 'sup2', 'sup3', 'acute', 'micro', 'para', 'middot', 'cedil', 'sup1', 'ordm', 'raquo', 'frac14', 'frac12', 'frac34', 'iquest', 'Agrave', 'Aacute', 'Acirc', 'Atilde', 'Auml', 'Aring', 'Aelig', 'Ccedil', 'Egrave', 'Eacute', 'Ecirc', 'Euml', 'Igrave', 'Iacute', 'Icirc', 'Iuml', 'ETH', 'Ntilde', 'Ograve', 'Oacute', 'Ocirc', 'Otilde', 'Ouml', 'times', 'Oslash', 'Ugrave', 'Uacute', 'Ucirc', 'Uuml', 'Yacute', 'THORN', 'szlig', 'agrave', 'aacute', 'acirc', 'atilde', 'auml', 'aring', 'aelig', 'ccedil', 'egrave', 'eacute', 'ecirc', 'euml', 'igrave', 'iacute', 'icirc', 'iuml', 'eth', 'ntilde', 'ograve', 'oacute', 'ocirc', 'otilde', 'ouml', 'divide', 'oslash', 'ugrave', 'uacute', 'ucirc', 'uuml', 'yacute', 'thorn', 'yuml', 'quot', 'amp', 'lt', 'gt', 'OElig', 'oelig', 'Scaron', 'scaron', 'Yuml', 'circ', 'tilde', 'ensp', 'emsp', 'thinsp', 'zwnj', 'zwj', 'lrm', 'rlm', 'ndash', 'mdash', 'lsquo', 'rsquo', 'sbquo', 'ldquo', 'rdquo', 'bdquo', 'dagger', 'Dagger', 'permil', 'lsaquo', 'rsaquo', 'euro', 'fnof', 'Alpha', 'Beta', 'Gamma', 'Delta', 'Epsilon', 'Zeta', 'Eta', 'Theta', 'Iota', 'Kappa', 'Lambda', 'Mu', 'Nu', 'Xi', 'Omicron', 'Pi', 'Rho', 'Sigma', 'Tau', 'Upsilon', 'Phi', 'Chi', 'Psi', 'Omega', 'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta', 'eta', 'theta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi', 'omicron', 'pi', 'rho', 'sigmaf', 'sigma', 'tau', 'upsilon', 'phi', 'chi', 'psi', 'omega', 'thetasym', 'upsih', 'piv', 'bull', 'hellip', 'prime', 'Prime', 'oline', 'frasl', 'weierp', 'image', 'real', 'trade', 'alefsym', 'larr', 'uarr', 'rarr', 'darr', 'harr', 'crarr', 'lArr', 'uArr', 'rArr', 'dArr', 'hArr', 'forall', 'part', 'exist', 'empty', 'nabla', 'isin', 'notin', 'ni', 'prod', 'sum', 'minus', 'lowast', 'radic', 'prop', 'infin', 'ang', 'and', 'or', 'cap', 'cup', 'int', 'there4', 'sim', 'cong', 'asymp', 'ne', 'equiv', 'le', 'ge', 'sub', 'sup', 'nsub', 'sube', 'supe', 'oplus', 'otimes', 'perp', 'sdot', 'lceil', 'rceil', 'lfloor', 'rfloor', 'lang', 'rang', 'loz', 'spades', 'clubs', 'hearts', 'diams'];
@@ -28690,7 +29314,7 @@ module.exports = Html4Entities;
 
 
 /***/ }),
-/* 128 */
+/* 135 */
 /***/ (function(module, exports) {
 
 var ALPHA_INDEX = {
@@ -28851,127 +29475,133 @@ module.exports = XmlEntities;
 
 
 /***/ }),
-/* 129 */
+/* 136 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-info-circle fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.About' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-5\">\r\n                <h2>Evaludius is tool for player evaluation<sup>&reg;</sup></h2>\r\n                <p>Mangage your players and measure their development.</p>\r\n                <p><span title=\"Based in Torornto\" class=\"fa fa-map-marker fa-fw\">Canada</span> </p>\r\n                <p><span title=\"Send me a WhatsApp\" class=\"fa fa-whatsapp fa-fw\"></span> 416-551-9999</p>\r\n                <p><span title=\"Contact us on Skype\" class=\"fa fa-skype fa-fw\"></span> evaludius</p>\r\n                <p><span title=\"Connect on facebook\" class=\"fa fa-facebook-official fa-fw\"></span> <a class=\"black-anchor\" target=\"_blank\" href=\"https://www.facebook.com/evaludius\">facebook.com/evaludius</a></p>\r\n                <p><span title=\"Drop us a mail\" class=\"fa fa-envelope fa-fw\"></span> <a class=\"black-anchor\" href=\"mailto:contact@evaludius.com\">contact@evaludius.com</a></p>\r\n                <p><span title=\"Our website\" class=\"fa fa-globe fa-fw\"></span> <a class=\"black-anchor\" target=\"_blank\" href=\"http://www.evaludius.com\">www.evaludius.com</a></p>\r\n                <br />\r\n            </div>\r\n        </div>\r\n        <div class=\"row bg-grey\">\r\n            <div class=\"col-sm-4\">\r\n                <span class=\"fa fa-globe logo\"></span>\r\n            </div>\r\n            <div class=\"col-sm-8\">\r\n                <h2>Our Values</h2>\r\n                <h4><strong>MISSION:</strong> Help you measure and monitor your players development</h4>\r\n                <p>\r\n                    <strong>VISION:</strong> It is our desire to encourage the use of technology in everyday life. Time is the most valuable resource anyone has,\r\n                    that is why we at Eben Software Solutions<sup>&reg;</sup> wish to provide quality, affordable and easy-to-use software solutions to boost your productivity. Get more done in less time!\r\n                    <br />\r\n                    <br />\r\n                    Productivity, Accessibility and Affordability is at the core of our values\r\n                </p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
-/* 130 */
-/***/ (function(module, exports) {
-
-module.exports = "<div id=\"app_container\" class=\"{{configurations.theme | lowercase}}-theme\">\r\n    <ng2-toasty></ng2-toasty>\r\n    <div class='container'>\r\n        <nav id=\"header\" class=\"app-component navbar navbar-inner navbar-fixed-top\">\r\n            <nav class=\"container\">\r\n                <div class=\"navbar-header\">\r\n                    <button type=\"button\" class=\"app-component navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\".menuItemsContainer.app-component\" aria-expanded=\"false\">\r\n                        <span class=\"sr-only\">Toggle navigation</span>\r\n                        <span class=\"icon-bar\"></span>\r\n                        <span class=\"icon-bar\"></span>\r\n                        <span class=\"icon-bar\"></span>\r\n                    </button>\r\n                    <a class=\"app-component navbar-brand\" routerLink=\"/\">\r\n                        <img [src]=\"appLogo\" alt=\"logo\">\r\n                        <span class=\"app-component appTitle\">{{appTitle}}</span>\r\n                    </a>\r\n                </div>\r\n                <div *ngIf=\"isUserLoggedIn\" class=\"app-component collapse navbar-collapse menuItemsContainer\">\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding\">\r\n                        <li routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\"><a routerLink=\"\"><span class=\"glyphicon glyphicon-home\"></span></a></li>\r\n                        <li routerLinkActive=\"active\" *ngIf=\"canViewCustomers\"><a routerLink=\"/customers\">{{'mainMenu.Customers' | translate}}</a></li>\r\n                        <li routerLinkActive=\"active\" *ngIf=\"canViewProducts\"><a routerLink=\"/products\">{{'mainMenu.Products' | translate}}</a></li>\r\n                        <li routerLinkActive=\"active\" *ngIf=\"canViewOrders\"><a routerLink=\"/orders\">{{'mainMenu.Orders' | translate}}</a></li>\r\n\t\t\t\t\t\t<li routerLinkActive=\"active\" *ngIf=\"canViewPlayers\"><a routerLink=\"/players\">{{'mainMenu.Players' | translate}}</a></li>\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/about\">{{'mainMenu.About' | translate}}</a></li>\r\n                    </ul>\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li (click)=\"logout()\"><a href=\"javascript:;\"><span class=\"glyphicon glyphicon-log-out\"></span> {{'mainMenu.Logout' | translate}}</a></li>\r\n                    </ul>\r\n                    <p class=\"app-component navbar-text navbar-right notifications-popup\">\r\n                        {{'app.Welcome' | translate}}\r\n                        <a class=\"app-component navbar-link user-name\" [popover]=\"popTemplate\" (onHidden)=\"markNotificationsAsRead()\" placement=\"bottom\" [popoverTitle]=\"notificationsTitle\" href=\"javascript:;\" triggers=\"focus\">\r\n                            {{userName}}\r\n                            <span *ngIf=\"newNotificationCount > 0\" class=\"badge\">{{newNotificationCount}}</span>\r\n                        </a>,\r\n                    </p>\r\n\r\n                    <ng-template #popTemplate>\r\n                        <notifications-viewer [isViewOnly]=\"true\"></notifications-viewer>\r\n                    </ng-template>\r\n\r\n\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/settings\"><span class=\"glyphicon glyphicon-cog\"></span></a></li>\r\n                    </ul>\r\n                </div>\r\n                <div *ngIf=\"!isUserLoggedIn && router.isActive('/about')\" class=\"app-component collapse navbar-collapse menuItemsContainer\">\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/login\"><span class=\"glyphicon glyphicon-log-in\"></span></a></li>\r\n                    </ul>\r\n                </div>\r\n                <div *ngIf=\"!isUserLoggedIn && router.isActive('/login') || false\" class=\"app-component collapse navbar-collapse menuItemsContainer\">\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/about\"><span class=\"glyphicon glyphicon-info-sign\"></span></a></li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </nav>\r\n\r\n        <div id=\"pre-bootstrap\" *ngIf=\"!removePrebootScreen\" [class.prebootShow.app-component]=\"!isAppLoaded\" class=\"app-component prebootStep\">\r\n            <div class=\"messaging\">\r\n                <h1>\r\n                    Loaded!\r\n                </h1>\r\n                <p>\r\n\t\t\t\t\tEVALUDIUS APPLICATION SYSTEM - <span class=\"appName\" style=\"font-style:italic\">Player evaluation system</span><span class=\"appName\">Application</span> &copy; <a href=\"http://www.evaludius.com\">www.evaludius.com</a>\r\n                </p>\r\n\r\n            </div>\r\n        </div>\r\n\r\n        <div id=\"mainContent\" class=\"app-component\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div id=\"footer\">\r\n            <div class=\"app-component navbar-fixed-bottom navbar-inner footer\">\r\n                <div class=\"container\">\r\n                    <footer>\r\n                        <div class=\"app-component vcenter_text center-block\">\r\n                            <p class=\"text-center text-muted\">\r\n                                <span class=\"appName\" style=\"font-style:italic\">evaludius</span><span class=\"appName\">Application</span> &copy; {{getYear()}}\r\n                                <a href=\"http://www.evaludius.com\" target=\"_blank\">www.evaludius.com</a>\r\n                                \r\n                            </p>\r\n                        </div>\r\n                    </footer>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div *ngIf=\"shouldShowLoginModal\" class=\"modal fade\" bsModal #loginModal=\"bs-modal\" (onShown)=\"onLoginModalShown()\" (onHidden)=\"onLoginModalHidden()\" (onHide)=\"onLoginModalHide()\"\r\n         [config]=\"{backdrop: 'static'}\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog modal-lg\">\r\n            <app-login #loginControl isModal=\"true\"></app-login>\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports) {
-
-module.exports = "<!--<div>\r\n    <div>\r\n        <carousel interval=\"6000\">\r\n            <slide>\r\n                <img [src]=\"banner1\" alt=\"ASP.NET\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        Learn how to build ASP.NET apps that can run anywhere\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n            <slide>\r\n                <img [src]=\"banner2\" alt=\"Visual Studio\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        One platform for building modern web, native mobile and native desktop applications\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://angular.io\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n            <slide>\r\n                <img [src]=\"banner3\" alt=\"Package Management\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        Bring in libraries from NuGet and npm, and bundle with webpack\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n            <slide>\r\n                <img [src]=\"banner4\" alt=\"Eben Monney\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        Follow me on social media for updates and tips on using this startup project\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://ebenmonney.com/about\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n        </carousel>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\">\r\n            <h3>Application uses</h3>\r\n            <ul>\r\n                <li>Restful API backend using the cross platform <a href=\"http://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409\" target=\"_blank\">ASP.NET Core MVC</a></li>\r\n                <li>Client framework with <a href=\"http://angular.io\" target=\"_blank\">angular2</a> and typescript</li>\r\n                <li><a href=\"http://npmjs.com\" target=\"_blank\">npm</a> for managing client-side libraries</li>\r\n                <li>Theming using <a href=\"http://go.microsoft.com/fwlink/?LinkID=398939\" target=\"_blank\">Bootstrap</a></li>\r\n                <li>Module bundling with <a href=\"https://webpack.js.org\" target=\"_blank\">webpack2</a></li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            <h3>How to</h3>\r\n            <ul>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#adding-pages\" target=\"_blank\">Add additional pages and set access permissions</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699315\" target=\"_blank\">Manage User Secrets using Secret Manager.</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699316\" target=\"_blank\">Use logging to log a message.</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699317\" target=\"_blank\">Add packages using NuGet.</a></li>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#adding-vendor-packages\" target=\"_blank\">Add client packages using npm</a></li>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#building-vendor-packages\" target=\"_blank\">Rebuild client vendor packages</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699319\" target=\"_blank\">Target development, staging or production environment.</a></li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            <h3>Overview</h3>\r\n            <ul>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=518008\" target=\"_blank\">Conceptual overview of what is ASP.NET Core</a></li>\r\n                <li><a href=\"http://angular.io/docs/ts/latest/guide\" target=\"_blank\">Angular2 documentation overview</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=398602\" target=\"_blank\">Working with Data</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=398603\" target=\"_blank\">Security</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=699321\" target=\"_blank\">Client side development</a></li>\r\n                <li><a href=\"https://webpack.js.org/guides/get-started\" target=\"_blank\">An introduction to webpack</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=699322\" target=\"_blank\">Develop on different platforms</a></li>\r\n                <li><a href=\"http://ebenmonney.com/quickapp\" target=\"_blank\">Read more on the documentation site</a></li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            <h3>Run & Deploy</h3>\r\n            <ul>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#how-to-run-app\" target=\"_blank\">Run your app</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=517853\" target=\"_blank\">Run tools such as EF migrations and more</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=398609\" target=\"_blank\">Publish to Microsoft Azure Web Apps</a></li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>-->\r\n";
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    <ngx-datatable class=\"material colored-header sm table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"isViewOnly ? 0 : 35\"\r\n                   [footerHeight]=\"35\"\r\n                   [limit]=\"10\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"verticalScrollbar\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #statusHeaderTemplate>\r\n        <i class=\"fa fa-bullhorn\"></i>\r\n    </ng-template>\r\n\r\n    <ng-template #statusTemplate>\r\n        <span></span>\r\n    </ng-template>\r\n\r\n    <ng-template #dateTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.unread]=\"!row.isRead\" attr.title=\"{{getPrintedDate(value)}}\">\r\n            {{getPrintedDate(value)}}\r\n        </span>\r\n    </ng-template>\r\n\r\n    <ng-template #contentHeaderTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.unread]=\"!row.isRead\" attr.title=\"{{row.body}}\">\r\n            {{value}}\r\n        </span>\r\n    </ng-template>\r\n\r\n    <ng-template #contenBodytTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.unread]=\"!row.isRead\" attr.title=\"{{row.header}}\">\r\n            {{value}}\r\n        </span>\r\n    </ng-template>\r\n\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\">\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'notifications.Delete' | translate}}\" container=\"body\" (click)=\"deleteNotification(row)\"><i class=\"fa fa-times\"></i></a>\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'notifications.Pin' | translate}}\" co container=\"body\" (click)=\"togglePin(row)\">\r\n            <i *ngIf=\"row.isPinned\" class=\"fa fa-thumb-tack\"></i>\r\n            <i *ngIf=\"!row.isPinned\" class=\"fa fa-thumb-tack fa-rotate-90\"></i>\r\n        </a>\r\n    </ng-template>\r\n</div>";
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    <form *ngIf=\"formResetToggle\" class=\"form-horizontal\" name=\"roleEditorForm\" #f=\"ngForm\" novalidate\r\n          (ngSubmit)=\"f.form.valid ? save() :\r\n          (!roleName.valid && showErrorAlert('Role name is required', 'Please enter a role name (minimum of 2 and maximum of 200 characters)'));\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-4\">\r\n                <div class=\"form-group has-feedback\">\r\n                    <label class=\"control-label col-md-2\" for=\"roleName\">{{'roles.editor.Name' | translate}}</label>\r\n                    <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && roleName.valid, 'has-error' : f.submitted && !roleName.valid}\">\r\n                        <input [disabled]=\"!canManageRoles\" type=\"text\" id=\"roleName\" name=\"roleName\" placeholder=\"Enter role name\" class=\"form-control\" [(ngModel)]=\"roleEdit.name\" #roleName=\"ngModel\" required minlength=\"2\" maxlength=\"200\" />\r\n                        <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': roleName.valid, 'glyphicon-remove' : !roleName.valid}\"></span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-sm-8\">\r\n                <div class=\"form-group\">\r\n                    <label class=\"control-label col-md-2\" for=\"roleDescription\">{{'roles.editor.Description' | translate}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        <input [disabled]=\"!canManageRoles\" type=\"text\" id=\"roleDescription\" name=\"roleDescription\" placeholder=\"Enter role description\" class=\"form-control\" [(ngModel)]=\"roleEdit.description\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !roleName.valid\" class=\"errorMessage roleErrorMessage\">\r\n                    {{'roles.editor.RoleNameRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr class=\"edit-separator-hr\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"row well well-sm permissionsRow\">\r\n\r\n                <ng-template ngFor let-permissionGroup [ngForOf]=\"allPermissions | groupBy: 'groupName'\" let-i=\"index\">\r\n                    <div class=\"form-group col-sm-6 permissionsColumn\">\r\n                        <label class=\"col-md-5 control-label\" for=\"checkboxes\" (click)=\"toggleGroup(permissionGroup.key)\">{{permissionGroup.key}}</label>\r\n                        <div class=\"col-md-7\">\r\n                            <div class=\"checkbox\" *ngFor=\"let permission of permissionGroup.value\">\r\n                                <label tooltip=\"{{permission.description}}\" for=\"checkboxes-{{permission.value}}\">\r\n                                    <input [disabled]=\"!canManageRoles\" name=\"checkboxes-{{permission.value}}\" id=\"checkboxes-{{permission.value}}\" type=\"checkbox\" [(ngModel)]=\"selectedValues[permission.value]\">\r\n                                    {{permission.name}}\r\n                                </label>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div *ngIf=\"(i + 1) % 2 === 0\" class=\"clearfix\"></div>\r\n                </ng-template>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr class=\"edit-last-separator-hr\" />\r\n            </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"form-group\">\r\n            <div class=\"col-sm-5\">\r\n                <div *ngIf=\"canManageRoles\" class=\"pull-left\">\r\n                    <a (click)=\"selectAll()\" href=\"javascript:;\" class=\"btn btn-link\">{{'roles.editor.SelectAll' | translate}}</a>|<a (click)=\"selectNone()\" href=\"javascript:;\" class=\"btn btn-link\">{{'roles.editor.SelectNone' | translate}}</a>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-sm-7\">\r\n                <div class=\"pull-right\">\r\n                    <button *ngIf=\"!canManageRoles\" type=\"button\" (click)=\"cancel()\" class=\"btn btn-default\">{{'roles.editor.Close' | translate}}</button>\r\n                    <button *ngIf=\"canManageRoles\" type=\"button\" (click)=\"cancel()\" class=\"btn btn-danger\" [disabled]=\"isSaving\"><i class='fa fa-times'></i> {{'roles.editor.Cancel' | translate}}</button>\r\n                    <button *ngIf=\"canManageRoles\" type=\"submit\" class=\"btn btn-primary\" [disabled]=\"isSaving\">\r\n                        <i *ngIf=\"!isSaving\" class='fa fa-save'></i><i *ngIf=\"isSaving\" class='fa fa-circle-o-notch fa-spin'></i> {{isSaving ? ('roles.editor.Saving' | translate) : ('roles.editor.Save' | translate)}}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"clearfix\"></div>\r\n    </form>\r\n</div>\r\n";
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    <div class=\"row control-box\">\r\n        <div class=\"col-sm-8\">\r\n            <div class=\"form-group search-box\">\r\n                <search-box (searchChange)=\"onSearchChanged($event)\" placeholder=\"{{'roles.management.Search' | translate}}\">></search-box>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"navbar action-box\">\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li *ngIf=\"canManageRoles\" class=\"toolbaritem\">\r\n                        <a href=\"javascript:;\" (click)=\"newRole(row)\">\r\n                            <i class=\"fa fa-plus-circle\"></i> {{'roles.management.NewRole' | translate}}\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ngx-datatable class=\"material colored-header sm table table-striped table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"35\"\r\n                   [footerHeight]=\"35\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"true\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #indexTemplate let-value=\"value\">\r\n        <strong>{{value}}</strong>\r\n    </ng-template>\r\n\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\" let-value=\"value\" let-i=\"index\">\r\n        <a *ngIf=\"canManageRoles\" class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"editRole(row)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> {{'roles.management.Edit' | translate}}</a>\r\n        <a *ngIf=\"!canManageRoles\" class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"editRole(row)\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{'roles.management.Details' | translate}}</a>\r\n        {{canManageRoles ? '|' : ''}}\r\n        <a *ngIf=\"canManageRoles\" class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"deleteRole(row)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i> {{'roles.management.Delete' | translate}}</a>\r\n    </ng-template>\r\n\r\n\r\n    <div class=\"modal fade\" bsModal #editorModal=\"bs-modal\" (onHidden)=\"onEditorModalHidden()\" [config]=\"{backdrop: 'static'}\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog modal-lg\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <h4 *ngIf=\"!canManageRoles\" class=\"modal-title pull-left\"><i class=\"fa fa-shield\"></i> {{'roles.management.RoleDetails' | translate}} \"{{editingRoleName}}\"</h4>\r\n                    <h4 *ngIf=\"canManageRoles\" class=\"modal-title pull-left\"><i class=\"fa fa-shield\"></i> {{editingRoleName ? ('roles.management.EditRole' | translate:editingRoleName) : ('roles.management.NewRole' | translate)}}</h4>\r\n                    <button type=\"button\" class=\"close pull-right\" title=\"Close\" (click)=\"editorModal.hide()\">\r\n                        <span aria-hidden=\"true\">&times;</span>\r\n                    </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <role-editor #roleEditor></role-editor>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"icon-addon addon-sm\">\r\n    <label for=\"searchInput\" title=\"Search\"><i class=\"fa fa-search left-icon search-icon\"></i></label>\r\n    <input id=\"searchInput\" #searchInput type=\"search\" ngModel=\"\" (ngModelChange)=\"onValueChange($event)\" [attr.placeholder]=\"placeholder\" class=\"form-control left-icon right-icon\">\r\n    <a *ngIf=\"searchInput.value\" href=\"javascript:;\" title=\"Clear\" (click)=\"clear()\" class=\"fa fa-times-circle clear-input right-icon\"></a>\r\n</div>";
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-6\">\r\n        <div class=\"chart-container\">\r\n            <canvas baseChart width=\"600\" height=\"250\"\r\n                    [datasets]=\"chartData\"\r\n                    [labels]=\"chartLabels\"\r\n                    [options]=\"chartOptions\"\r\n                    [colors]=\"chartColors\"\r\n                    [legend]=\"chartLegend\"\r\n                    [chartType]=\"chartType\"\r\n                    (chartHover)=\"chartHovered($event)\"\r\n                    (chartClick)=\"chartClicked($event, item)\"></canvas>\r\n        </div>\r\n    </div>\r\n    <div class=\"col-md-6 table-container\">\r\n        <table class=\"table table-responsive table-condensed\">\r\n            <thead>\r\n                <tr>\r\n                    <th></th>\r\n                    <th *ngFor=\"let label of chartLabels\">{{label}}</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr *ngFor=\"let d of chartData\">\r\n                    <th>{{d && d.label.split(' ').pop()}}</th>\r\n                    <td *ngFor=\"let label of chartLabels; let j=index\">{{d && d.data[j]}}</td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n        <button class=\"refresh-btn\" (click)=\"randomize();showMessage('Manual refresh!');\">REFSH</button>\r\n        <div class=\"chart-type-container\" dropdown>\r\n            <button id=\"chartType\" type=\"button\" dropdownToggle><i class=\"fa fa-bar-chart dropdown-toggle\"></i></button>\r\n            <ul *dropdownMenu role=\"menu\" aria-labelledby=\"chartType\" class=\"dropdown-menu\">\r\n                <li [class.active2]=\"chartType == 'bar'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('bar')\" href=\"javascript:;\">Bar Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'pie'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('pie')\" href=\"javascript:;\">Pie Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'doughnut'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('doughnut')\" href=\"javascript:;\">Doughnut Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'polarArea'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('polarArea')\" href=\"javascript:;\">Polar Area Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'radar'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('radar')\" href=\"javascript:;\">Radar Chart</a></li>\r\n                <li class=\"divider dropdown-divider\"></li>\r\n                <li [class.active2]=\"chartType == 'line'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('line')\" href=\"javascript:;\">Line Chart</a></li>\r\n            </ul>\r\n        </div>\r\n        <button class=\"p1ull-right\" (click)=\"showMessage('You\\'ve clicked on the menu')\"><i class=\"fa fa-bars\"></i></button>\r\n        <button class=\"p1ull-right\" (click)=\"showDialog('Enter some value to do serious configuration...')\"><i class=\"fa fa-cogs\"></i></button>\r\n    </div>\r\n</div>";
-
-/***/ }),
 /* 137 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <div class=\"row control-box\">\r\n        <div class=\"col-sm-8\">\r\n            <div class=\"form-group search-box\">\r\n                <search-box (searchChange)=\"onSearchChanged($event)\" placeholder=\"{{'todoDemo.management.Search' | translate}}\"></search-box>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"navbar action-box\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [class.active]=\"hideCompletedTasks\" class=\"toolbaritem\"><a href=\"javascript:;\" (click)=\"hideCompletedTasks = !hideCompletedTasks\"><i class=\"fa fa-eye-slash\"></i> {{'todoDemo.management.HideCompleted' | translate}}</a></li>\r\n                    <li class=\"toolbaritem\"><a href=\"javascript:;\" (click)=\"addTask()\"><i class=\"fa fa-plus\"></i> {{'todoDemo.management.AddTask' | translate}}</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <ngx-datatable class=\"material colored-header sm table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"35\"\r\n                   [footerHeight]=\"35\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"verticalScrollbar\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #statusHeaderTemplate>\r\n        <i class=\"fa fa-check-square-o\"></i>\r\n    </ng-template>\r\n\r\n    <ng-template #statusTemplate let-row=\"row\" let-value=\"value\">\r\n        <div class=\"checkbox\">\r\n            <label>\r\n                <input attr.name=\"checkboxes-{{value}}\" type=\"checkbox\" [(ngModel)]=\"row.completed\">\r\n            </label>\r\n        </div>\r\n    </ng-template>\r\n\r\n    <ng-template #nameTemplate let-row=\"row\" let-value=\"value\">\r\n        <span *ngIf=\"!editing[row.$$index + '-name']\" [class.completed]=\"row.completed\" attr.title=\"{{value}}\" (dblclick)=\"editing[row.$$index + '-name'] = true\">\r\n            {{value}}\r\n        </span>\r\n        <input *ngIf=\"editing[row.$$index + '-name']\" class=\"inline-editor\" autofocus (blur)=\"updateValue($event, 'name', value, row)\" type=\"text\" [value]=\"value\" />\r\n    </ng-template>\r\n\r\n    <ng-template #descriptionTemplate let-row=\"row\" let-value=\"value\">\r\n        <span *ngIf=\"!editing[row.$$index + '-description']\" [class.completed]=\"row.completed\" attr.title=\"{{value}}\" (dblclick)=\"editing[row.$$index + '-description'] = true\">\r\n            {{value}}\r\n        </span>\r\n        <input *ngIf=\"editing[row.$$index + '-description']\" class=\"inline-editor\" autofocus (blur)=\"updateValue($event, 'description', value, row)\" type=\"text\" [value]=\"value\" />\r\n    </ng-template>\r\n\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\">\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'todoDemo.management.Delete' | translate}}\" container=\"body\" (click)=\"delete(row)\"><i class=\"fa fa-times\"></i></a>\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'todoDemo.management.Important' | translate}}\" container=\"body\" (click)=\"row.important = !row.important\" (mouseover)=\"row.isMouseOver=true\" (mouseout)=\"row.isMouseOver=false\">\r\n            <i *ngIf=\"row.important || row.isMouseOver\" class=\"fa fa-bookmark\"></i>\r\n            <i *ngIf=\"!row.important && !row.isMouseOver\" class=\"fa fa-bookmark-o\"></i>\r\n        </a>\r\n    </ng-template>\r\n\r\n\r\n\r\n\r\n\r\n    <div class=\"modal fade\" bsModal #editorModal=\"bs-modal\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <h4 class=\"modal-title pull-left\"><i class=\"fa fa-tasks\"></i> {{'todoDemo.editor.NewTask' | translate}}</h4>\r\n                    <button type=\"button\" class=\"close pull-right\" title=\"Close\" (click)=\"editorModal.hide()\">\r\n                        <span aria-hidden=\"true\">&times;</span>\r\n                    </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <form *ngIf=\"formResetToggle\" class=\"form-horizontal\" name=\"taskEditorForm\" #f=\"ngForm\" novalidate\r\n                          (ngSubmit)=\"f.form.valid ? save() :\r\n                      (!taskName.valid && showErrorAlert('Task name is required', 'Please enter a name for the task'));\">\r\n\r\n\r\n                        <div class=\"form-group has-feedback\">\r\n                            <label class=\"control-label col-md-2\" for=\"taskName\">{{'todoDemo.editor.Name' | translate}}:</label>\r\n                            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && taskName.valid, 'has-error' : f.submitted && !taskName.valid}\">\r\n                                <input autofocus type=\"text\" id=\"taskName\" name=\"taskName\" placeholder=\"Enter task name\" class=\"form-control\" [(ngModel)]=\"taskEdit.name\" #taskName=\"ngModel\" required />\r\n                                <span *ngIf=\"f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ':taskName.valid, 'glyphicon-remove' : !taskName.valid}\"></span>\r\n                                <span *ngIf=\"f.submitted && !taskName.valid\" class=\"errorMessage\">\r\n                                    {{'todoDemo.editor.TaskNameRequired' | translate}}\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"form-group description-form-group\">\r\n                            <label class=\"control-label col-md-2\" for=\"taskDescription\">{{'todoDemo.editor.Description' | translate}}:</label>\r\n                            <div class=\"col-md-10\">\r\n                                <input type=\"text\" id=\"taskDescription\" name=\"taskDescription\" placeholder=\"Enter task description\" class=\"form-control\" [(ngModel)]=\"taskEdit.description\" />\r\n                            </div>\r\n                        </div>\r\n                        <label class=\"control-label col-md-2\"> </label>\r\n                        <div class=\"col-md-7\">\r\n                            <div class=\"checkbox\">\r\n                                <label>\r\n                                    <input name=\"isImportant\" type=\"checkbox\" [(ngModel)]=\"taskEdit.important\">\r\n                                    {{'todoDemo.editor.Important' | translate}}\r\n                                </label>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                            <hr class=\"edit-last-separator-hr\" />\r\n                        </div>\r\n\r\n\r\n                        <div class=\"form-group actionBtn-form-group\">\r\n                            <div class=\"pull-right\">\r\n                                <button type=\"submit\" class=\"btn btn-primary\">{{'todoDemo.editor.AddTask' | translate}}</button>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"clearfix\"></div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div id=\"app_container\" class=\"{{configurations.theme | lowercase}}-theme\">\r\n    <ng2-toasty></ng2-toasty>\r\n    <div class='container'>\r\n        <nav id=\"header\" class=\"app-component navbar navbar-inner navbar-fixed-top\">\r\n            <nav class=\"container\">\r\n                <div class=\"navbar-header\">\r\n                    <button type=\"button\" class=\"app-component navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\".menuItemsContainer.app-component\" aria-expanded=\"false\">\r\n                        <span class=\"sr-only\">Toggle navigation</span>\r\n                        <span class=\"icon-bar\"></span>\r\n                        <span class=\"icon-bar\"></span>\r\n                        <span class=\"icon-bar\"></span>\r\n                    </button>\r\n                    <a class=\"app-component navbar-brand\" routerLink=\"/\">\r\n                        <img [src]=\"appLogo\" alt=\"logo\">\r\n                        <span class=\"app-component appTitle\">{{appTitle}}</span>\r\n                    </a>\r\n                </div>\r\n                <div *ngIf=\"isUserLoggedIn\" class=\"app-component collapse navbar-collapse menuItemsContainer\">\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding\">\r\n                        <li routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\"><a routerLink=\"\"><span class=\"glyphicon glyphicon-home\"></span></a></li>\r\n                        <li routerLinkActive=\"active\" *ngIf=\"canViewCustomers\"><a routerLink=\"/customers\">{{'mainMenu.Customers' | translate}}</a></li>\r\n                        <li routerLinkActive=\"active\" *ngIf=\"canViewProducts\"><a routerLink=\"/products\">{{'mainMenu.Products' | translate}}</a></li>\r\n                        <li routerLinkActive=\"active\" *ngIf=\"canViewOrders\"><a routerLink=\"/orders\">{{'mainMenu.Orders' | translate}}</a></li>\r\n\t\t\t\t\t\t<li routerLinkActive=\"active\" *ngIf=\"canViewPlayers\"><a routerLink=\"/players\">{{'mainMenu.Players' | translate}}</a></li>\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/about\">{{'mainMenu.About' | translate}}</a></li>\r\n                    </ul>\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li (click)=\"logout()\"><a href=\"javascript:;\"><span class=\"glyphicon glyphicon-log-out\"></span> {{'mainMenu.Logout' | translate}}</a></li>\r\n                    </ul>\r\n                    <p class=\"app-component navbar-text navbar-right notifications-popup\">\r\n                        {{'app.Welcome' | translate}}\r\n                        <a class=\"app-component navbar-link user-name\" [popover]=\"popTemplate\" (onHidden)=\"markNotificationsAsRead()\" placement=\"bottom\" [popoverTitle]=\"notificationsTitle\" href=\"javascript:;\" triggers=\"focus\">\r\n                            {{userName}}\r\n                            <span *ngIf=\"newNotificationCount > 0\" class=\"badge\">{{newNotificationCount}}</span>\r\n                        </a>,\r\n                    </p>\r\n\r\n                    <ng-template #popTemplate>\r\n                        <notifications-viewer [isViewOnly]=\"true\"></notifications-viewer>\r\n                    </ng-template>\r\n\r\n\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/settings\"><span class=\"glyphicon glyphicon-cog\"></span></a></li>\r\n                    </ul>\r\n                </div>\r\n                <div *ngIf=\"!isUserLoggedIn && router.isActive('/about')\" class=\"app-component collapse navbar-collapse menuItemsContainer\">\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/login\"><span class=\"glyphicon glyphicon-log-in\"></span></a></li>\r\n                    </ul>\r\n                </div>\r\n                <div *ngIf=\"!isUserLoggedIn && router.isActive('/login') || false\" class=\"app-component collapse navbar-collapse menuItemsContainer\">\r\n                    <ul class=\"app-component nav navbar-nav nav-pills navBarPadding navbar-right\">\r\n                        <li routerLinkActive=\"active\"><a routerLink=\"/about\"><span class=\"glyphicon glyphicon-info-sign\"></span></a></li>\r\n                    </ul>\r\n                </div>\r\n            </nav>\r\n        </nav>\r\n\r\n        <div id=\"pre-bootstrap\" *ngIf=\"!removePrebootScreen\" [class.prebootShow.app-component]=\"!isAppLoaded\" class=\"app-component prebootStep\">\r\n            <div class=\"messaging\">\r\n                <h1>\r\n                    Loaded!\r\n                </h1>\r\n                <p>\r\n\t\t\t\t\tEVALUDIUS APPLICATION SYSTEM - <span class=\"appName\" style=\"font-style:italic\">Player evaluation system  </span> <span class=\"appName\">Application</span> &copy; <a href=\"http://www.evaludius.com\">www.evaludius.com</a>\r\n                </p>\r\n\r\n            </div>\r\n        </div>\r\n\r\n        <div id=\"mainContent\" class=\"app-component\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div id=\"footer\">\r\n            <div class=\"app-component navbar-fixed-bottom navbar-inner footer\">\r\n                <div class=\"container\">\r\n                    <footer>\r\n                        <div class=\"app-component vcenter_text center-block\">\r\n                            <p class=\"text-center text-muted\">\r\n                                <span class=\"appName\" style=\"font-style:italic\">evaludius</span><span class=\"appName\">Application</span> &copy; {{getYear()}}\r\n                                <a href=\"http://www.evaludius.com\" target=\"_blank\">www.evaludius.com</a>\r\n                                \r\n                            </p>\r\n                        </div>\r\n                    </footer>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div *ngIf=\"shouldShowLoginModal\" class=\"modal fade\" bsModal #loginModal=\"bs-modal\" (onShown)=\"onLoginModalShown()\" (onHidden)=\"onLoginModalHidden()\" (onHide)=\"onLoginModalHide()\"\r\n         [config]=\"{backdrop: 'static'}\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog modal-lg\">\r\n            <app-login #loginControl isModal=\"true\"></app-login>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 138 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <form *ngIf=\"formResetToggle\" [attr.autocomplete]=\"isGeneralEditor ? NaN : null\" class=\"form-horizontal\" name=\"userInfoForm\" #f=\"ngForm\" novalidate\r\n          (ngSubmit)=\"f.form.valid ? save() :\r\n\r\n          (!userName.valid && showErrorAlert('User name is required', 'Please enter a user name (minimum of 2 and maximum of 200 characters)'));\r\n\r\n          (userPassword && !userPassword.valid && showErrorAlert('Password is required', 'Please enter the current password'));\r\n\r\n          (email.errors?.required && showErrorAlert('Email is required', 'Please enter an email address (maximum of 200 characters)'));\r\n          (email.errors?.pattern && showErrorAlert('Invalid Email', 'Please enter a valid email address'));\r\n\r\n          (isChangePassword && isEditingSelf && !currentPassword.valid && showErrorAlert('Current password is required', 'Please enter the current password'));\r\n\r\n          (isChangePassword && !newPassword.valid && showErrorAlert('New password is required', 'Please enter the new password (minimum of 6 characters)'));\r\n\r\n          (isChangePassword && confirmPassword.errors?.required && showErrorAlert('Confirmation password is required', 'Please enter the confirmation password'));\r\n          (isChangePassword && confirmPassword.errors?.validateEqual && showErrorAlert('Passwword mismatch', 'New password and comfirmation password do not match'));\r\n\r\n          (canAssignRoles && !roles.valid && showErrorAlert('Roles is required', 'Please select a minimum of 1 role'));\">\r\n\r\n        <div class=\"form-group\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'users.editor.JobTitle' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.jobTitle}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <input autofocus type=\"text\" attr.id=\"jobTitle-{{uniqueId}}\" name=\"jobTitle\" placeholder=\"Enter Job Title\" class=\"form-control\" [(ngModel)]=\"userEdit.jobTitle\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"userName-{{uniqueId}}\">{{'users.editor.UserName' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.userName}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\" [ngClass]=\"{'has-success': f.submitted && userName.valid, 'has-error' : f.submitted && !userName.valid}\">\r\n                <input type=\"text\" attr.id=\"userName-{{uniqueId}}\" name=\"userName\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Enter user name\"\r\n                       class=\"form-control\" [(ngModel)]=\"userEdit.userName\" #userName=\"ngModel\" required minlength=\"2\" maxlength=\"200\" />\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': userName.valid, 'glyphicon-remove' : !userName.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !userName.valid\" class=\"errorMessage\">\r\n                    {{'users.editor.UserNameRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"isEditMode && isEditingSelf && !isChangePassword && user.userName != userEdit.userName\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr class=\"password-separator-hr\" />\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"isEditMode && isEditingSelf && !isChangePassword && user.userName != userEdit.userName\" class=\"form-group has-feedback\">\r\n            <label class=\"control-label col-md-2\" for=\"userPassword-{{uniqueId}}\">{{'users.editor.Password' | translate}}</label>\r\n            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && userPassword.valid, 'has-error' : f.submitted && !userPassword.valid}\">\r\n                <input type=\"password\" attr.id=\"userPassword-{{uniqueId}}\" name=\"userPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Enter password\"\r\n                       class=\"form-control\" [(ngModel)]=\"userEdit.currentPassword\" #userPassword=\"ngModel\" required />\r\n                <small class=\"hint-sm\">{{'users.editor.PasswordHint' | translate}}</small>\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': userPassword.valid, 'glyphicon-remove' : !userPassword.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !userPassword.valid\" class=\"errorMessage\">\r\n                    {{'users.editor.CurrentPasswordRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"email-{{uniqueId}}\">{{'users.editor.Email' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.email}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\" [ngClass]=\"{'has-success': f.submitted && email.valid, 'has-error' : f.submitted && !email.valid}\">\r\n                <input type=\"text\" attr.id=\"email-{{uniqueId}}\" name=\"email\" placeholder=\"Enter email address\" class=\"form-control\" [(ngModel)]=\"userEdit.email\" #email=\"ngModel\"\r\n                       required maxlength=\"200\" pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$\" />\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': email.valid, 'glyphicon-remove' : !email.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && email.errors?.required\" class=\"errorMessage\">\r\n                    {{'users.editor.EmailRequired' | translate}}\r\n                </span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && email.errors?.pattern\" class=\"errorMessage\">\r\n                    {{'users.editor.InvalidEmail' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"isEditMode\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"isEditMode\" class=\"form-group\">\r\n            <label for=\"newPassword-{{uniqueId}}\" class=\"control-label col-md-2\">{{'users.editor.Password' | translate}}</label>\r\n            <div *ngIf=\"!isChangePassword && !isNewUser\" class=\"col-md-10\">\r\n                <button type=\"button\" (click)=\"changePassword()\" class=\"btn btn-link\">{{'users.editor.ChangePassword' | translate}}</button>\r\n            </div>\r\n\r\n            <div *ngIf=\"isChangePassword || isNewUser\" class=\"col-md-10\">\r\n                <div class=\"password-well well well-sm\">\r\n                    <div *ngIf=\"isEditingSelf\" class=\"form-group has-feedback\">\r\n                        <label class=\"control-label col-md-3\" for=\"currentPassword-{{uniqueId}}\">{{'users.editor.CurrentPassword' | translate}}</label>\r\n                        <div class=\"col-md-9\" [ngClass]=\"{'has-success': f.submitted && currentPassword.valid, 'has-error' : f.submitted && !currentPassword.valid}\">\r\n                            <input type=\"password\" attr.id=\"currentPassword-{{uniqueId}}\" name=\"currentPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Enter current password\" class=\"form-control\" [(ngModel)]=\"userEdit.currentPassword\" #currentPassword=\"ngModel\"\r\n                                   required />\r\n                            <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': currentPassword.valid, 'glyphicon-remove' : !currentPassword.valid}\"></span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && !currentPassword.valid\" class=\"errorMessage\">\r\n                                {{'users.editor.CurrentPasswordRequired' | translate}}\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div *ngIf=\"!isNewUser\" class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <hr class=\"password-separator-hr\" />\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                        <label class=\"control-label col-md-3\" for=\"newPassword-{{uniqueId}}\">{{'users.editor.NewPassword' | translate}}</label>\r\n                        <div class=\"col-md-9\" [ngClass]=\"{'has-success': f.submitted && newPassword.valid, 'has-error' : f.submitted && !newPassword.valid}\">\r\n                            <input type=\"password\" attr.id=\"newPassword-{{uniqueId}}\" name=\"newPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"{{'users.formInput.EnterNewPassword'|translate}}\" class=\"form-control\" [(ngModel)]=\"userEdit.newPassword\" #newPassword=\"ngModel\"\r\n                                   required minlength=\"6\" validateEqual=\"confirmPassword\" reverse=\"true\" />\r\n                            <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': newPassword.valid, 'glyphicon-remove' : !newPassword.valid}\"></span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && !newPassword.valid\" class=\"errorMessage\">\r\n                                {{'users.editor.NewPasswordRequired' | translate}}\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <hr class=\"password-separator-hr\" />\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                        <label class=\"control-label col-md-3\" for=\"confirmPassword-{{uniqueId}}\">{{'users.editor.ConfirmPassword' | translate}}</label>\r\n                        <div class=\"col-md-9\" [ngClass]=\"{'has-success': f.submitted && confirmPassword.valid, 'has-error' : f.submitted && !confirmPassword.valid}\">\r\n                            <input type=\"password\" attr.id=\"confirmPassword-{{uniqueId}}\" name=\"confirmPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Confirm new password\" class=\"form-control\" [(ngModel)]=\"userEdit.confirmPassword\" #confirmPassword=\"ngModel\"\r\n                                   required validateEqual=\"newPassword\" />\r\n                            <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': confirmPassword.valid, 'glyphicon-remove' : !confirmPassword.valid}\"></span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && confirmPassword.errors?.required\" class=\"errorMessage\">\r\n                                {{'users.editor.ConfirmationPasswordRequired' | translate}}\r\n                            </span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && confirmPassword.errors?.validateEqual && !confirmPassword.errors?.required\" class=\"errorMessage\">\r\n                                {{'users.editor.PasswordMismatch' | translate}}\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <!--******************************************************************************************************-->\r\n\r\n        <div *ngIf=\"!isEditMode || canAssignRoles\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"!isEditMode || canAssignRoles\" class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"roles-user-info\">{{'users.editor.Roles' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">\r\n                    <span *ngFor=\"let role of user.roles\">\r\n                        <span title='{{getRoleByName(role)?.description}}' class=\"badge\">{{role}}</span>\r\n                    </span>\r\n                </p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode && canAssignRoles\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\" [ngClass]=\"{'has-success': f.submitted && roles.valid, 'has-error' : f.submitted && !roles.valid}\">\r\n                <select id=\"roles-user-info\" name=\"roles\" [(ngModel)]=\"userEdit.roles\" #roles=\"ngModel\" class=\"selectpicker form-control\" bootstrapSelect required multiple\r\n                        data-live-search=\"true\" data-actions-box=\"false\" data-live-search-placeholder=\"Search...\" title=\"Select Roles\">\r\n                    <option *ngFor=\"let role of allRoles\" attr.data-content=\"<span title='{{role.description}}' class='badge'>{{role.name}}</span>\" attr.value=\"{{role.name}}\">\r\n                        {{role.name}}\r\n                    </option>\r\n                </select>\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': roles.valid, 'glyphicon-remove' : !roles.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !roles.valid\" class=\"errorMessage\">\r\n                    {{'users.editor.RoleRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <!--******************************************************************************************************-->\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"fullName-{{uniqueId}}\">{{'users.editor.FullName' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.fullName}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <input type=\"text\" attr.id=\"fullName-{{uniqueId}}\" name=\"fullName\" placeholder=\"Enter full name\" class=\"form-control\" [(ngModel)]=\"userEdit.fullName\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"phoneNumber-{{uniqueId}}\">{{'users.editor.PhoneNumber' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.phoneNumber}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <input type=\"text\" attr.id=\"phoneNumber-{{uniqueId}}\" name=\"phoneNumber\" placeholder=\"Enter phone number\" class=\"form-control\" [(ngModel)]=\"userEdit.phoneNumber\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"!isViewOnly\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.last-separator-hr]=\"!isEditMode\" [class.edit-last-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"!isViewOnly\" class=\"form-group\">\r\n            <div class=\"col-sm-5\">\r\n                <div *ngIf=\"isGeneralEditor && isEditMode\" class=\"pull-left\">\r\n                    <div class=\"checkbox user-enabled\">\r\n                        <label>\r\n                            <input type=\"checkbox\" name=\"isEnabled\" [(ngModel)]=\"userEdit.isEnabled\">\r\n                            {{'users.editor.Enabled' | translate}}\r\n                        </label>\r\n                    </div>\r\n                    <button *ngIf=\"userEdit.isLockedOut\" type=\"button\" (click)=\"unlockUser()\" class=\"btn btn-warning unblock-user\" [disabled]=\"isSaving\"><i class='fa fa-unlock-alt'></i> {{'users.editor.Unblock' | translate}}</button>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-sm-7\">\r\n                <div class=\"pull-right\">\r\n                    <button *ngIf=\"!isEditMode && isGeneralEditor\" type=\"button\" (click)=\"close()\" class=\"btn btn-default\"><i class='fa fa-close'></i> {{'users.editor.Close' | translate}}</button>\r\n                    <button *ngIf=\"!isEditMode && !isGeneralEditor\" type=\"button\" (click)=\"edit()\" class=\"btn btn-default\"><i class='fa fa-edit'></i> {{'users.editor.Edit' | translate}}</button>\r\n                    <button *ngIf=\"isEditMode\" type=\"button\" (click)=\"cancel()\" class=\"btn btn-danger\" [disabled]=\"isSaving\"><i class='fa fa-times'></i> {{'users.editor.Cancel' | translate}}</button>\r\n                    <button *ngIf=\"isEditMode\" type=\"submit\" class=\"btn btn-primary\" [disabled]=\"isSaving\">\r\n                        <i *ngIf=\"!isSaving\" class='fa fa-save'></i><i *ngIf=\"isSaving\" class='fa fa-circle-o-notch fa-spin'></i> {{isSaving ? ('users.editor.Saving' | translate) : ('users.editor.Save' | translate)}}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"clearfix\"></div>\r\n    </form>\r\n</div>\r\n";
+module.exports = "<div>\r\n    <div>\r\n        <carousel interval=\"6000\">\r\n            <slide>\r\n                <img [src]=\"banner1\" alt=\"ASP.NET\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        Learn how to build ASP.NET apps that can run anywhere\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n            <slide>\r\n                <img [src]=\"banner2\" alt=\"Visual Studio\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        One platform for building modern web, native mobile and native desktop applications\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://angular.io\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n            <slide>\r\n                <img [src]=\"banner3\" alt=\"Package Management\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        Bring in libraries from NuGet and npm, and bundle with webpack\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n            <slide>\r\n                <img [src]=\"banner4\" alt=\"Eben Monney\" class=\"img-responsive\" />\r\n                <div class=\"carousel-caption\">\r\n                    <p>\r\n                        Follow me on social media for updates and tips on using this startup project\r\n                        <a class=\"btn btn-default btn-sm\" href=\"http://ebenmonney.com/about\" target=\"_blank\">\r\n                            Learn More\r\n                        </a>\r\n                    </p>\r\n                </div>\r\n            </slide>\r\n        </carousel>\r\n    </div>\r\n\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\">\r\n            <h3>Application uses</h3>\r\n            <ul>\r\n                <li>Restful API backend using the cross platform <a href=\"http://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409\" target=\"_blank\">ASP.NET Core MVC</a></li>\r\n                <li>Client framework with <a href=\"http://angular.io\" target=\"_blank\">angular2</a> and typescript</li>\r\n                <li><a href=\"http://npmjs.com\" target=\"_blank\">npm</a> for managing client-side libraries</li>\r\n                <li>Theming using <a href=\"http://go.microsoft.com/fwlink/?LinkID=398939\" target=\"_blank\">Bootstrap</a></li>\r\n                <li>Module bundling with <a href=\"https://webpack.js.org\" target=\"_blank\">webpack2</a></li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            <h3>How to</h3>\r\n            <ul>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#adding-pages\" target=\"_blank\">Add additional pages and set access permissions</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699315\" target=\"_blank\">Manage User Secrets using Secret Manager.</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699316\" target=\"_blank\">Use logging to log a message.</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699317\" target=\"_blank\">Add packages using NuGet.</a></li>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#adding-vendor-packages\" target=\"_blank\">Add client packages using npm</a></li>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#building-vendor-packages\" target=\"_blank\">Rebuild client vendor packages</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=699319\" target=\"_blank\">Target development, staging or production environment.</a></li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            <h3>Overview</h3>\r\n            <ul>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=518008\" target=\"_blank\">Conceptual overview of what is ASP.NET Core</a></li>\r\n                <li><a href=\"http://angular.io/docs/ts/latest/guide\" target=\"_blank\">Angular2 documentation overview</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=398602\" target=\"_blank\">Working with Data</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkId=398603\" target=\"_blank\">Security</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=699321\" target=\"_blank\">Client side development</a></li>\r\n                <li><a href=\"https://webpack.js.org/guides/get-started\" target=\"_blank\">An introduction to webpack</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=699322\" target=\"_blank\">Develop on different platforms</a></li>\r\n                <li><a href=\"http://ebenmonney.com/quickapp\" target=\"_blank\">Read more on the documentation site</a></li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-md-3\">\r\n            <h3>Run & Deploy</h3>\r\n            <ul>\r\n                <li><a href=\"http://ebenmonney.com/quickapp#how-to-run-app\" target=\"_blank\">Run your app</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=517853\" target=\"_blank\">Run tools such as EF migrations and more</a></li>\r\n                <li><a href=\"http://go.microsoft.com/fwlink/?LinkID=398609\" target=\"_blank\">Publish to Microsoft Azure Web Apps</a></li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 139 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-horizontal\">\r\n    <div class=\"form-group\">\r\n        <label for=\"refreshButton\" class=\"col-sm-3 control-label\">{{'preferences.ReloadPreferences' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <button id=\"refreshButton\" class=\"btn btn-default\" (click)=\"reloadFromServer()\">\r\n                <i class=\"fa fa-refresh\"></i>\r\n            </button>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.ReloadPreferencesHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label for=\"language\" class=\"col-sm-3 control-label\">{{'preferences.Language' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <select id=\"language\" [(ngModel)]=\"configurations.language\" #languageSelector=\"bootstrap-select\" bootstrapSelect class=\"selectpicker form-control\">\r\n                <option data-subtext=\"(Default)\" value=\"en\">{{'preferences.English' | translate}}</option>\r\n                <option value=\"fr\">{{'preferences.French' | translate}}</option>\r\n                <option value=\"ar\">{{'preferences.Arabic' | translate}}</option>\r\n                <option value=\"ko\">{{'preferences.Korean' | translate}}</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.LanguageHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label for=\"homePage\" class=\"col-sm-3 control-label\">{{'preferences.HomePage' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <select id=\"homePage\" [(ngModel)]=\"configurations.homeUrl\" #homePageSelector=\"bootstrap-select\" bootstrapSelect class=\"selectpicker form-control\">\r\n                <option data-icon=\"fa fa-tachometer\" data-subtext=\"(Default)\" value=\"/\">{{'preferences.Dashboard' | translate}}</option>\r\n                <option *ngIf=\"canViewCustomers\" data-icon=\"fa fa-handshake-o\" value=\"/customers\">{{'preferences.Customers' | translate}}</option>\r\n                <option *ngIf=\"canViewProducts\" data-icon=\"fa fa-truck\" value=\"/products\">{{'preferences.Products' | translate}}</option>\r\n                <option *ngIf=\"canViewOrders\" data-icon=\"fa fa-shopping-cart\" value=\"/orders\">{{'preferences.Orders' | translate}}</option>\r\n\t\t\t\t<option *ngIf=\"canViewPlayers\" data-icon=\"fa fa-shopping-cart\" value=\"/players\">{{'preferences.Players' | translate}}</option>\r\n                <option data-icon=\"fa fa-info-circle\" value=\"/about\">{{'preferences.About' | translate}}</option>\r\n                <option data-icon=\"fa fa-cog\" value=\"/settings\">{{'preferences.Settings' | translate}}</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.HomePageHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label for=\"defaultTheme\" class=\"col-sm-3 control-label\">{{'preferences.Theme' | translate}} </label>\r\n        <div *ngIf=\"themeSelectorToggle\" class=\"col-sm-4\">\r\n            <select id=\"defaultTheme\" [(ngModel)]=\"configurations.theme\" bootstrapSelect class=\"selectpicker form-control\">\r\n                <option attr.data-content=\"{{'preferences.DefaultColor' | translate}}\">Default</option>\r\n                <option attr.data-content=\"{{'preferences.RedColor' | translate}}\">Red</option>\r\n                <option attr.data-content=\"{{'preferences.OrangeColor' | translate}}\">Orange</option>\r\n                <option attr.data-content=\"{{'preferences.GreenColor' | translate}}\">Green</option>\r\n                <option attr.data-content=\"{{'preferences.GrayColor' | translate}}\">Gray</option>\r\n                <option attr.data-content=\"{{'preferences.BlackColor' | translate}}\">Black</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.ThemeHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardStatistics\">{{'preferences.DashboardStatistics' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardStatistics\" [(ngModel)]=\"configurations.showDashboardStatistics\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardStatisticsHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"subseparator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardTodo\">{{'preferences.DashboardNotifications' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardNotifications\" [(ngModel)]=\"configurations.showDashboardNotifications\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardNotificationsHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"subseparator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardTodo\">{{'preferences.DashboardTodo' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardTodo\" [(ngModel)]=\"configurations.showDashboardTodo\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardTodoHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"subseparator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardBanner\">{{'preferences.DashboardBanner' | translate}}</label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardBanner\" [(ngModel)]=\"configurations.showDashboardBanner\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardBannerHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"last-separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <div class=\"col-sm-3\">\r\n\r\n        </div>\r\n        <div class=\"col-sm-9\">\r\n            <div class=\"row pull-left\">\r\n                <div class=\"col-sm-6 col-reset-default\">\r\n                    <button type=\"button\" (click)=\"resetDefault()\" class=\"btn btn-success\">\r\n                        <i class='fa fa-circle-o-notch'></i> {{'preferences.ResetDefault' | translate}}\r\n                    </button>\r\n                </div>\r\n                <div class=\"col-sm-6 col-set-default\">\r\n                    <button type=\"button\" (click)=\"setAsDefault()\" class=\"btn btn-primary\">\r\n                        <i class='fa fa-hdd-o'></i> {{'preferences.SetDefault' | translate}}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div>\r\n    <ngx-datatable class=\"material colored-header sm table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"isViewOnly ? 0 : 35\"\r\n                   [footerHeight]=\"35\"\r\n                   [limit]=\"10\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"verticalScrollbar\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #statusHeaderTemplate>\r\n        <i class=\"fa fa-bullhorn\"></i>\r\n    </ng-template>\r\n\r\n    <ng-template #statusTemplate>\r\n        <span></span>\r\n    </ng-template>\r\n\r\n    <ng-template #dateTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.unread]=\"!row.isRead\" attr.title=\"{{getPrintedDate(value)}}\">\r\n            {{getPrintedDate(value)}}\r\n        </span>\r\n    </ng-template>\r\n\r\n    <ng-template #contentHeaderTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.unread]=\"!row.isRead\" attr.title=\"{{row.body}}\">\r\n            {{value}}\r\n        </span>\r\n    </ng-template>\r\n\r\n    <ng-template #contenBodytTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.unread]=\"!row.isRead\" attr.title=\"{{row.header}}\">\r\n            {{value}}\r\n        </span>\r\n    </ng-template>\r\n\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\">\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'notifications.Delete' | translate}}\" container=\"body\" (click)=\"deleteNotification(row)\"><i class=\"fa fa-times\"></i></a>\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'notifications.Pin' | translate}}\" co container=\"body\" (click)=\"togglePin(row)\">\r\n            <i *ngIf=\"row.isPinned\" class=\"fa fa-thumb-tack\"></i>\r\n            <i *ngIf=\"!row.isPinned\" class=\"fa fa-thumb-tack fa-rotate-90\"></i>\r\n        </a>\r\n    </ng-template>\r\n</div>";
 
 /***/ }),
 /* 140 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\r\n    <div class=\"row control-box\">\r\n        <div class=\"col-sm-8\">\r\n            <div class=\"form-group search-box\">\r\n                <search-box (searchChange)=\"onSearchChanged($event)\" placeholder=\"{{'users.management.Search' | translate}}\">></search-box>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"navbar action-box\">\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li *ngIf=\"canManageUsers\" class=\"toolbaritem\">\r\n                        <a href=\"javascript:;\" (click)=\"newUser(row)\">\r\n                            <i class=\"fa fa-plus-circle\"></i> {{'users.management.NewUser' | translate}}\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ngx-datatable class=\"material colored-header sm table table-striped table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"35\"\r\n                   [footerHeight]=\"35\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"true\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #indexTemplate let-value=\"value\">\r\n        <strong>{{value}}</strong>\r\n    </ng-template>\r\n\r\n    <ng-template #userNameTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.locked-out]=\"row.isLockedOut\" [class.user-disabled]=\"!row.isEnabled\">\r\n            <i *ngIf=\"row.isLockedOut\" class=\"fa fa-exclamation-triangle\"> </i>\r\n            <i *ngIf=\"!row.isEnabled\" class=\"fa fa-exclamation\"> </i>\r\n            {{value}}\r\n        </span>\r\n    </ng-template>\r\n\r\n    <ng-template #rolesTemplate let-row=\"row\" let-value=\"value\" let-i=\"index\">\r\n        <span class=\"user-role badge\" *ngFor=\"let role of value\">{{role}}</span>\r\n    </ng-template>\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\" let-value=\"value\" let-i=\"index\">\r\n        <div *ngIf=\"canManageUsers\">\r\n            <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"editUser(row)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> {{'users.management.Edit' | translate}}</a>\r\n            |\r\n            <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"deleteUser(row)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i> {{'users.management.Delete' | translate}}</a>\r\n        </div>\r\n    </ng-template>\r\n\r\n\r\n    <div class=\"modal fade\" bsModal #editorModal=\"bs-modal\" (onHidden)=\"onEditorModalHidden()\" [config]=\"{backdrop: 'static'}\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog modal-lg\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <h4 class=\"modal-title pull-left\"><i class=\"fa fa-user-circle-o\"></i> {{editingUserName ? ('users.management.EditUser' | translate:editingUserName) : ('users.management.NewUser' | translate)}}</h4>\r\n                    <button type=\"button\" class=\"close pull-right\" title=\"Close\" (click)=\"editorModal.hide()\">\r\n                        <span aria-hidden=\"true\">&times;</span>\r\n                    </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <user-info #userEditor [isGeneralEditor]=\"true\"></user-info>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div>\r\n    <form *ngIf=\"formResetToggle\" class=\"form-horizontal\" name=\"roleEditorForm\" #f=\"ngForm\" novalidate\r\n          (ngSubmit)=\"f.form.valid ? save() :\r\n          (!roleName.valid && showErrorAlert('Role name is required', 'Please enter a role name (minimum of 2 and maximum of 200 characters)'));\">\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-sm-4\">\r\n                <div class=\"form-group has-feedback\">\r\n                    <label class=\"control-label col-md-2\" for=\"roleName\">{{'roles.editor.Name' | translate}}</label>\r\n                    <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && roleName.valid, 'has-error' : f.submitted && !roleName.valid}\">\r\n                        <input [disabled]=\"!canManageRoles\" type=\"text\" id=\"roleName\" name=\"roleName\" placeholder=\"Enter role name\" class=\"form-control\" [(ngModel)]=\"roleEdit.name\" #roleName=\"ngModel\" required minlength=\"2\" maxlength=\"200\" />\r\n                        <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': roleName.valid, 'glyphicon-remove' : !roleName.valid}\"></span>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-sm-8\">\r\n                <div class=\"form-group\">\r\n                    <label class=\"control-label col-md-2\" for=\"roleDescription\">{{'roles.editor.Description' | translate}}</label>\r\n                    <div class=\"col-md-10\">\r\n                        <input [disabled]=\"!canManageRoles\" type=\"text\" id=\"roleDescription\" name=\"roleDescription\" placeholder=\"Enter role description\" class=\"form-control\" [(ngModel)]=\"roleEdit.description\" />\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !roleName.valid\" class=\"errorMessage roleErrorMessage\">\r\n                    {{'roles.editor.RoleNameRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr class=\"edit-separator-hr\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"row well well-sm permissionsRow\">\r\n\r\n                <ng-template ngFor let-permissionGroup [ngForOf]=\"allPermissions | groupBy: 'groupName'\" let-i=\"index\">\r\n                    <div class=\"form-group col-sm-6 permissionsColumn\">\r\n                        <label class=\"col-md-5 control-label\" for=\"checkboxes\" (click)=\"toggleGroup(permissionGroup.key)\">{{permissionGroup.key}}</label>\r\n                        <div class=\"col-md-7\">\r\n                            <div class=\"checkbox\" *ngFor=\"let permission of permissionGroup.value\">\r\n                                <label tooltip=\"{{permission.description}}\" for=\"checkboxes-{{permission.value}}\">\r\n                                    <input [disabled]=\"!canManageRoles\" name=\"checkboxes-{{permission.value}}\" id=\"checkboxes-{{permission.value}}\" type=\"checkbox\" [(ngModel)]=\"selectedValues[permission.value]\">\r\n                                    {{permission.name}}\r\n                                </label>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div *ngIf=\"(i + 1) % 2 === 0\" class=\"clearfix\"></div>\r\n                </ng-template>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr class=\"edit-last-separator-hr\" />\r\n            </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"form-group\">\r\n            <div class=\"col-sm-5\">\r\n                <div *ngIf=\"canManageRoles\" class=\"pull-left\">\r\n                    <a (click)=\"selectAll()\" href=\"javascript:;\" class=\"btn btn-link\">{{'roles.editor.SelectAll' | translate}}</a>|<a (click)=\"selectNone()\" href=\"javascript:;\" class=\"btn btn-link\">{{'roles.editor.SelectNone' | translate}}</a>\r\n                </div>\r\n            </div>\r\n\r\n            <div class=\"col-sm-7\">\r\n                <div class=\"pull-right\">\r\n                    <button *ngIf=\"!canManageRoles\" type=\"button\" (click)=\"cancel()\" class=\"btn btn-default\">{{'roles.editor.Close' | translate}}</button>\r\n                    <button *ngIf=\"canManageRoles\" type=\"button\" (click)=\"cancel()\" class=\"btn btn-danger\" [disabled]=\"isSaving\"><i class='fa fa-times'></i> {{'roles.editor.Cancel' | translate}}</button>\r\n                    <button *ngIf=\"canManageRoles\" type=\"submit\" class=\"btn btn-primary\" [disabled]=\"isSaving\">\r\n                        <i *ngIf=\"!isSaving\" class='fa fa-save'></i><i *ngIf=\"isSaving\" class='fa fa-circle-o-notch fa-spin'></i> {{isSaving ? ('roles.editor.Saving' | translate) : ('roles.editor.Save' | translate)}}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"clearfix\"></div>\r\n    </form>\r\n</div>\r\n";
 
 /***/ }),
 /* 141 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-handshake-o fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Customers' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <!---- Sample Page Content ---->\r\n        <todo-demo verticalScrollbar=\"true\"></todo-demo>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div>\r\n    <div class=\"row control-box\">\r\n        <div class=\"col-sm-8\">\r\n            <div class=\"form-group search-box\">\r\n                <search-box (searchChange)=\"onSearchChanged($event)\" placeholder=\"{{'roles.management.Search' | translate}}\">></search-box>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"navbar action-box\">\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li *ngIf=\"canManageRoles\" class=\"toolbaritem\">\r\n                        <a href=\"javascript:;\" (click)=\"newRole(row)\">\r\n                            <i class=\"fa fa-plus-circle\"></i> {{'roles.management.NewRole' | translate}}\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ngx-datatable class=\"material colored-header sm table table-striped table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"35\"\r\n                   [footerHeight]=\"35\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"true\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #indexTemplate let-value=\"value\">\r\n        <strong>{{value}}</strong>\r\n    </ng-template>\r\n\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\" let-value=\"value\" let-i=\"index\">\r\n        <a *ngIf=\"canManageRoles\" class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"editRole(row)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> {{'roles.management.Edit' | translate}}</a>\r\n        <a *ngIf=\"!canManageRoles\" class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"editRole(row)\"><i class=\"fa fa-eye\" aria-hidden=\"true\"></i> {{'roles.management.Details' | translate}}</a>\r\n        {{canManageRoles ? '|' : ''}}\r\n        <a *ngIf=\"canManageRoles\" class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"deleteRole(row)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i> {{'roles.management.Delete' | translate}}</a>\r\n    </ng-template>\r\n\r\n\r\n    <div class=\"modal fade\" bsModal #editorModal=\"bs-modal\" (onHidden)=\"onEditorModalHidden()\" [config]=\"{backdrop: 'static'}\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog modal-lg\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <h4 *ngIf=\"!canManageRoles\" class=\"modal-title pull-left\"><i class=\"fa fa-shield\"></i> {{'roles.management.RoleDetails' | translate}} \"{{editingRoleName}}\"</h4>\r\n                    <h4 *ngIf=\"canManageRoles\" class=\"modal-title pull-left\"><i class=\"fa fa-shield\"></i> {{editingRoleName ? ('roles.management.EditRole' | translate:editingRoleName) : ('roles.management.NewRole' | translate)}}</h4>\r\n                    <button type=\"button\" class=\"close pull-right\" title=\"Close\" (click)=\"editorModal.hide()\">\r\n                        <span aria-hidden=\"true\">&times;</span>\r\n                    </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <role-editor #roleEditor></role-editor>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 142 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-tachometer fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Dashboard' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <div *ngIf=\"!configurations.showDashboardStatistics && !configurations.showDashboardNotifications && !configurations.showDashboardTodo && !configurations.showDashboardBanner\" class=\"well well-lg\">\r\n            <h4 class=\"text-muted text-center\">\r\n                {{'home.NoWidgets1' | translate}} <a routerLink=\"/settings\" fragment=\"preferences\"><i class=\"fa fa-sliders\"></i> {{'settings.tab.Preferences' | translate}}</a>\r\n                {{'home.NoWidgets2' | translate}}\r\n            </h4>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardStatistics\" class=\"row bottom-space well well-sm\">\r\n            <h4 class=\"text-muted inline-block\">{{'home.StatisticsTitle' | translate}}</h4>\r\n            <button type=\"button\" class=\"close pull-right statistics-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardStatistics = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <statistics-demo></statistics-demo>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardNotifications\" class=\"row bottom-space\">\r\n            <button type=\"button\" class=\"close pull-right todo-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardNotifications = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <notifications-viewer></notifications-viewer>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardTodo\" class=\"row bottom-space\">\r\n            <button type=\"button\" class=\"close pull-right todo-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardTodo = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <todo-demo></todo-demo>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardBanner\" class=\"row no-bottom-space\">\r\n            <button type=\"button\" class=\"close pull-right banner-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardBanner = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <banner1-demo></banner1-demo>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class=\"icon-addon addon-sm\">\r\n    <label for=\"searchInput\" title=\"Search\"><i class=\"fa fa-search left-icon search-icon\"></i></label>\r\n    <input id=\"searchInput\" #searchInput type=\"search\" ngModel=\"\" (ngModelChange)=\"onValueChange($event)\" [attr.placeholder]=\"placeholder\" class=\"form-control left-icon right-icon\">\r\n    <a *ngIf=\"searchInput.value\" href=\"javascript:;\" title=\"Clear\" (click)=\"clear()\" class=\"fa fa-times-circle clear-input right-icon\"></a>\r\n</div>";
 
 /***/ }),
 /* 143 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"vertical-center-flex\">\r\n    <div class=\"login-container center-block\">\r\n        <div class=\"panel panel-primary boxshadow\">\r\n            <div class=\"panel-heading\">\r\n                <span class=\"glyphicon glyphicon-lock\"></span>{{'login.Login' | translate}} {{currentUser}}\r\n                <button *ngIf=\"isModal\" type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"closeModal()\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n            <div class=\"panel-body\">\r\n                <div class=\"col-md-8 col-md-offset-2\">\r\n                    <form *ngIf=\"formResetToggle\" class=\"form-horizontal login\" name=\"loginForm\" #f=\"ngForm\" novalidate\r\n                          (ngSubmit)=\"f.form.valid ? login() :\r\n                          (!email.valid && showErrorAlert('Email is required', 'Please enter a valid email'));\r\n                          (!password.valid && showErrorAlert('Password is required', 'Please enter a valid password'))\">\r\n                        <div class=\"form-group has-feedback\">\r\n                            <label class=\"control-label col-md-2\" for=\"login-email\">{{'login.Email' | translate}}:</label>\r\n                            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && email.valid, 'has-error' : f.submitted && !email.valid}\">\r\n                                <input type=\"text\" id=\"login-email\" name=\"email\" placeholder=\"{{'login.EnterUser' | translate}}\" class=\"form-control\" [(ngModel)]=\"userLogin.email\" #email=\"ngModel\" required />\r\n                                <span *ngIf=\"f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': email.valid, 'glyphicon-remove' : !email.valid}\" aria-hidden=\"true\"></span>\r\n                                <span class=\"errorMessage\" *ngIf=\"f.submitted && !email.valid\">\r\n                                    Email is required\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group has-feedback\">\r\n                            <label class=\"control-label col-md-2\" for=\"login-password\">{{'login.Password' | translate}}:</label>\r\n                            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && password.valid, 'has-error' : f.submitted && !password.valid}\">\r\n                                <input type=\"password\" id=\"login-password\" name=\"password\" placeholder=\"{{'login.EnterPassword' |translate}}\" class=\"form-control\" [(ngModel)]=\"userLogin.password\" #password=\"ngModel\" required />\r\n                                <span *ngIf=\"f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': password.valid, 'glyphicon-remove' : !password.valid}\" aria-hidden=\"true\"></span>\r\n                                <span class=\"errorMessage\" *ngIf=\"f.submitted && !password.valid\">\r\n                                    Password is required\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <div class=\"col-md-offset-2 col-md-10\">\r\n                                <div class=\"checkbox\">\r\n                                    <label><input type=\"checkbox\" name=\"rememberMe\" [(ngModel)]=\"userLogin.rememberMe\"> {{'login.Rememberme' | translate}}</label>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <div class=\"col-md-offset-2 col-md-10\">\r\n                                <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"isLoading\"><i *ngIf=\"isLoading\" class='fa fa-circle-o-notch fa-spin'></i> {{isLoading ? 'Loggin in...' : 'Login'}}</button>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <!--<div *ngIf=\"!isModal\" class=\"col-md-12\">\r\n                            <hr class=\"separator-hr\" />\r\n                        </div>\r\n\r\n                        <div *ngIf=\"!isModal\" class=\"col-md-12 last-control-group\">\r\n                            <span>Don't have an account?</span><a href=\"javascript:;\" class=\"btn btn-link\" (click)=\"signUp()\">Sign Up</a>\r\n                        </div>-->\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"row\">\r\n    <div class=\"col-md-6\">\r\n        <div class=\"chart-container\">\r\n            <canvas baseChart width=\"600\" height=\"250\"\r\n                    [datasets]=\"chartData\"\r\n                    [labels]=\"chartLabels\"\r\n                    [options]=\"chartOptions\"\r\n                    [colors]=\"chartColors\"\r\n                    [legend]=\"chartLegend\"\r\n                    [chartType]=\"chartType\"\r\n                    (chartHover)=\"chartHovered($event)\"\r\n                    (chartClick)=\"chartClicked($event, item)\"></canvas>\r\n        </div>\r\n    </div>\r\n    <div class=\"col-md-6 table-container\">\r\n        <table class=\"table table-responsive table-condensed\">\r\n            <thead>\r\n                <tr>\r\n                    <th></th>\r\n                    <th *ngFor=\"let label of chartLabels\">{{label}}</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr *ngFor=\"let d of chartData\">\r\n                    <th>{{d && d.label.split(' ').pop()}}</th>\r\n                    <td *ngFor=\"let label of chartLabels; let j=index\">{{d && d.data[j]}}</td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n        <button class=\"refresh-btn\" (click)=\"randomize();showMessage('Manual refresh!');\">REFSH</button>\r\n        <div class=\"chart-type-container\" dropdown>\r\n            <button id=\"chartType\" type=\"button\" dropdownToggle><i class=\"fa fa-bar-chart dropdown-toggle\"></i></button>\r\n            <ul *dropdownMenu role=\"menu\" aria-labelledby=\"chartType\" class=\"dropdown-menu\">\r\n                <li [class.active2]=\"chartType == 'bar'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('bar')\" href=\"javascript:;\">Bar Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'pie'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('pie')\" href=\"javascript:;\">Pie Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'doughnut'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('doughnut')\" href=\"javascript:;\">Doughnut Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'polarArea'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('polarArea')\" href=\"javascript:;\">Polar Area Chart</a></li>\r\n                <li [class.active2]=\"chartType == 'radar'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('radar')\" href=\"javascript:;\">Radar Chart</a></li>\r\n                <li class=\"divider dropdown-divider\"></li>\r\n                <li [class.active2]=\"chartType == 'line'\" role=\"menuitem\"><a class=\"dropdown-item\" (click)=\"changeChartType('line')\" href=\"javascript:;\">Line Chart</a></li>\r\n            </ul>\r\n        </div>\r\n        <button class=\"p1ull-right\" (click)=\"showMessage('You\\'ve clicked on the menu')\"><i class=\"fa fa-bars\"></i></button>\r\n        <button class=\"p1ull-right\" (click)=\"showDialog('Enter some value to do serious configuration...')\"><i class=\"fa fa-cogs\"></i></button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 144 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-exclamation-circle fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.NotFound' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut] class=\"vertical-center-flex\">\r\n        <div class=\"center-block\">\r\n            <div class=\"icon-container\"><i class='fa fa-exclamation-circle'></i> {{'notFound.404' | translate}}</div>\r\n            <div class=\"text-muted error-description\">{{'notFound.pageNotFound' | translate}}</div>\r\n            <div><a class=\"btn btn-primary\" routerLink=\"/\"><i class='fa fa-home'></i> {{'notFound.backToHome' | translate}}</a></div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div>\r\n    <div class=\"row control-box\">\r\n        <div class=\"col-sm-8\">\r\n            <div class=\"form-group search-box\">\r\n                <search-box (searchChange)=\"onSearchChanged($event)\" placeholder=\"{{'todoDemo.management.Search' | translate}}\"></search-box>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"navbar action-box\">\r\n                <ul class=\"nav navbar-nav\">\r\n                    <li [class.active]=\"hideCompletedTasks\" class=\"toolbaritem\"><a href=\"javascript:;\" (click)=\"hideCompletedTasks = !hideCompletedTasks\"><i class=\"fa fa-eye-slash\"></i> {{'todoDemo.management.HideCompleted' | translate}}</a></li>\r\n                    <li class=\"toolbaritem\"><a href=\"javascript:;\" (click)=\"addTask()\"><i class=\"fa fa-plus\"></i> {{'todoDemo.management.AddTask' | translate}}</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\t\r\n    <ngx-datatable class=\"material colored-header sm table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"35\"\r\n                   [footerHeight]=\"35\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"verticalScrollbar\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #statusHeaderTemplate>\r\n        <i class=\"fa fa-check-square-o\"></i>\r\n    </ng-template>\r\n\r\n    <ng-template #statusTemplate let-row=\"row\" let-value=\"value\">\r\n        <div class=\"checkbox\">\r\n            <label>\r\n                <input attr.name=\"checkboxes-{{value}}\" type=\"checkbox\" [(ngModel)]=\"row.completed\">\r\n            </label>\r\n        </div>\r\n    </ng-template>\r\n\r\n    <ng-template #nameTemplate let-row=\"row\" let-value=\"value\">\r\n        <span *ngIf=\"!editing[row.$$index + '-name']\" [class.completed]=\"row.completed\" attr.title=\"{{value}}\" (dblclick)=\"editing[row.$$index + '-name'] = true\">\r\n            {{value}}\r\n        </span>\r\n        <input *ngIf=\"editing[row.$$index + '-name']\" class=\"inline-editor\" autofocus (blur)=\"updateValue($event, 'name', value, row)\" type=\"text\" [value]=\"value\" />\r\n    </ng-template>\r\n\r\n    <ng-template #descriptionTemplate let-row=\"row\" let-value=\"value\">\r\n        <span *ngIf=\"!editing[row.$$index + '-description']\" [class.completed]=\"row.completed\" attr.title=\"{{value}}\" (dblclick)=\"editing[row.$$index + '-description'] = true\">\r\n            {{value}}\r\n        </span>\r\n        <input *ngIf=\"editing[row.$$index + '-description']\" class=\"inline-editor\" autofocus (blur)=\"updateValue($event, 'description', value, row)\" type=\"text\" [value]=\"value\" />\r\n    </ng-template>\r\n\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\">\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'todoDemo.management.Delete' | translate}}\" container=\"body\" (click)=\"delete(row)\"><i class=\"fa fa-times\"></i></a>\r\n        <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" tooltip=\"{{'todoDemo.management.Important' | translate}}\" container=\"body\" (click)=\"row.important = !row.important\" (mouseover)=\"row.isMouseOver=true\" (mouseout)=\"row.isMouseOver=false\">\r\n            <i *ngIf=\"row.important || row.isMouseOver\" class=\"fa fa-bookmark\"></i>\r\n            <i *ngIf=\"!row.important && !row.isMouseOver\" class=\"fa fa-bookmark-o\"></i>\r\n        </a>\r\n    </ng-template>\r\n\r\n\r\n\r\n\r\n\r\n    <div class=\"modal fade\" bsModal #editorModal=\"bs-modal\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <h4 class=\"modal-title pull-left\"><i class=\"fa fa-tasks\"></i> {{'todoDemo.editor.NewTask' | translate}}</h4>\r\n                    <button type=\"button\" class=\"close pull-right\" title=\"Close\" (click)=\"editorModal.hide()\">\r\n                        <span aria-hidden=\"true\">&times;</span>\r\n                    </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <form *ngIf=\"formResetToggle\" class=\"form-horizontal\" name=\"taskEditorForm\" #f=\"ngForm\" novalidate\r\n                          (ngSubmit)=\"f.form.valid ? save() :\r\n                      (!taskName.valid && showErrorAlert('Task name is required', 'Please enter a name for the task'));\">\r\n\r\n\r\n                        <div class=\"form-group has-feedback\">\r\n                            <label class=\"control-label col-md-2\" for=\"taskName\">{{'todoDemo.editor.Name' | translate}}:</label>\r\n                            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && taskName.valid, 'has-error' : f.submitted && !taskName.valid}\">\r\n                                <input autofocus type=\"text\" id=\"taskName\" name=\"taskName\" placeholder=\"Enter task name\" class=\"form-control\" [(ngModel)]=\"taskEdit.name\" #taskName=\"ngModel\" required />\r\n                                <span *ngIf=\"f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ':taskName.valid, 'glyphicon-remove' : !taskName.valid}\"></span>\r\n                                <span *ngIf=\"f.submitted && !taskName.valid\" class=\"errorMessage\">\r\n                                    {{'todoDemo.editor.TaskNameRequired' | translate}}\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"form-group description-form-group\">\r\n                            <label class=\"control-label col-md-2\" for=\"taskDescription\">{{'todoDemo.editor.Description' | translate}}:</label>\r\n                            <div class=\"col-md-10\">\r\n                                <input type=\"text\" id=\"taskDescription\" name=\"taskDescription\" placeholder=\"Enter task description\" class=\"form-control\" [(ngModel)]=\"taskEdit.description\" />\r\n                            </div>\r\n                        </div>\r\n                        <label class=\"control-label col-md-2\"> </label>\r\n                        <div class=\"col-md-7\">\r\n                            <div class=\"checkbox\">\r\n                                <label>\r\n                                    <input name=\"isImportant\" type=\"checkbox\" [(ngModel)]=\"taskEdit.important\">\r\n                                    {{'todoDemo.editor.Important' | translate}}\r\n                                </label>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <div class=\"col-md-12\">\r\n                            <hr class=\"edit-last-separator-hr\" />\r\n                        </div>\r\n\r\n\r\n                        <div class=\"form-group actionBtn-form-group\">\r\n                            <div class=\"pull-right\">\r\n                                <button type=\"submit\" class=\"btn btn-primary\">{{'todoDemo.editor.AddTask' | translate}}</button>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"clearfix\"></div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 145 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-shopping-cart fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Orders' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <span class=\"text-muted\">-- Sample Page --</span>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div>\r\n    <form *ngIf=\"formResetToggle\" [attr.autocomplete]=\"isGeneralEditor ? NaN : null\" class=\"form-horizontal\" name=\"userInfoForm\" #f=\"ngForm\" novalidate\r\n          (ngSubmit)=\"f.form.valid ? save() :\r\n\r\n          (!userName.valid && showErrorAlert('User name is required', 'Please enter a user name (minimum of 2 and maximum of 200 characters)'));\r\n\r\n          (userPassword && !userPassword.valid && showErrorAlert('Password is required', 'Please enter the current password'));\r\n\r\n          (email.errors?.required && showErrorAlert('Email is required', 'Please enter an email address (maximum of 200 characters)'));\r\n          (email.errors?.pattern && showErrorAlert('Invalid Email', 'Please enter a valid email address'));\r\n\r\n          (isChangePassword && isEditingSelf && !currentPassword.valid && showErrorAlert('Current password is required', 'Please enter the current password'));\r\n\r\n          (isChangePassword && !newPassword.valid && showErrorAlert('New password is required', 'Please enter the new password (minimum of 6 characters)'));\r\n\r\n          (isChangePassword && confirmPassword.errors?.required && showErrorAlert('Confirmation password is required', 'Please enter the confirmation password'));\r\n          (isChangePassword && confirmPassword.errors?.validateEqual && showErrorAlert('Passwword mismatch', 'New password and comfirmation password do not match'));\r\n\r\n          (canAssignRoles && !roles.valid && showErrorAlert('Roles is required', 'Please select a minimum of 1 role'));\">\r\n\r\n        <div class=\"form-group\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'users.editor.JobTitle' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.jobTitle}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <input autofocus type=\"text\" attr.id=\"jobTitle-{{uniqueId}}\" name=\"jobTitle\" placeholder=\"Enter Job Title\" class=\"form-control\" [(ngModel)]=\"userEdit.jobTitle\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"userName-{{uniqueId}}\">{{'users.editor.UserName' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.userName}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\" [ngClass]=\"{'has-success': f.submitted && userName.valid, 'has-error' : f.submitted && !userName.valid}\">\r\n                <input type=\"text\" attr.id=\"userName-{{uniqueId}}\" name=\"userName\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Enter user name\"\r\n                       class=\"form-control\" [(ngModel)]=\"userEdit.userName\" #userName=\"ngModel\" required minlength=\"2\" maxlength=\"200\" />\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': userName.valid, 'glyphicon-remove' : !userName.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !userName.valid\" class=\"errorMessage\">\r\n                    {{'users.editor.UserNameRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"isEditMode && isEditingSelf && !isChangePassword && user.userName != userEdit.userName\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr class=\"password-separator-hr\" />\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"isEditMode && isEditingSelf && !isChangePassword && user.userName != userEdit.userName\" class=\"form-group has-feedback\">\r\n            <label class=\"control-label col-md-2\" for=\"userPassword-{{uniqueId}}\">{{'users.editor.Password' | translate}}</label>\r\n            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && userPassword.valid, 'has-error' : f.submitted && !userPassword.valid}\">\r\n                <input type=\"password\" attr.id=\"userPassword-{{uniqueId}}\" name=\"userPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Enter password\"\r\n                       class=\"form-control\" [(ngModel)]=\"userEdit.currentPassword\" #userPassword=\"ngModel\" required />\r\n                <small class=\"hint-sm\">{{'users.editor.PasswordHint' | translate}}</small>\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': userPassword.valid, 'glyphicon-remove' : !userPassword.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !userPassword.valid\" class=\"errorMessage\">\r\n                    {{'users.editor.CurrentPasswordRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"email-{{uniqueId}}\">{{'users.editor.Email' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.email}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\" [ngClass]=\"{'has-success': f.submitted && email.valid, 'has-error' : f.submitted && !email.valid}\">\r\n                <input type=\"text\" attr.id=\"email-{{uniqueId}}\" name=\"email\" placeholder=\"Enter email address\" class=\"form-control\" [(ngModel)]=\"userEdit.email\" #email=\"ngModel\"\r\n                       required maxlength=\"200\" pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$\" />\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': email.valid, 'glyphicon-remove' : !email.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && email.errors?.required\" class=\"errorMessage\">\r\n                    {{'users.editor.EmailRequired' | translate}}\r\n                </span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && email.errors?.pattern\" class=\"errorMessage\">\r\n                    {{'users.editor.InvalidEmail' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"isEditMode\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"isEditMode\" class=\"form-group\">\r\n            <label for=\"newPassword-{{uniqueId}}\" class=\"control-label col-md-2\">{{'users.editor.Password' | translate}}</label>\r\n            <div *ngIf=\"!isChangePassword && !isNewUser\" class=\"col-md-10\">\r\n                <button type=\"button\" (click)=\"changePassword()\" class=\"btn btn-link\">{{'users.editor.ChangePassword' | translate}}</button>\r\n            </div>\r\n\r\n            <div *ngIf=\"isChangePassword || isNewUser\" class=\"col-md-10\">\r\n                <div class=\"password-well well well-sm\">\r\n                    <div *ngIf=\"isEditingSelf\" class=\"form-group has-feedback\">\r\n                        <label class=\"control-label col-md-3\" for=\"currentPassword-{{uniqueId}}\">{{'users.editor.CurrentPassword' | translate}}</label>\r\n                        <div class=\"col-md-9\" [ngClass]=\"{'has-success': f.submitted && currentPassword.valid, 'has-error' : f.submitted && !currentPassword.valid}\">\r\n                            <input type=\"password\" attr.id=\"currentPassword-{{uniqueId}}\" name=\"currentPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Enter current password\" class=\"form-control\" [(ngModel)]=\"userEdit.currentPassword\" #currentPassword=\"ngModel\"\r\n                                   required />\r\n                            <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': currentPassword.valid, 'glyphicon-remove' : !currentPassword.valid}\"></span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && !currentPassword.valid\" class=\"errorMessage\">\r\n                                {{'users.editor.CurrentPasswordRequired' | translate}}\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div *ngIf=\"!isNewUser\" class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <hr class=\"password-separator-hr\" />\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                        <label class=\"control-label col-md-3\" for=\"newPassword-{{uniqueId}}\">{{'users.editor.NewPassword' | translate}}</label>\r\n                        <div class=\"col-md-9\" [ngClass]=\"{'has-success': f.submitted && newPassword.valid, 'has-error' : f.submitted && !newPassword.valid}\">\r\n                            <input type=\"password\" attr.id=\"newPassword-{{uniqueId}}\" name=\"newPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"{{'users.formInput.EnterNewPassword'|translate}}\" class=\"form-control\" [(ngModel)]=\"userEdit.newPassword\" #newPassword=\"ngModel\"\r\n                                   required minlength=\"6\" validateEqual=\"confirmPassword\" reverse=\"true\" />\r\n                            <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': newPassword.valid, 'glyphicon-remove' : !newPassword.valid}\"></span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && !newPassword.valid\" class=\"errorMessage\">\r\n                                {{'users.editor.NewPasswordRequired' | translate}}\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <hr class=\"password-separator-hr\" />\r\n                        </div>\r\n                    </div>\r\n\r\n                    <div class=\"form-group has-feedback\">\r\n                        <label class=\"control-label col-md-3\" for=\"confirmPassword-{{uniqueId}}\">{{'users.editor.ConfirmPassword' | translate}}</label>\r\n                        <div class=\"col-md-9\" [ngClass]=\"{'has-success': f.submitted && confirmPassword.valid, 'has-error' : f.submitted && !confirmPassword.valid}\">\r\n                            <input type=\"password\" attr.id=\"confirmPassword-{{uniqueId}}\" name=\"confirmPassword\" [attr.autocomplete]=\"isGeneralEditor ? new-password : null\" placeholder=\"Confirm new password\" class=\"form-control\" [(ngModel)]=\"userEdit.confirmPassword\" #confirmPassword=\"ngModel\"\r\n                                   required validateEqual=\"newPassword\" />\r\n                            <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': confirmPassword.valid, 'glyphicon-remove' : !confirmPassword.valid}\"></span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && confirmPassword.errors?.required\" class=\"errorMessage\">\r\n                                {{'users.editor.ConfirmationPasswordRequired' | translate}}\r\n                            </span>\r\n                            <span *ngIf=\"showValidationErrors && f.submitted && confirmPassword.errors?.validateEqual && !confirmPassword.errors?.required\" class=\"errorMessage\">\r\n                                {{'users.editor.PasswordMismatch' | translate}}\r\n                            </span>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <!--******************************************************************************************************-->\r\n\r\n        <div *ngIf=\"!isEditMode || canAssignRoles\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"!isEditMode || canAssignRoles\" class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"roles-user-info\">{{'users.editor.Roles' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">\r\n                    <span *ngFor=\"let role of user.roles\">\r\n                        <span title='{{getRoleByName(role)?.description}}' class=\"badge\">{{role}}</span>\r\n                    </span>\r\n                </p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode && canAssignRoles\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\" [ngClass]=\"{'has-success': f.submitted && roles.valid, 'has-error' : f.submitted && !roles.valid}\">\r\n                <select id=\"roles-user-info\" name=\"roles\" [(ngModel)]=\"userEdit.roles\" #roles=\"ngModel\" class=\"selectpicker form-control\" bootstrapSelect required multiple\r\n                        data-live-search=\"true\" data-actions-box=\"false\" data-live-search-placeholder=\"Search...\" title=\"Select Roles\">\r\n                    <option *ngFor=\"let role of allRoles\" attr.data-content=\"<span title='{{role.description}}' class='badge'>{{role.name}}</span>\" attr.value=\"{{role.name}}\">\r\n                        {{role.name}}\r\n                    </option>\r\n                </select>\r\n                <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': roles.valid, 'glyphicon-remove' : !roles.valid}\"></span>\r\n                <span *ngIf=\"showValidationErrors && f.submitted && !roles.valid\" class=\"errorMessage\">\r\n                    {{'users.editor.RoleRequired' | translate}}\r\n                </span>\r\n            </div>\r\n        </div>\r\n\r\n        <!--******************************************************************************************************-->\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"fullName-{{uniqueId}}\">{{'users.editor.FullName' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.fullName}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <input type=\"text\" attr.id=\"fullName-{{uniqueId}}\" name=\"fullName\" placeholder=\"Enter full name\" class=\"form-control\" [(ngModel)]=\"userEdit.fullName\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.separator-hr]=\"!isEditMode\" [class.edit-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"form-group has-feedback\">\r\n            <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"phoneNumber-{{uniqueId}}\">{{'users.editor.PhoneNumber' | translate}}</label>\r\n            <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <p class=\"form-control-static\">{{user.phoneNumber}}</p>\r\n            </div>\r\n            <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n                <input type=\"text\" attr.id=\"phoneNumber-{{uniqueId}}\" name=\"phoneNumber\" placeholder=\"Enter phone number\" class=\"form-control\" [(ngModel)]=\"userEdit.phoneNumber\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"!isViewOnly\" class=\"row\">\r\n            <div class=\"col-md-12\">\r\n                <hr [class.last-separator-hr]=\"!isEditMode\" [class.edit-last-separator-hr]=\"isEditMode\" />\r\n            </div>\r\n        </div>\r\n\r\n        <div *ngIf=\"!isViewOnly\" class=\"form-group\">\r\n            <div class=\"col-sm-5\">\r\n                <div *ngIf=\"isGeneralEditor && isEditMode\" class=\"pull-left\">\r\n                    <div class=\"checkbox user-enabled\">\r\n                        <label>\r\n                            <input type=\"checkbox\" name=\"isEnabled\" [(ngModel)]=\"userEdit.isEnabled\">\r\n                            {{'users.editor.Enabled' | translate}}\r\n                        </label>\r\n                    </div>\r\n                    <button *ngIf=\"userEdit.isLockedOut\" type=\"button\" (click)=\"unlockUser()\" class=\"btn btn-warning unblock-user\" [disabled]=\"isSaving\"><i class='fa fa-unlock-alt'></i> {{'users.editor.Unblock' | translate}}</button>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-sm-7\">\r\n                <div class=\"pull-right\">\r\n                    <button *ngIf=\"!isEditMode && isGeneralEditor\" type=\"button\" (click)=\"close()\" class=\"btn btn-default\"><i class='fa fa-close'></i> {{'users.editor.Close' | translate}}</button>\r\n                    <button *ngIf=\"!isEditMode && !isGeneralEditor\" type=\"button\" (click)=\"edit()\" class=\"btn btn-default\"><i class='fa fa-edit'></i> {{'users.editor.Edit' | translate}}</button>\r\n                    <button *ngIf=\"isEditMode\" type=\"button\" (click)=\"cancel()\" class=\"btn btn-danger\" [disabled]=\"isSaving\"><i class='fa fa-times'></i> {{'users.editor.Cancel' | translate}}</button>\r\n                    <button *ngIf=\"isEditMode\" type=\"submit\" class=\"btn btn-primary\" [disabled]=\"isSaving\">\r\n                        <i *ngIf=\"!isSaving\" class='fa fa-save'></i><i *ngIf=\"isSaving\" class='fa fa-circle-o-notch fa-spin'></i> {{isSaving ? ('users.editor.Saving' | translate) : ('users.editor.Save' | translate)}}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"clearfix\"></div>\r\n    </form>\r\n</div>\r\n";
 
 /***/ }),
 /* 146 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n\t<header class=\"pageHeader\">\r\n\t\t<h3><i class=\"fa fa-truck fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Players' | translate}}</h3>\r\n\t</header>\r\n\r\n\t<div [@fadeInOut]>\r\n\t\t<span class=\"text-muted\">-- Sample Page --</span>\r\n\t</div>\r\n</div>";
+module.exports = "<div class=\"form-horizontal\">\r\n    <div class=\"form-group\">\r\n        <label for=\"refreshButton\" class=\"col-sm-3 control-label\">{{'preferences.ReloadPreferences' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <button id=\"refreshButton\" class=\"btn btn-default\" (click)=\"reloadFromServer()\">\r\n                <i class=\"fa fa-refresh\"></i>\r\n            </button>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.ReloadPreferencesHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label for=\"language\" class=\"col-sm-3 control-label\">{{'preferences.Language' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <select id=\"language\" [(ngModel)]=\"configurations.language\" #languageSelector=\"bootstrap-select\" bootstrapSelect class=\"selectpicker form-control\">\r\n                <option data-subtext=\"(Default)\" value=\"en\">{{'preferences.English' | translate}}</option>\r\n                <option value=\"fr\">{{'preferences.French' | translate}}</option>\r\n                <option value=\"ar\">{{'preferences.Arabic' | translate}}</option>\r\n                <option value=\"ko\">{{'preferences.Korean' | translate}}</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.LanguageHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label for=\"homePage\" class=\"col-sm-3 control-label\">{{'preferences.HomePage' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <select id=\"homePage\" [(ngModel)]=\"configurations.homeUrl\" #homePageSelector=\"bootstrap-select\" bootstrapSelect class=\"selectpicker form-control\">\r\n                <option data-icon=\"fa fa-tachometer\" data-subtext=\"(Default)\" value=\"/\">{{'preferences.Dashboard' | translate}}</option>\r\n                <option *ngIf=\"canViewCustomers\" data-icon=\"fa fa-handshake-o\" value=\"/customers\">{{'preferences.Customers' | translate}}</option>\r\n                <option *ngIf=\"canViewProducts\" data-icon=\"fa fa-truck\" value=\"/products\">{{'preferences.Products' | translate}}</option>\r\n                <option *ngIf=\"canViewOrders\" data-icon=\"fa fa-shopping-cart\" value=\"/orders\">{{'preferences.Orders' | translate}}</option>\r\n\t\t\t\t<option *ngIf=\"canViewPlayers\" data-icon=\"fa fa-shopping-cart\" value=\"/players\">{{'preferences.Players' | translate}}</option>\r\n                <option data-icon=\"fa fa-info-circle\" value=\"/about\">{{'preferences.About' | translate}}</option>\r\n                <option data-icon=\"fa fa-cog\" value=\"/settings\">{{'preferences.Settings' | translate}}</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.HomePageHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label for=\"defaultTheme\" class=\"col-sm-3 control-label\">{{'preferences.Theme' | translate}} </label>\r\n        <div *ngIf=\"themeSelectorToggle\" class=\"col-sm-4\">\r\n            <select id=\"defaultTheme\" [(ngModel)]=\"configurations.theme\" bootstrapSelect class=\"selectpicker form-control\">\r\n                <option attr.data-content=\"{{'preferences.DefaultColor' | translate}}\">Default</option>\r\n                <option attr.data-content=\"{{'preferences.RedColor' | translate}}\">Red</option>\r\n                <option attr.data-content=\"{{'preferences.OrangeColor' | translate}}\">Orange</option>\r\n                <option attr.data-content=\"{{'preferences.GreenColor' | translate}}\">Green</option>\r\n                <option attr.data-content=\"{{'preferences.GrayColor' | translate}}\">Gray</option>\r\n                <option attr.data-content=\"{{'preferences.BlackColor' | translate}}\">Black</option>\r\n            </select>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.ThemeHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardStatistics\">{{'preferences.DashboardStatistics' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardStatistics\" [(ngModel)]=\"configurations.showDashboardStatistics\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardStatisticsHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"subseparator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardTodo\">{{'preferences.DashboardNotifications' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardNotifications\" [(ngModel)]=\"configurations.showDashboardNotifications\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardNotificationsHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"subseparator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardTodo\">{{'preferences.DashboardTodo' | translate}} </label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardTodo\" [(ngModel)]=\"configurations.showDashboardTodo\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardTodoHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"subseparator-hr\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"col-sm-3 control-label\" for=\"dashboardBanner\">{{'preferences.DashboardBanner' | translate}}</label>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"checkbox\">\r\n                <input name=\"dashboardBanner\" [(ngModel)]=\"configurations.showDashboardBanner\" class=\"form-control\" type=\"checkbox\" bootstrapToggle data-size=\"small\">\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-5\">\r\n            <p class=\"form-control-static text-muted small\">{{'preferences.DashboardBannerHint' | translate}}</p>\r\n        </div>\r\n    </div>\r\n    <!--  -->\r\n\r\n\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"last-separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <div class=\"col-sm-3\">\r\n\r\n        </div>\r\n        <div class=\"col-sm-9\">\r\n            <div class=\"row pull-left\">\r\n                <div class=\"col-sm-6 col-reset-default\">\r\n                    <button type=\"button\" (click)=\"resetDefault()\" class=\"btn btn-success\">\r\n                        <i class='fa fa-circle-o-notch'></i> {{'preferences.ResetDefault' | translate}}\r\n                    </button>\r\n                </div>\r\n                <div class=\"col-sm-6 col-set-default\">\r\n                    <button type=\"button\" (click)=\"setAsDefault()\" class=\"btn btn-primary\">\r\n                        <i class='fa fa-hdd-o'></i> {{'preferences.SetDefault' | translate}}\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 147 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-truck fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Products' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <span class=\"text-muted\">-- Sample Page --</span>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div>\r\n    <div class=\"row control-box\">\r\n        <div class=\"col-sm-8\">\r\n            <div class=\"form-group search-box\">\r\n                <search-box (searchChange)=\"onSearchChanged($event)\" placeholder=\"{{'users.management.Search' | translate}}\">></search-box>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-sm-4\">\r\n            <div class=\"navbar action-box\">\r\n                <ul class=\"nav navbar-nav navbar-right\">\r\n                    <li *ngIf=\"canManageUsers\" class=\"toolbaritem\">\r\n                        <a href=\"javascript:;\" (click)=\"newUser(row)\">\r\n                            <i class=\"fa fa-plus-circle\"></i> {{'users.management.NewUser' | translate}}\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <ngx-datatable class=\"material colored-header sm table table-striped table-hover\"\r\n                   [loadingIndicator]=\"loadingIndicator\"\r\n                   [rows]=\"rows\"\r\n                   [rowHeight]=\"35\"\r\n                   [headerHeight]=\"35\"\r\n                   [footerHeight]=\"35\"\r\n                   [columns]=\"columns\"\r\n                   [scrollbarV]=\"true\"\r\n                   [columnMode]=\"'force'\">\r\n    </ngx-datatable>\r\n\r\n    <ng-template #indexTemplate let-value=\"value\">\r\n        <strong>{{value}}</strong>\r\n    </ng-template>\r\n\r\n    <ng-template #userNameTemplate let-row=\"row\" let-value=\"value\">\r\n        <span [class.locked-out]=\"row.isLockedOut\" [class.user-disabled]=\"!row.isEnabled\">\r\n            <i *ngIf=\"row.isLockedOut\" class=\"fa fa-exclamation-triangle\"> </i>\r\n            <i *ngIf=\"!row.isEnabled\" class=\"fa fa-exclamation\"> </i>\r\n            {{value}}\r\n        </span>\r\n    </ng-template>\r\n\r\n    <ng-template #rolesTemplate let-row=\"row\" let-value=\"value\" let-i=\"index\">\r\n        <span class=\"user-role badge\" *ngFor=\"let role of value\">{{role}}</span>\r\n    </ng-template>\r\n\r\n    <ng-template #actionsTemplate let-row=\"row\" let-value=\"value\" let-i=\"index\">\r\n        <div *ngIf=\"canManageUsers\">\r\n            <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"editUser(row)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> {{'users.management.Edit' | translate}}</a>\r\n            |\r\n            <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"deleteUser(row)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i> {{'users.management.Delete' | translate}}</a>\r\n        </div>\r\n    </ng-template>\r\n\r\n\r\n    <div class=\"modal fade\" bsModal #editorModal=\"bs-modal\" (onHidden)=\"onEditorModalHidden()\" [config]=\"{backdrop: 'static'}\" tabindex=\"-1\">\r\n        <div class=\"modal-dialog modal-lg\">\r\n            <div class=\"modal-content\">\r\n                <div class=\"modal-header\">\r\n                    <h4 class=\"modal-title pull-left\"><i class=\"fa fa-user-circle-o\"></i> {{editingUserName ? ('users.management.EditUser' | translate:editingUserName) : ('users.management.NewUser' | translate)}}</h4>\r\n                    <button type=\"button\" class=\"close pull-right\" title=\"Close\" (click)=\"editorModal.hide()\">\r\n                        <span aria-hidden=\"true\">&times;</span>\r\n                    </button>\r\n                </div>\r\n                <div class=\"modal-body\">\r\n                    <user-info #userEditor [isGeneralEditor]=\"true\"></user-info>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 148 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-cog fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Settings' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut] class=\"row\">\r\n        <div class=\"col-sm-2 side-menu\">\r\n            <ul bootstrapTab #tab=\"bootstrap-tab\" class=\"nav nav-tabs tabs-left\" (showBSTab)=\"onShowTab($event)\">\r\n                <li class=\"active\">\r\n                    <a id=\"profileTab\" [routerLink]=\"[]\" fragment=\"profile\" href=\"#profile\" data-toggle=\"tab\"><i class=\"fa fa-user-circle-o fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Profile' | translate}}</a>\r\n                </li>\r\n                <li>\r\n                    <a id=\"preferencesTab\" [routerLink]=\"[]\" fragment=\"preferences\" href=\"#preferences\" data-toggle=\"tab\"><i class=\"fa fa-sliders fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Preferences' | translate}}</a>\r\n                </li>\r\n                <li [hidden]=\"!canViewUsers\">\r\n                    <a id=\"usersTab\" [routerLink]=\"[]\" fragment=\"users\" href=\"#users\" data-toggle=\"tab\"><i class=\"fa fa-users fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Users' | translate}}</a>\r\n                </li>\r\n                <li [hidden]=\"!canViewRoles\">\r\n                    <a id=\"rolesTab\" [routerLink]=\"[]\" fragment=\"roles\" href=\"#roles\" data-toggle=\"tab\"><i class=\"fa fa-shield fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Roles' | translate}}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-sm-10\">\r\n            <div class=\"tab-content\">\r\n                <div class=\"tab-pane active\" id=\"profile\">\r\n                    <h4>{{'settings.header.UserProfile' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"isProfileActived\" class=\"content-container\">\r\n                        <user-info></user-info>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"tab-pane\" id=\"preferences\">\r\n                    <h4>{{'settings.header.UserPreferences' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"isPreferencesActived\" class=\"content-container\">\r\n                        <user-preferences></user-preferences>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"tab-pane\" id=\"users\">\r\n                    <h4>{{'settings.header.UsersManagements' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"canViewUsers && isUsersActived\" class=\"content-container\">\r\n                        <users-management></users-management>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"tab-pane\" id=\"roles\">\r\n                    <h4>{{'settings.header.RolesManagement' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"canViewRoles && isRolesActived\" class=\"content-container\">\r\n                        <roles-management></roles-management>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-handshake-o fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Customers' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <!---- Sample Page Content ---->\r\n        <todo-demo verticalScrollbar=\"true\"></todo-demo>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 149 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-tachometer fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Dashboard' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <div *ngIf=\"!configurations.showDashboardStatistics && !configurations.showDashboardNotifications && !configurations.showDashboardTodo && !configurations.showDashboardBanner\" class=\"well well-lg\">\r\n            <h4 class=\"text-muted text-center\">\r\n                {{'home.NoWidgets1' | translate}} <a routerLink=\"/settings\" fragment=\"preferences\"><i class=\"fa fa-sliders\"></i> {{'settings.tab.Preferences' | translate}}</a>\r\n                {{'home.NoWidgets2' | translate}}\r\n            </h4>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardStatistics\" class=\"row bottom-space well well-sm\">\r\n            <h4 class=\"text-muted inline-block\">{{'home.StatisticsTitle' | translate}}</h4>\r\n            <button type=\"button\" class=\"close pull-right statistics-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardStatistics = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <statistics-demo></statistics-demo>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardNotifications\" class=\"row bottom-space\">\r\n            <button type=\"button\" class=\"close pull-right todo-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardNotifications = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <notifications-viewer></notifications-viewer>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardTodo\" class=\"row bottom-space\">\r\n            <button type=\"button\" class=\"close pull-right todo-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardTodo = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <todo-demo></todo-demo>\r\n        </div>\r\n\r\n        <div *ngIf=\"configurations.showDashboardBanner\" class=\"row no-bottom-space\">\r\n            <button type=\"button\" class=\"close pull-right banner-close-btn\" aria-label=\"Close\" title=\"Close\" (click)=\"configurations.showDashboardBanner = false\">\r\n                <span aria-hidden=\"true\">&times;</span>\r\n            </button>\r\n            <div class=\"clearfix\"></div>\r\n            <banner1-demo></banner1-demo>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"vertical-center-flex\">\r\n    <div class=\"login-container center-block\">\r\n        <div class=\"panel panel-primary boxshadow\">\r\n            <div class=\"panel-heading\">\r\n                <span class=\"glyphicon glyphicon-lock\"></span>{{'login.Login' | translate}} {{currentUser}}\r\n                <button *ngIf=\"isModal\" type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"closeModal()\">\r\n                    <span aria-hidden=\"true\">&times;</span>\r\n                </button>\r\n            </div>\r\n            <div class=\"panel-body\">\r\n                <div class=\"col-md-8 col-md-offset-2\">\r\n                    <form *ngIf=\"formResetToggle\" class=\"form-horizontal login\" name=\"loginForm\" #f=\"ngForm\" novalidate\r\n                          (ngSubmit)=\"f.form.valid ? login() :\r\n                          (!email.valid && showErrorAlert('Email is required', 'Please enter a valid email'));\r\n                          (!password.valid && showErrorAlert('Password is required', 'Please enter a valid password'))\">\r\n                        <div class=\"form-group has-feedback\">\r\n                            <label class=\"control-label col-md-2\" for=\"login-email\">{{'login.Email' | translate}}:</label>\r\n                            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && email.valid, 'has-error' : f.submitted && !email.valid}\">\r\n                                <input type=\"text\" id=\"login-email\" name=\"email\" placeholder=\"{{'login.EnterUser' | translate}}\" class=\"form-control\" [(ngModel)]=\"userLogin.email\" #email=\"ngModel\" required />\r\n                                <span *ngIf=\"f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': email.valid, 'glyphicon-remove' : !email.valid}\" aria-hidden=\"true\"></span>\r\n                                <span class=\"errorMessage\" *ngIf=\"f.submitted && !email.valid\">\r\n                                    Email is required\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group has-feedback\">\r\n                            <label class=\"control-label col-md-2\" for=\"login-password\">{{'login.Password' | translate}}:</label>\r\n                            <div class=\"col-md-10\" [ngClass]=\"{'has-success': f.submitted && password.valid, 'has-error' : f.submitted && !password.valid}\">\r\n                                <input type=\"password\" id=\"login-password\" name=\"password\" placeholder=\"{{'login.EnterPassword' |translate}}\" class=\"form-control\" [(ngModel)]=\"userLogin.password\" #password=\"ngModel\" required />\r\n                                <span *ngIf=\"f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': password.valid, 'glyphicon-remove' : !password.valid}\" aria-hidden=\"true\"></span>\r\n                                <span class=\"errorMessage\" *ngIf=\"f.submitted && !password.valid\">\r\n                                    Password is required\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <div class=\"col-md-offset-2 col-md-10\">\r\n                                <div class=\"checkbox\">\r\n                                    <label><input type=\"checkbox\" name=\"rememberMe\" [(ngModel)]=\"userLogin.rememberMe\"> {{'login.Rememberme' | translate}}</label>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <div class=\"col-md-offset-2 col-md-10\">\r\n                                <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"isLoading\"><i *ngIf=\"isLoading\" class='fa fa-circle-o-notch fa-spin'></i> {{isLoading ? 'Loggin in...' : 'Login'}}</button>\r\n                            </div>\r\n                        </div>\r\n\r\n                        <!--<div *ngIf=\"!isModal\" class=\"col-md-12\">\r\n                            <hr class=\"separator-hr\" />\r\n                        </div>\r\n\r\n                        <div *ngIf=\"!isModal\" class=\"col-md-12 last-control-group\">\r\n                            <span>Don't have an account?</span><a href=\"javascript:;\" class=\"btn btn-link\" (click)=\"signUp()\">Sign Up</a>\r\n                        </div>-->\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-exclamation-circle fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.NotFound' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut] class=\"vertical-center-flex\">\r\n        <div class=\"center-block\">\r\n            <div class=\"icon-container\"><i class='fa fa-exclamation-circle'></i> {{'notFound.404' | translate}}</div>\r\n            <div class=\"text-muted error-description\">{{'notFound.pageNotFound' | translate}}</div>\r\n            <div><a class=\"btn btn-primary\" routerLink=\"/\"><i class='fa fa-home'></i> {{'notFound.backToHome' | translate}}</a></div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-shopping-cart fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Orders' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <span class=\"text-muted\">-- Sample Page --</span>\r\n    </div>\r\n</div>\r\n";
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"form-horizontal\">\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.firstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"firstName-{{uniqueId}}\" name=\"firstName\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.lastName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.lastName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"lastName-{{uniqueId}}\" name=\"lastName\" placeholder=\"Enter Last Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.lastName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'players.Editor.yearOfBirth' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.yearOfBirth}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"yearOfBirth-{{uniqueId}}\" name=\"jobTiyearOfBirthtle\" placeholder=\"Enter Year Of Birth\" class=\"form-control\" [(ngModel)]=\"playerEdit.yearOfBirth\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.firstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"jobTitle-{{uniqueId}}\" name=\"jobTitle\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.firstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"jobTitle-{{uniqueId}}\" name=\"jobTitle\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n\t<header class=\"pageHeader\">\r\n\t\t<h3><i class=\"fa fa-truck fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Players' | translate}}</h3>\r\n\t</header>\r\n\r\n    <div [@fadeInOut]>\r\n        <div class=\"row control-box\">\r\n            <div class=\"col-sm-8\">\r\n                <div class=\"form-group search-box\">\r\n                    <search-box (searchChange)=\"onSearchChanged($event)\" placeholder=\"{{'users.management.Search' | translate}}\">></search-box>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-sm-4\">\r\n                <div class=\"navbar action-box\">\r\n                    <ul class=\"nav navbar-nav navbar-right\">\r\n                        <li *ngIf=\"canManagePlayers\" class=\"toolbaritem\">\r\n                            <a href=\"javascript:;\" (click)=\"newPlayer()\">\r\n                                <i class=\"fa fa-plus-circle\"></i> {{'users.management.NewPlayer' | translate}}\r\n                            </a>\r\n                        </li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <ngx-datatable class=\"material colored-header sm table-hover\"\r\n                       [loadingIndicator]=\"loadingIndicator\"\r\n                       [rows]=\"rows\"\r\n                       [rowHeight]=\"35\"\r\n                       [headerHeight]=\"35\"\r\n                       [footerHeight]=\"35\"\r\n                       [columns]=\"columns\"\r\n                       [scrollbarV]=\"verticalScrollbar\"\r\n                       [columnMode]=\"'force'\">\r\n        </ngx-datatable>\r\n        <ng-template #indexTemplate let-value=\"value\">\r\n            <strong>{{value}}</strong>\r\n        </ng-template>\r\n        <ng-template #actionsTemplate let-row=\"row\" let-value=\"value\" let-i=\"index\">\r\n            <div *ngIf=\"canManagePlayers\">\r\n                <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"editPlayer(row)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> {{'users.management.Edit' | translate}}</a>\r\n                |\r\n                <a class=\"btn btn-link btn-xs\" href=\"javascript:;\" (click)=\"deletePlayer(row)\"><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i> {{'users.management.Delete' | translate}}</a>\r\n            </div>\r\n        </ng-template>\r\n\r\n\r\n        <div class=\"modal fade\" bsModal #editorModal=\"bs-modal\" (onHidden)=\"onEditorModalHidden()\" [config]=\"{backdrop: 'static'}\" tabindex=\"-1\">\r\n            <div class=\"modal-dialog modal-lg\">\r\n                <div class=\"modal-content\">\r\n                    <div class=\"modal-header\">\r\n                        <h4 class=\"modal-title pull-left\"><i class=\"fa fa-user-circle-o\"></i> {{ 'users.management.NewPlayer' | translate}}</h4>\r\n                        <button type=\"button\" class=\"close pull-right\" title=\"Close\" (click)=\"editorModal.hide()\">\r\n                            <span aria-hidden=\"true\">&times;</span>\r\n                        </button>\r\n                    </div>\r\n                    <div class=\"modal-body\">\r\n                        <player-info #playerEditor [isGeneralEditor]=\"true\"></player-info>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    \r\n\r\n\t</div>\r\n</div>";
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-truck fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Products' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut]>\r\n        <span class=\"text-muted\">-- Sample Page --</span>\r\n    </div>\r\n</div>\r\n";
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">\r\n        <h3><i class=\"fa fa-cog fa-lg page-caption\" aria-hidden=\"true\"></i> {{'pageHeader.Settings' | translate}}</h3>\r\n    </header>\r\n\r\n    <div [@fadeInOut] class=\"row\">\r\n        <div class=\"col-sm-2 side-menu\">\r\n            <ul bootstrapTab #tab=\"bootstrap-tab\" class=\"nav nav-tabs tabs-left\" (showBSTab)=\"onShowTab($event)\">\r\n                <li class=\"active\">\r\n                    <a id=\"profileTab\" [routerLink]=\"[]\" fragment=\"profile\" href=\"#profile\" data-toggle=\"tab\"><i class=\"fa fa-user-circle-o fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Profile' | translate}}</a>\r\n                </li>\r\n                <li>\r\n                    <a id=\"preferencesTab\" [routerLink]=\"[]\" fragment=\"preferences\" href=\"#preferences\" data-toggle=\"tab\"><i class=\"fa fa-sliders fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Preferences' | translate}}</a>\r\n                </li>\r\n                <li [hidden]=\"!canViewUsers\">\r\n                    <a id=\"usersTab\" [routerLink]=\"[]\" fragment=\"users\" href=\"#users\" data-toggle=\"tab\"><i class=\"fa fa-users fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Users' | translate}}</a>\r\n                </li>\r\n                <li [hidden]=\"!canViewRoles\">\r\n                    <a id=\"rolesTab\" [routerLink]=\"[]\" fragment=\"roles\" href=\"#roles\" data-toggle=\"tab\"><i class=\"fa fa-shield fa-fw\" aria-hidden=\"true\"></i> {{'settings.tab.Roles' | translate}}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n        <div class=\"col-sm-10\">\r\n            <div class=\"tab-content\">\r\n                <div class=\"tab-pane active\" id=\"profile\">\r\n                    <h4>{{'settings.header.UserProfile' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"isProfileActived\" class=\"content-container\">\r\n                        <user-info></user-info>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"tab-pane\" id=\"preferences\">\r\n                    <h4>{{'settings.header.UserPreferences' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"isPreferencesActived\" class=\"content-container\">\r\n                        <user-preferences></user-preferences>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"tab-pane\" id=\"users\">\r\n                    <h4>{{'settings.header.UsersManagements' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"canViewUsers && isUsersActived\" class=\"content-container\">\r\n                        <users-management></users-management>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"tab-pane\" id=\"roles\">\r\n                    <h4>{{'settings.header.RolesManagement' | translate}}</h4>\r\n                    <hr class=\"separator-hr\" />\r\n                    <div [@fadeInOut] *ngIf=\"canViewRoles && isRolesActived\" class=\"content-container\">\r\n                        <roles-management></roles-management>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+
+/***/ }),
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29062,7 +29692,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 150 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29154,18 +29784,18 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 151 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(149);
-exports.encode = exports.stringify = __webpack_require__(150);
+exports.decode = exports.parse = __webpack_require__(157);
+exports.encode = exports.stringify = __webpack_require__(158);
 
 
 /***/ }),
-/* 152 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29220,105 +29850,15 @@ exports.Scheduler = Scheduler;
 //# sourceMappingURL=Scheduler.js.map
 
 /***/ }),
-/* 153 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var forkJoin_1 = __webpack_require__(231);
-Observable_1.Observable.forkJoin = forkJoin_1.forkJoin;
-//# sourceMappingURL=forkJoin.js.map
-
-/***/ }),
-/* 154 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var interval_1 = __webpack_require__(168);
-Observable_1.Observable.interval = interval_1.interval;
-//# sourceMappingURL=interval.js.map
-
-/***/ }),
-/* 155 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var throw_1 = __webpack_require__(169);
-Observable_1.Observable.throw = throw_1._throw;
-//# sourceMappingURL=throw.js.map
-
-/***/ }),
-/* 156 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var catch_1 = __webpack_require__(234);
-Observable_1.Observable.prototype.catch = catch_1._catch;
-Observable_1.Observable.prototype._catch = catch_1._catch;
-//# sourceMappingURL=catch.js.map
-
-/***/ }),
-/* 157 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var concat_1 = __webpack_require__(57);
-Observable_1.Observable.prototype.concat = concat_1.concat;
-//# sourceMappingURL=concat.js.map
-
-/***/ }),
-/* 158 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var do_1 = __webpack_require__(170);
-Observable_1.Observable.prototype.do = do_1._do;
-Observable_1.Observable.prototype._do = do_1._do;
-//# sourceMappingURL=do.js.map
-
-/***/ }),
-/* 159 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var merge_1 = __webpack_require__(235);
-Observable_1.Observable.prototype.merge = merge_1.merge;
-//# sourceMappingURL=merge.js.map
-
-/***/ }),
-/* 160 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var share_1 = __webpack_require__(236);
-Observable_1.Observable.prototype.share = share_1.share;
-//# sourceMappingURL=share.js.map
-
-/***/ }),
 /* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var startWith_1 = __webpack_require__(171);
-Observable_1.Observable.prototype.startWith = startWith_1.startWith;
-//# sourceMappingURL=startWith.js.map
+var interval_1 = __webpack_require__(174);
+Observable_1.Observable.interval = interval_1.interval;
+//# sourceMappingURL=interval.js.map
 
 /***/ }),
 /* 162 */
@@ -29327,9 +29867,9 @@ Observable_1.Observable.prototype.startWith = startWith_1.startWith;
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var take_1 = __webpack_require__(173);
-Observable_1.Observable.prototype.take = take_1.take;
-//# sourceMappingURL=take.js.map
+var throw_1 = __webpack_require__(175);
+Observable_1.Observable.throw = throw_1._throw;
+//# sourceMappingURL=throw.js.map
 
 /***/ }),
 /* 163 */
@@ -29338,12 +29878,79 @@ Observable_1.Observable.prototype.take = take_1.take;
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var toArray_1 = __webpack_require__(174);
+var catch_1 = __webpack_require__(241);
+Observable_1.Observable.prototype.catch = catch_1._catch;
+Observable_1.Observable.prototype._catch = catch_1._catch;
+//# sourceMappingURL=catch.js.map
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var concat_1 = __webpack_require__(62);
+Observable_1.Observable.prototype.concat = concat_1.concat;
+//# sourceMappingURL=concat.js.map
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var merge_1 = __webpack_require__(242);
+Observable_1.Observable.prototype.merge = merge_1.merge;
+//# sourceMappingURL=merge.js.map
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var share_1 = __webpack_require__(243);
+Observable_1.Observable.prototype.share = share_1.share;
+//# sourceMappingURL=share.js.map
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var startWith_1 = __webpack_require__(177);
+Observable_1.Observable.prototype.startWith = startWith_1.startWith;
+//# sourceMappingURL=startWith.js.map
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var take_1 = __webpack_require__(179);
+Observable_1.Observable.prototype.take = take_1.take;
+//# sourceMappingURL=take.js.map
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var toArray_1 = __webpack_require__(180);
 Observable_1.Observable.prototype.toArray = toArray_1.toArray;
 //# sourceMappingURL=toArray.js.map
 
 /***/ }),
-/* 164 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29432,7 +30039,7 @@ exports.ErrorObservable = ErrorObservable;
 //# sourceMappingURL=ErrorObservable.js.map
 
 /***/ }),
-/* 165 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29443,10 +30050,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var tryCatch_1 = __webpack_require__(237);
-var isFunction_1 = __webpack_require__(215);
-var errorObject_1 = __webpack_require__(214);
-var Subscription_1 = __webpack_require__(58);
+var tryCatch_1 = __webpack_require__(244);
+var isFunction_1 = __webpack_require__(222);
+var errorObject_1 = __webpack_require__(221);
+var Subscription_1 = __webpack_require__(63);
 var toString = Object.prototype.toString;
 function isNodeStyleEventEmitter(sourceObj) {
     return !!sourceObj && typeof sourceObj.addListener === 'function' && typeof sourceObj.removeListener === 'function';
@@ -29578,7 +30185,7 @@ exports.FromEventObservable = FromEventObservable;
 //# sourceMappingURL=FromEventObservable.js.map
 
 /***/ }),
-/* 166 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29588,9 +30195,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isNumeric_1 = __webpack_require__(180);
+var isNumeric_1 = __webpack_require__(186);
 var Observable_1 = __webpack_require__(2);
-var async_1 = __webpack_require__(178);
+var async_1 = __webpack_require__(184);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -29672,37 +30279,37 @@ exports.IntervalObservable = IntervalObservable;
 //# sourceMappingURL=IntervalObservable.js.map
 
 /***/ }),
-/* 167 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromEventObservable_1 = __webpack_require__(165);
+var FromEventObservable_1 = __webpack_require__(171);
 exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
 //# sourceMappingURL=fromEvent.js.map
 
 /***/ }),
-/* 168 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var IntervalObservable_1 = __webpack_require__(166);
+var IntervalObservable_1 = __webpack_require__(172);
 exports.interval = IntervalObservable_1.IntervalObservable.create;
 //# sourceMappingURL=interval.js.map
 
 /***/ }),
-/* 169 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ErrorObservable_1 = __webpack_require__(164);
+var ErrorObservable_1 = __webpack_require__(170);
 exports._throw = ErrorObservable_1.ErrorObservable.create;
 //# sourceMappingURL=throw.js.map
 
 /***/ }),
-/* 170 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29712,7 +30319,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(33);
+var Subscriber_1 = __webpack_require__(34);
 /* tslint:enable:max-line-length */
 /**
  * Perform a side effect for every emission on the source Observable, but return
@@ -29821,16 +30428,16 @@ var DoSubscriber = (function (_super) {
 //# sourceMappingURL=do.js.map
 
 /***/ }),
-/* 171 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ArrayObservable_1 = __webpack_require__(62);
-var ScalarObservable_1 = __webpack_require__(211);
-var EmptyObservable_1 = __webpack_require__(63);
-var concat_1 = __webpack_require__(57);
-var isScheduler_1 = __webpack_require__(59);
+var ArrayObservable_1 = __webpack_require__(67);
+var ScalarObservable_1 = __webpack_require__(218);
+var EmptyObservable_1 = __webpack_require__(68);
+var concat_1 = __webpack_require__(62);
+var isScheduler_1 = __webpack_require__(64);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the items you specify as arguments before it begins to emit
@@ -29873,7 +30480,7 @@ exports.startWith = startWith;
 //# sourceMappingURL=startWith.js.map
 
 /***/ }),
-/* 172 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29883,8 +30490,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var OuterSubscriber_1 = __webpack_require__(210);
-var subscribeToResult_1 = __webpack_require__(216);
+var OuterSubscriber_1 = __webpack_require__(217);
+var subscribeToResult_1 = __webpack_require__(223);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -30019,7 +30626,7 @@ var SwitchMapSubscriber = (function (_super) {
 //# sourceMappingURL=switchMap.js.map
 
 /***/ }),
-/* 173 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30029,9 +30636,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(33);
-var ArgumentOutOfRangeError_1 = __webpack_require__(179);
-var EmptyObservable_1 = __webpack_require__(63);
+var Subscriber_1 = __webpack_require__(34);
+var ArgumentOutOfRangeError_1 = __webpack_require__(185);
+var EmptyObservable_1 = __webpack_require__(68);
 /**
  * Emits only the first `count` values emitted by the source Observable.
  *
@@ -30114,7 +30721,7 @@ var TakeSubscriber = (function (_super) {
 //# sourceMappingURL=take.js.map
 
 /***/ }),
-/* 174 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30124,7 +30731,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(33);
+var Subscriber_1 = __webpack_require__(34);
 /**
  * @return {Observable<any[]>|WebSocketSubject<T>|Observable<T>}
  * @method toArray
@@ -30165,7 +30772,7 @@ var ToArraySubscriber = (function (_super) {
 //# sourceMappingURL=toArray.js.map
 
 /***/ }),
-/* 175 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30175,7 +30782,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscription_1 = __webpack_require__(58);
+var Subscription_1 = __webpack_require__(63);
 /**
  * A unit of work to be executed in a {@link Scheduler}. An action is typically
  * created from within a Scheduler and an RxJS user does not need to concern
@@ -30215,7 +30822,7 @@ exports.Action = Action;
 //# sourceMappingURL=Action.js.map
 
 /***/ }),
-/* 176 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30225,8 +30832,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var root_1 = __webpack_require__(241);
-var Action_1 = __webpack_require__(175);
+var root_1 = __webpack_require__(248);
+var Action_1 = __webpack_require__(181);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -30363,7 +30970,7 @@ exports.AsyncAction = AsyncAction;
 //# sourceMappingURL=AsyncAction.js.map
 
 /***/ }),
-/* 177 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30373,7 +30980,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Scheduler_1 = __webpack_require__(152);
+var Scheduler_1 = __webpack_require__(160);
 var AsyncScheduler = (function (_super) {
     __extends(AsyncScheduler, _super);
     function AsyncScheduler() {
@@ -30420,13 +31027,13 @@ exports.AsyncScheduler = AsyncScheduler;
 //# sourceMappingURL=AsyncScheduler.js.map
 
 /***/ }),
-/* 178 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var AsyncAction_1 = __webpack_require__(176);
-var AsyncScheduler_1 = __webpack_require__(177);
+var AsyncAction_1 = __webpack_require__(182);
+var AsyncScheduler_1 = __webpack_require__(183);
 /**
  *
  * Async Scheduler
@@ -30473,7 +31080,7 @@ exports.async = new AsyncScheduler_1.AsyncScheduler(AsyncAction_1.AsyncAction);
 //# sourceMappingURL=async.js.map
 
 /***/ }),
-/* 179 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30507,12 +31114,12 @@ exports.ArgumentOutOfRangeError = ArgumentOutOfRangeError;
 //# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
 /***/ }),
-/* 180 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var isArray_1 = __webpack_require__(239);
+var isArray_1 = __webpack_require__(246);
 function isNumeric(val) {
     // parseFloat NaNs numeric-cast false positives (null|true|false|"")
     // ...but misinterprets leading-number strings, particularly hex literals ("0x...")
@@ -30525,101 +31132,17 @@ exports.isNumeric = isNumeric;
 //# sourceMappingURL=isNumeric.js.map
 
 /***/ }),
-/* 181 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ansiRegex = __webpack_require__(77)();
+var ansiRegex = __webpack_require__(82)();
 
 module.exports = function (str) {
 	return typeof str === 'string' ? str.replace(ansiRegex, '') : str;
 };
 
-
-/***/ }),
-/* 182 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(105);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 183 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(106);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 184 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(107);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(108);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(109);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(110);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
 
 /***/ }),
 /* 188 */
@@ -30833,36 +31356,134 @@ module.exports = function (str) {
 
 /***/ }),
 /* 203 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "data:image/png;base64,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"
+
+        var result = __webpack_require__(126);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
 
 /***/ }),
 /* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "e10af218b941826ea360d7554688d721.png";
+
+        var result = __webpack_require__(127);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
 
 /***/ }),
 /* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(128);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(129);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 207 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(130);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(131);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(132);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "e10af218b941826ea360d7554688d721.png";
+
+/***/ }),
+/* 212 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 206 */
+/* 213 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB4AAAAD6CAYAAABAvFrvAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAACAASURBVHic7N3tcyPXlSb45968+QYQVYIklkSqirZpm3JXzbR6R90jx0od4XV3xPzJO7P2fpmojra7RzsjT5faRdm0zZJIm5AKVQKBfM+7H8CbAsFMECTxmnh+CgRZIJi4CSRICk+ec8QvfvELDSIiIiIiIiIiIiIiIiIiWnty2QsgIiIiIiIiIiIiIiIiIqLZYABMRERERERERERERERERFQTDICJiIiIiIiIiIiIiIiIiGqCATARERERERERERERERERUU0wACYiIiIiIiIiIiIiIiIiqgkGwERERERERERERERERERENcEAmIiIiIiIiIiIiIiIiIioJhgAExERERERERERERERERHVBANgIiIiIiIiIiIiIiIiIqKaYABMRERERERERERERERERFQTDICJiIiIiIiIiIiIiIiIiGqCATARERERERERERERERERUU0wACYiIiIiIiIiIiIiIiIiqgkGwEREREREVHvvv/8+3n///WUvg4iIiIiIiIho7tSyF0BERERERDRv7XZ72UsgIiIiIiIiIloIVgATEREREREREREREREREdUEA2AiIiIiIiIiIiIiIiIioppgAExEREREREREREREREREVBMMgImIiIiIiIiIiIiIiIiIaoIBMBERERERERERERERERFRTTAAJiIiIiIiIiIiIiIiIiKqCQbAREREREREREREREREREQ1wQCYiIiIiIiIiIiIiIiIiKgmGAATEREREREREREREREREdUEA2AiIiIiIiIiIiIiIiIioppgAExEREREREREREREREREVBMMgImIiIiIiIiIiIiIiIiIaoIBMBERERERERERERERERFRTahlL4CIiIiIiIhoE2itobVGnufI8/zK52WklJBSQikFpfi/8LR4SZrjq69DvOql0FosezmrSWi8saXw3rYHR7HWgogI5u8arSHGrxv5t8hziDwDsmz4eZYDeQZR/Dsb+bcefp7nEHkO5BpC50CWDz9qXWzT3JfIs+uXKq3hJ0JASwkIMfxcSMCSw49y+DUtJSAt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"
 
 /***/ }),
-/* 207 */
+/* 214 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 208 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*eslint-env browser*/
@@ -30891,7 +31512,7 @@ for (var key in styles) {
   clientOverlay.style[key] = styles[key];
 }
 
-var ansiHTML = __webpack_require__(76);
+var ansiHTML = __webpack_require__(81);
 var colors = {
   reset: ['transparent', 'transparent'],
   black: '181818',
@@ -30906,7 +31527,7 @@ var colors = {
 };
 ansiHTML.setColors(colors);
 
-var Entities = __webpack_require__(126).AllHtmlEntities;
+var Entities = __webpack_require__(133).AllHtmlEntities;
 var entities = new Entities();
 
 exports.showProblems =
@@ -30947,7 +31568,7 @@ function problemType (type) {
 
 
 /***/ }),
-/* 209 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -31085,204 +31706,204 @@ module.exports = function(hash, moduleMap, options) {
 
 
 /***/ }),
-/* 210 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(17);
 
 /***/ }),
-/* 211 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(176);
 
 /***/ }),
-/* 212 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(179);
 
 /***/ }),
-/* 213 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(180);
 
 /***/ }),
-/* 214 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(182);
 
 /***/ }),
-/* 215 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(184);
 
 /***/ }),
-/* 216 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(19);
 
 /***/ }),
-/* 217 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(191);
 
 /***/ }),
-/* 218 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(193);
 
 /***/ }),
-/* 219 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(194);
 
 /***/ }),
-/* 220 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(195);
 
 /***/ }),
-/* 221 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(196);
 
 /***/ }),
-/* 222 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(207);
 
 /***/ }),
-/* 223 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(209);
 
 /***/ }),
-/* 224 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(210);
 
 /***/ }),
-/* 225 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(212);
 
 /***/ }),
-/* 226 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(213);
 
 /***/ }),
-/* 227 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(214);
 
 /***/ }),
-/* 228 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(215);
 
 /***/ }),
-/* 229 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(228);
 
 /***/ }),
-/* 230 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(290);
 
 /***/ }),
-/* 231 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(296);
 
 /***/ }),
-/* 232 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(299);
 
 /***/ }),
-/* 233 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(30);
 
 /***/ }),
-/* 234 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(300);
 
 /***/ }),
-/* 235 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(306);
 
 /***/ }),
-/* 236 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(310);
 
 /***/ }),
-/* 237 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(313);
 
 /***/ }),
-/* 238 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(314);
 
 /***/ }),
-/* 239 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(35);
 
 /***/ }),
-/* 240 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(5);
 
 /***/ }),
-/* 241 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(1))(8);
 
 /***/ }),
-/* 242 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(67);
-__webpack_require__(66);
-module.exports = __webpack_require__(65);
+__webpack_require__(72);
+__webpack_require__(71);
+module.exports = __webpack_require__(70);
 
 
 /***/ })
