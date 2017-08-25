@@ -24,9 +24,11 @@ namespace DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<SkillSet> SkillSets { get; set; }
 
-		public DbSet<SkillSetItem> SkillSetItemss { get; set; }
+		public DbSet<SkillSetItem> SkillSetItems { get; set; }
 
-		public DbSet<Team> Teams { get; set; }
+        public DbSet<AssessmentResult> AssessmentResults { get; set; }
+
+        public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Position> Positions { get;  set; }
 
@@ -34,11 +36,24 @@ namespace DAL
         { }
 
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
+            
+            modelBuilder.Entity<TeamPlayer>()
+         .HasKey(x => new { x.TeamId, x.PlayerId });
 
-          
+            modelBuilder.Entity<TeamPlayer>()
+                .HasOne(x => x.Team)
+                .WithMany(y => y.Players)
+                .HasForeignKey(y => y.TeamId);
+
+            modelBuilder.Entity<TeamPlayer>()
+                .HasOne(x => x.Player)
+                .WithMany(y => y.Teams)
+                .HasForeignKey(y => y.PlayerId);
+
+
         }
     }
 }

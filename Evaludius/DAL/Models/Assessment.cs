@@ -18,12 +18,14 @@ namespace DAL.Models
     public class Assessment
     {
         public int Id { get; set; }
-        public Player Player { get; set; }
-        public DateTime AssessmentDate { get; set; }
-        
-      
+        public String Description { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
 
 
-    
+
+
+
+
     }
 }

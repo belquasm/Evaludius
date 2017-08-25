@@ -35,6 +35,9 @@ namespace DAL.Models
         public string Configuration { get; set; }
         public bool IsEnabled { get; set; }
         public bool IsLockedOut => this.LockoutEnabled && this.LockoutEnd >= DateTimeOffset.UtcNow;
-        public ICollection<Team> Orders { get; set; }
+
+        
+
+        public ICollection<Team> Teams { get; set; }
     }
 }

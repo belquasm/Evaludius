@@ -31,7 +31,7 @@ namespace DAL.Repositories
 
         public IEnumerable<Player> GetAllPlayersData()
         {
-            return appContext.Players.Include(x=>x.Position).Include(y=>y.Team)
+            return AppContext.Players.Include(x=>x.Position).Include(y=>y.Teams).ThenInclude(z=>z.Team)
                 
                 .ToList();
         }
@@ -39,7 +39,7 @@ namespace DAL.Repositories
         public Tuple<bool, string[]> UpdatePlayerAsync(Player player)
         {
 
-           var playerEdit = appContext.Players.FirstOrDefault(x => x.Id == player.Id);
+           var playerEdit = AppContext.Players.FirstOrDefault(x => x.Id == player.Id);
 
             if (playerEdit == null)
             {
@@ -50,12 +50,12 @@ namespace DAL.Repositories
 
             Mapper.Map(player, playerEdit);
 
-            appContext.SaveChanges();
+            AppContext.SaveChanges();
 
             return Tuple.Create(true, new string[] { });
         }
 
-        private ApplicationDbContext appContext
+        private ApplicationDbContext AppContext
         {
             get { return (ApplicationDbContext)_context; }
         }

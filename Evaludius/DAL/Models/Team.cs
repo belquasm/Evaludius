@@ -6,23 +6,20 @@
 // ==> Gun4Hire: contact@ebenmonney.com
 // ======================================
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL.Models
 {
     public class Team
     {
         public int Id { get; set; }
-        public string TeamName { get; set; }
-        public string LastName { get; set; }
-       
+        public string Name { get; set; }
+        public string Description { get; set; }       
         public int BirthYear { get; set; }
 
+        public ApplicationUser Manager { get; set; }
 
-        public ICollection<Player> Players { get; set; }
+        
+        public virtual ICollection<TeamPlayer> Players { get; set; }
     }
 }

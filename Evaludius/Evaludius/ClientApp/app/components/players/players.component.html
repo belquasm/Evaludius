@@ -35,6 +35,10 @@
         <ng-template #indexTemplate let-value="value">
             <strong>{{value}}</strong>
         </ng-template>
+        <ng-template #teamsTemplate let-row="row" let-value="value" let-i="index">
+            <span class="player-team badge" *ngFor="let team of value">{{team}}</span>
+        </ng-template>
+
         <ng-template #actionsTemplate let-row="row" let-value="value" let-i="index">
             <div *ngIf="canManagePlayers">
                 <a class="btn btn-link btn-xs" href="javascript:;" (click)="editPlayer(row)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {{'users.management.Edit' | translate}}</a>

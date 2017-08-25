@@ -46,7 +46,6 @@ namespace Evaludius.ControllersUser
 		{
             var players = _unitOfWork.Players.GetAllPlayersData();
 
-
             List<PlayerViewModel> playersVM = new List<PlayerViewModel>();
            
 			foreach (var player in players)
@@ -54,7 +53,7 @@ namespace Evaludius.ControllersUser
 				var playerVM = Mapper.Map<PlayerViewModel>(player);
 
                 playerVM.Position = player.Position.Name;
-                playerVM.Team = player.Team.TeamName;
+                playerVM.Teams = player.Teams.Select(x=>x.Team.Name).ToArray();
 
                 playersVM.Add(playerVM);
 			}

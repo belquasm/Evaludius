@@ -8,7 +8,7 @@
 
 export class Player {
     // Note: Using only optional constructor properties without backing store disables typescript's type checking for the type
-    constructor(id?: number, firstName?: string, lastName?: string, yearOfBirth?: number, position?: string, isActive?: boolean) {
+    constructor(id?: number, firstName?: string, lastName?: string, yearOfBirth?: number, position?: string, isActive?: boolean, teams?: string[]) {
 
         this.id = id;
         this.firstName = firstName;
@@ -16,6 +16,7 @@ export class Player {
         this.yearOfBirth = yearOfBirth;
         this.position = position;
         this.isActive = isActive;
+        this.teams = teams;
         
     }
 
@@ -28,7 +29,7 @@ export class Player {
     public lastName: string;
     public yearOfBirth: number;
     public position: string; 
-    public team: string;
+    public teams: string[];
     public isActive: boolean;
     public fullName = this.firstName + " " + this.lastName;
    

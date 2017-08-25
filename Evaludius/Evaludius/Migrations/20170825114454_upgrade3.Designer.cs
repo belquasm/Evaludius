@@ -8,9 +8,10 @@ using DAL;
 namespace Evaludius.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170825114454_upgrade3")]
+    partial class upgrade3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.2")
@@ -119,30 +120,6 @@ namespace Evaludius.Migrations
                     b.ToTable("Assessment");
                 });
 
-            modelBuilder.Entity("DAL.Models.AssessmentResult", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int?>("AssessmentId");
-
-                    b.Property<int?>("PlayerId");
-
-                    b.Property<int?>("SkillSetItemId");
-
-                    b.Property<int>("TotalPoints");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AssessmentId");
-
-                    b.HasIndex("PlayerId");
-
-                    b.HasIndex("SkillSetItemId");
-
-                    b.ToTable("AssessmentResults");
-                });
-
             modelBuilder.Entity("DAL.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -174,11 +151,15 @@ namespace Evaludius.Migrations
 
                     b.Property<int?>("PositionId");
 
+                    b.Property<int?>("TeamId");
+
                     b.Property<int>("YearOfBirth");
 
                     b.HasKey("Id");
 
                     b.HasIndex("PositionId");
+
+                    b.HasIndex("TeamId");
 
                     b.ToTable("Players");
                 });
@@ -236,7 +217,7 @@ namespace Evaludius.Migrations
 
                     b.HasIndex("SkillSetId");
 
-                    b.ToTable("SkillSetItems");
+                    b.ToTable("SkillSetItemss");
                 });
 
             modelBuilder.Entity("DAL.Models.Team", b =>
@@ -257,19 +238,6 @@ namespace Evaludius.Migrations
                     b.HasIndex("ManagerId");
 
                     b.ToTable("Teams");
-                });
-
-            modelBuilder.Entity("DAL.Models.TeamPlayer", b =>
-                {
-                    b.Property<int>("TeamId");
-
-                    b.Property<int>("PlayerId");
-
-                    b.HasKey("TeamId", "PlayerId");
-
-                    b.HasIndex("PlayerId");
-
-                    b.ToTable("TeamPlayer");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -440,26 +408,15 @@ namespace Evaludius.Migrations
                         .HasForeignKey("PlayerId");
                 });
 
-            modelBuilder.Entity("DAL.Models.AssessmentResult", b =>
-                {
-                    b.HasOne("DAL.Models.Assessment", "Assessment")
-                        .WithMany()
-                        .HasForeignKey("AssessmentId");
-
-                    b.HasOne("DAL.Models.Player", "Player")
-                        .WithMany()
-                        .HasForeignKey("PlayerId");
-
-                    b.HasOne("DAL.Models.SkillSetItem", "SkillSetItem")
-                        .WithMany()
-                        .HasForeignKey("SkillSetItemId");
-                });
-
             modelBuilder.Entity("DAL.Models.Player", b =>
                 {
                     b.HasOne("DAL.Models.Position", "Position")
                         .WithMany()
                         .HasForeignKey("PositionId");
+
+                    b.HasOne("DAL.Models.Team", "Team")
+                        .WithMany("Players")
+                        .HasForeignKey("TeamId");
                 });
 
             modelBuilder.Entity("DAL.Models.SkillSet", b =>
@@ -481,19 +438,6 @@ namespace Evaludius.Migrations
                     b.HasOne("DAL.Models.ApplicationUser", "Manager")
                         .WithMany("Teams")
                         .HasForeignKey("ManagerId");
-                });
-
-            modelBuilder.Entity("DAL.Models.TeamPlayer", b =>
-                {
-                    b.HasOne("DAL.Models.Team", "Team")
-                        .WithMany("Players")
-                        .HasForeignKey("PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("DAL.Models.Player", "Player")
-                        .WithMany("Teams")
-                        .HasForeignKey("TeamId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>

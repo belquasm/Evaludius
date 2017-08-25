@@ -57,7 +57,7 @@ export class PlayersEndpoint extends EndpointFactory {
     }
 
     deletePlayerEndpoint(playerId?: number): Observable<Response> {
-        let endpointUrl = playerId ? `${this.playersUrl}/${playerId}` : this.playerUrl;
+        let endpointUrl = playerId ? `${this.playerUrl}/${playerId}` : this.playerUrl;
 
         return this.http.delete(endpointUrl, this.getAuthHeader())
             .map((response: Response) => {

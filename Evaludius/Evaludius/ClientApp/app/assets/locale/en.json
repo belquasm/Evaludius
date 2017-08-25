@@ -5,7 +5,16 @@
     "New": "New"
   },
   "common": {
-    "firstName": "First Name"
+    "FullName": "Full Name",
+    "Email": "Email",
+    "PhoneNumber": "Phone Number",
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "Close": "Close",
+    "Edit": "Edit",
+    "Cancel": "Cancel",
+    "Save": "Save",
+    "Saving": "Saving..."
   },
   "mainMenu": {
     "Appointments": "Appointments",
@@ -13,8 +22,8 @@
     "Products": "Products",
     "Orders": "Orders",
     "About": "About",
-			"Logout": "Logout",
-			"Players": "Players"
+    "Logout": "Logout",
+    "Players": "Players"
   },
   "pageHeader": {
     "Dashboard": "Dashboard",
@@ -87,18 +96,18 @@
     "ResetDefault": "Reset default",
     "SetDefault": "Set as default"
   },
-	"users": {
-		"management": {
-			"Search": "Search for user...",
-			"NewUser": "New User",
-			"Edit": "Edit",
-			"Delete": "Delete",
-			"EditUser": "Edit User \"{{name}}\"",
-			"Title": "Title",
-			"UserName": "User Name",
-			"FullName": "Full Name",
-			"Email": "Email",
-			"Roles": "Roles",
+  "users": {
+    "management": {
+      "Search": "Search for user...",
+      "NewUser": "New User",
+      "Edit": "Edit",
+      "Delete": "Delete",
+      "EditUser": "Edit User \"{{name}}\"",
+      "Title": "Title",
+      "UserName": "User Name",
+      "FullName": "Full Name",
+      "Email": "Email",
+      "Roles": "Roles",
       "PhoneNumber": "Phone Number",
       "FirstName": "First Name",
       "LastName": "Last Name",
@@ -106,42 +115,41 @@
       "Team": "Team",
       "YearOfBirth": "Year of Birth",
       "NewPlayer": "New Player"
-		},
-		"editor": {
-			"JobTitle": "Job Title: ",
-			"UserName": "User Name:",
-			"UserNameRequired": "User name is required (minimum of 2 and maximum of 200 characters)",
-			"Password": "Password:",
-			"PasswordHint": "Your password is required when changing user name",
-			"CurrentPasswordRequired": "Current password is required",
-			"Email": "Email:",
-			"EmailRequired": "Email address is required (maximum of 200 characters)",
-			"InvalidEmail": "Specified email is not valid",
-			"ChangePassword": "Change Password",
-			"CurrentPassword": "Current Password:",
-			"NewPassword": "New Password:",
-			"NewPasswordRequired": "New password is required (minimum of 6 characters)",
-			"ConfirmPassword": "Confirm Password:",
-			"ConfirmationPasswordRequired": "Confirmation password is required",
-			"PasswordMismatch": "New password and confirmation password do not match",
-			"Roles": "Roles:",
-			"FullName": " Full Name:",
-			"RoleRequired": " Role is required",
-			"PhoneNumber": "Phone #:",
-			"Enabled": "Enabled",
-			"Unblock": "Unblock",
-			"Close": "Close",
-			"Edit": "Edit",
-			"Cancel": "Cancel",
-			"Save": "Save",
-			"Saving": "Saving..."
-		},
-		"formInput": {
-			"EnterNewPassword": "Enter New Password",
-			"ConfirmNewPassword": "Confirm new password",
-			"":""
-					}
-	},
+    },
+    "editor": {
+      "JobTitle": "Job Title: ",
+      "UserName": "User Name:",
+      "UserNameRequired": "User name is required (minimum of 2 and maximum of 200 characters)",
+      "Password": "Password:",
+      "PasswordHint": "Your password is required when changing user name",
+      "CurrentPasswordRequired": "Current password is required",
+      "Email": "Email:",
+      "EmailRequired": "Email address is required (maximum of 200 characters)",
+      "InvalidEmail": "Specified email is not valid",
+      "ChangePassword": "Change Password",
+      "CurrentPassword": "Current Password:",
+      "NewPassword": "New Password:",
+      "NewPasswordRequired": "New password is required (minimum of 6 characters)",
+      "ConfirmPassword": "Confirm Password:",
+      "ConfirmationPasswordRequired": "Confirmation password is required",
+      "PasswordMismatch": "New password and confirmation password do not match",
+      "Roles": "Roles:",
+      "FullName": " Full Name:",
+      "RoleRequired": " Role is required",
+      "PhoneNumber": "Phone #:",
+      "Enabled": "Enabled",
+      "Unblock": "Unblock",
+      "Close": "Close",
+      "Edit": "Edit",
+      "Cancel": "Cancel",
+      "Save": "Save",
+      "Saving": "Saving..."
+    },
+    "formInput": {
+      "EnterNewPassword": "Enter New Password",
+      "ConfirmNewPassword": "Confirm new password"      
+    }
+  },
   "roles": {
     "management": {
       "Search": "Search for role...",
@@ -173,31 +181,50 @@
     "Date": "Date",
     "Notification": "Notification"
   },
-	"todoDemo": {
-		"management": {
-			"Search": "Search for task...",
-			"HideCompleted": "Hide Completed",
-			"AddTask": "Add Task",
-			"Delete": "Delete task",
-			"Important": "Mark as important",
-			"Task": "Task",
-			"Description": "Description"
-		},
-		"editor": {
-			"NewTask": "New Task",
-			"Name": "Name",
-			"TaskNameRequired": "Task name is required",
-			"Description": "Description",
-			"Important": "Mark as important",
-			"AddTask": "Add Task"
-		}
-	},
-	"login": {
-					"Login": "Login",
-					"Email": "Email",
-					"Password": "Password",
-					"EnterUser": "Enter email or username",
-					"EnterPassword": "Enter password",
-					"Rememberme": "Remember me"
-	}
-	}
+  "todoDemo": {
+    "management": {
+      "Search": "Search for task...",
+      "HideCompleted": "Hide Completed",
+      "AddTask": "Add Task",
+      "Delete": "Delete task",
+      "Important": "Mark as important",
+      "Task": "Task",
+      "Description": "Description"
+    },
+    "editor": {
+      "NewTask": "New Task",
+      "Name": "Name",
+      "TaskNameRequired": "Task name is required",
+      "Description": "Description",
+      "Important": "Mark as important",
+      "AddTask": "Add Task"
+    }
+  },
+  "login": {
+    "Login": "Login",
+    "Email": "Email",
+    "Password": "Password",
+    "EnterUser": "Enter email or username",
+    "EnterPassword": "Enter password",
+    "Rememberme": "Remember me"
+  },
+  "players": {
+    "management": {
+      "Search": "Search for player...",
+      "NewPlayer": "New Player",      
+      "EditUser": "Edit Player \"{{fullName}}\"",      
+      "Position": "Position",
+      "Teams": "Teams",
+      "YearOfBirth": "Year of Birth"
+      
+    },
+    "editor": {
+      "YearOfBirth": "Year of Birth",
+      "Team": "Team",
+      "Position": "Position",
+      "JerseyNumber": "Jersey Number",
+      "Saving": "Saving..."
+    }
+  }
+
+  }

@@ -18,8 +18,8 @@ import { AppTranslationService } from "../../services/app-translation.service";
 import { AccountService } from "../../services/account.service";
 import { Utilities } from "../../services/utilities";
 import { Player } from '../../models/Player.model';
-import { Role } from '../../models/role.model';
-import { Permission } from '../../models/permission.model';
+import { Team } from '../../models/team.model';
+import { PlayerPosition } from '../../models/position.model';
 
 import { PlayerInfoComponent } from "./player-info.component";
 
@@ -46,17 +46,16 @@ export class PlayersComponent implements OnInit {
    
     loadingIndicator: boolean;
 
-    allRoles: Role[] = [];
+    allTeams: Team[] = [];
+    allPositions: PlayerPosition[] = [];
 
 
     @ViewChild('indexTemplate')
     indexTemplate: TemplateRef<any>;
 
-    @ViewChild('userNameTemplate')
-    userNameTemplate: TemplateRef<any>;
-
-    @ViewChild('rolesTemplate')
-    rolesTemplate: TemplateRef<any>;
+    
+    @ViewChild('teamsTemplate')
+    teamsTemplate: TemplateRef<any>;
 
     @ViewChild('actionsTemplate')
     actionsTemplate: TemplateRef<any>;
@@ -82,12 +81,12 @@ export class PlayersComponent implements OnInit {
 
             this.columns = [
                 { prop: "index", name: '#', width: 40, cellTemplate: this.indexTemplate, canAutoResize: false },
-                { prop: 'firstName', name: gT('Players.management.FirstName'), width: 100 },
-                { prop: 'lastName', name: gT('Players.management.LastName'), width: 100 },
-                { prop: 'yearOfBirth', name: gT('Players.management.YearOfBirth'), width: 50 },
-                { prop: 'position', name: gT('Players.management.Position'), width: 100 },
-               
-                { prop: 'team', name: gT('Players.management.Team'), width: 100 }
+                { prop: 'firstName', name: gT('common.FirstName'), width: 100 },
+                { prop: 'lastName', name: gT('common.LastName'), width: 100 },
+                { prop: 'yearOfBirth', name: gT('players.management.YearOfBirth'), width: 50 },
+                { prop: 'position', name: gT('players.management.Position'), width: 100 },
+
+                { prop: 'teams', name: gT('players.management.Teams'), width: 120, cellTemplate: this.teamsTemplate }
             ];
 
             if (this.canManagePlayers)
@@ -100,12 +99,12 @@ export class PlayersComponent implements OnInit {
         loadData() {
             this.alertService.startLoadingMessage();
             this.loadingIndicator = true;
-            this.playersService.getPlayers().subscribe(players => this.onDataLoadSuccessful(players), error => this.onDataLoadFailed(error));
+            this.playersService.getPlayers().subscribe(players => this.onDataLoadSuccessful(players, [],[]), error => this.onDataLoadFailed(error));
             
         }
 
 
-        onDataLoadSuccessful(players: Player[]) {
+        onDataLoadSuccessful(players: Player[], teams: Team[],positions: PlayerPosition[]) {
             this.alertService.stopLoadingMessage();
             this.loadingIndicator = false;
 
@@ -115,7 +114,8 @@ export class PlayersComponent implements OnInit {
 
             this.rowsCache = [...players];
             this.rows = players;
-
+            this.allTeams = teams;
+            this.allPositions = positions;
           
         }
 
@@ -134,8 +134,7 @@ export class PlayersComponent implements OnInit {
                 let filteredRows = this.rowsCache.filter(r => {
                     let isChosen = !value
                         || r.firstName.toLowerCase().indexOf(value) !== -1
-
-                        || r.team.toLowerCase().indexOf(value) !== -1
+                        || r.teams.some(i => i.toLowerCase().indexOf(value) !== -1)
                         || r.position.toLowerCase().indexOf(value) !== -1
                        
                     return isChosen;

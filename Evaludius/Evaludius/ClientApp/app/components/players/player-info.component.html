@@ -1,6 +1,6 @@
 ﻿<div class="form-horizontal">
     <div class="form-group">
-        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.firstName' | translate}}</label>
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.FirstName' | translate}}</label>
         <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
             <p class="form-control-static">{{player.firstName}}</p>
         </div>
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.lastName' | translate}}</label>
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.LastName' | translate}}</label>
         <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
             <p class="form-control-static">{{player.lastName}}</p>
         </div>
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'players.Editor.yearOfBirth' | translate}}</label>
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'players.editor.YearOfBirth' | translate}}</label>
         <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
             <p class="form-control-static">{{player.yearOfBirth}}</p>
         </div>
@@ -45,12 +45,21 @@
         </div>
     </div>
     <div class="form-group">
-        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.firstName' | translate}}</label>
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'players.editor.Team' | translate}}</label>
         <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
-            <p class="form-control-static">{{player.firstName}}</p>
+            <p class="form-control-static">{{player.Team.Name}}</p>
         </div>
-        <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
-            <input autofocus type="text" attr.id="jobTitle-{{uniqueId}}" name="jobTitle" placeholder="Enter First Name" class="form-control" [(ngModel)]="playerEdit.firstName" />
+        <div *ngIf="isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly" [ngClass]="{'has-success': f.submitted && teams.valid, 'has-error' : f.submitted && !teams.valid}">
+            <select id="teams-player-info" name="teams" [(ngModel)]="playerEdit.teams" #roles="ngModel" class="selectpicker form-control" bootstrapSelect required multiple
+                    data-live-search="true" data-actions-box="false" data-live-search-placeholder="Search..." title="Select Team">
+                <option *ngFor="let team of allTeams" attr.data-content="<span title='{{team.description}}' class='badge'>{{team.name}}</span>" attr.value="{{team.name}}">
+                    {{team.name}}
+                </option>
+            </select>
+            <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': teams.valid, 'glyphicon-remove' : !teams.valid}"></span>
+            <span *ngIf="showValidationErrors && f.submitted && !teams.valid" class="errorMessage">
+                {{'players.editor.TeamRequired' | translate}}
+            </span>
         </div>
     </div>
 
@@ -60,7 +69,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.firstName' | translate}}</label>
+        <label [class.col-md-3]="isViewOnly" [class.col-md-2]="!isViewOnly" class="control-label" for="jobTitle-{{uniqueId}}">{{'common.FirstName' | translate}}</label>
         <div *ngIf="!isEditMode" [class.col-md-9]="isViewOnly" [class.col-md-10]="!isViewOnly">
             <p class="form-control-static">{{player.firstName}}</p>
         </div>

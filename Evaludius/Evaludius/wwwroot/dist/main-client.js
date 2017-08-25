@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5610f2ea778ffd1e552b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "92ad10c1acd3b749578b"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -5404,11 +5404,11 @@ var PlayersComponent = (function () {
         var gT = function (key) { return _this.translationService.getTranslation(key); };
         this.columns = [
             { prop: "index", name: '#', width: 40, cellTemplate: this.indexTemplate, canAutoResize: false },
-            { prop: 'firstName', name: gT('Players.management.FirstName'), width: 100 },
-            { prop: 'lastName', name: gT('Players.management.LastName'), width: 100 },
-            { prop: 'yearOfBirth', name: gT('Players.management.YearOfBirth'), width: 50 },
-            { prop: 'position', name: gT('Players.management.Position'), width: 100 },
-            { prop: 'team', name: gT('Players.management.Team'), width: 100 }
+            { prop: 'firstName', name: gT('common.FirstName'), width: 100 },
+            { prop: 'lastName', name: gT('common.LastName'), width: 100 },
+            { prop: 'yearOfBirth', name: gT('players.management.YearOfBirth'), width: 50 },
+            { prop: 'position', name: gT('players.management.Position'), width: 100 },
+            { prop: 'team', name: gT('players.management.Team'), width: 100 }
         ];
         if (this.canManagePlayers)
             this.columns.push({ name: '', width: 130, cellTemplate: this.actionsTemplate, resizeable: false, canAutoResize: false, sortable: false, draggable: false });
@@ -6515,7 +6515,7 @@ var PlayersEndpoint = (function (_super) {
     };
     PlayersEndpoint.prototype.deletePlayerEndpoint = function (playerId) {
         var _this = this;
-        var endpointUrl = playerId ? this.playersUrl + "/" + playerId : this.playerUrl;
+        var endpointUrl = playerId ? this.playerUrl + "/" + playerId : this.playerUrl;
         return this.http.delete(endpointUrl, this.getAuthHeader())
             .map(function (response) {
             return response;
@@ -7531,7 +7531,16 @@ module.exports = {
 		"New": "New"
 	},
 	"common": {
-		"firstName": "First Name"
+		"FullName": "Full Name",
+		"Email": "Email",
+		"PhoneNumber": "Phone Number",
+		"FirstName": "First Name",
+		"LastName": "Last Name",
+		"Close": "Close",
+		"Edit": "Edit",
+		"Cancel": "Cancel",
+		"Save": "Save",
+		"Saving": "Saving..."
 	},
 	"mainMenu": {
 		"Appointments": "Appointments",
@@ -7664,8 +7673,7 @@ module.exports = {
 		},
 		"formInput": {
 			"EnterNewPassword": "Enter New Password",
-			"ConfirmNewPassword": "Confirm new password",
-			"": ""
+			"ConfirmNewPassword": "Confirm new password"
 		}
 	},
 	"roles": {
@@ -7725,6 +7733,23 @@ module.exports = {
 		"EnterUser": "Enter email or username",
 		"EnterPassword": "Enter password",
 		"Rememberme": "Remember me"
+	},
+	"players": {
+		"management": {
+			"Search": "Search for player...",
+			"NewPlayer": "New Player",
+			"EditUser": "Edit Player \"{{fullName}}\"",
+			"Position": "Position",
+			"Team": "Team",
+			"YearOfBirth": "Year of Birth"
+		},
+		"editor": {
+			"YearOfBirth": "Year of Birth",
+			"Team": "Team",
+			"Position": "Position",
+			"JerseyNumber": "Jersey Number",
+			"Saving": "Saving..."
+		}
 	}
 };
 
@@ -29580,7 +29605,7 @@ module.exports = "<div class=\"container\">\r\n    <header class=\"pageHeader\">
 /* 153 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-horizontal\">\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.firstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"firstName-{{uniqueId}}\" name=\"firstName\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.lastName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.lastName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"lastName-{{uniqueId}}\" name=\"lastName\" placeholder=\"Enter Last Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.lastName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'players.Editor.yearOfBirth' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.yearOfBirth}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"yearOfBirth-{{uniqueId}}\" name=\"jobTiyearOfBirthtle\" placeholder=\"Enter Year Of Birth\" class=\"form-control\" [(ngModel)]=\"playerEdit.yearOfBirth\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.firstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"jobTitle-{{uniqueId}}\" name=\"jobTitle\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.firstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"jobTitle-{{uniqueId}}\" name=\"jobTitle\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"form-horizontal\">\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.FirstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"firstName-{{uniqueId}}\" name=\"firstName\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.LastName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.lastName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"lastName-{{uniqueId}}\" name=\"lastName\" placeholder=\"Enter Last Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.lastName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'players.editor.YearOfBirth' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.yearOfBirth}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"yearOfBirth-{{uniqueId}}\" name=\"jobTiyearOfBirthtle\" placeholder=\"Enter Year Of Birth\" class=\"form-control\" [(ngModel)]=\"playerEdit.yearOfBirth\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'players.editor.Team' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.Team.Name}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\" [ngClass]=\"{'has-success': f.submitted && teams.valid, 'has-error' : f.submitted && !teams.valid}\">\r\n            <select id=\"teams-player-info\" name=\"teams\" [(ngModel)]=\"playerEdit.teams\" #roles=\"ngModel\" class=\"selectpicker form-control\" bootstrapSelect required multiple\r\n                    data-live-search=\"true\" data-actions-box=\"false\" data-live-search-placeholder=\"Search...\" title=\"Select Team\">\r\n                <option *ngFor=\"let team of allTeams\" attr.data-content=\"<span title='{{team.description}}' class='badge'>{{team.name}}</span>\" attr.value=\"{{team.name}}\">\r\n                    {{team.name}}\r\n                </option>\r\n            </select>\r\n            <span *ngIf=\"showValidationErrors && f.submitted\" class=\"glyphicon form-control-feedback\" [ngClass]=\"{'glyphicon-ok ': teams.valid, 'glyphicon-remove' : !teams.valid}\"></span>\r\n            <span *ngIf=\"showValidationErrors && f.submitted && !teams.valid\" class=\"errorMessage\">\r\n                {{'players.editor.TeamRequired' | translate}}\r\n            </span>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n    <div class=\"form-group\">\r\n        <label [class.col-md-3]=\"isViewOnly\" [class.col-md-2]=\"!isViewOnly\" class=\"control-label\" for=\"jobTitle-{{uniqueId}}\">{{'common.FirstName' | translate}}</label>\r\n        <div *ngIf=\"!isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <p class=\"form-control-static\">{{player.firstName}}</p>\r\n        </div>\r\n        <div *ngIf=\"isEditMode\" [class.col-md-9]=\"isViewOnly\" [class.col-md-10]=\"!isViewOnly\">\r\n            <input autofocus type=\"text\" attr.id=\"jobTitle-{{uniqueId}}\" name=\"jobTitle\" placeholder=\"Enter First Name\" class=\"form-control\" [(ngModel)]=\"playerEdit.firstName\" />\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12\">\r\n            <hr class=\"separator-hr\" />\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 154 */

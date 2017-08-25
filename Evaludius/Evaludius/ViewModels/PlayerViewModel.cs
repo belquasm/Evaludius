@@ -34,7 +34,7 @@ namespace Evaludius.ViewModels
 
         public string   Position { get; set; }
 
-        public string Team { get; set; }
+        public string[] Teams { get; set; }
 
         public bool IsActive { get; set; }
 
